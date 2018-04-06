@@ -1,0 +1,13 @@
+stages:
+  - production
+
+image: tetraweb/php:7.1
+
+production-env:
+  stage: production
+  script:
+    - node -v
+    - npm -v
+    - npm install
+  only:
+    - master
