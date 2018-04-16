@@ -189,7 +189,6 @@ var buildtools_core = vars.buildtools.buildtools_core,
         .pipe(gulp.dest(path + dist + js));
     });
 
-
 // JS LINT =====================================================================
 
     gulp.task('jslint', function() {
@@ -227,10 +226,8 @@ var buildtools_core = vars.buildtools.buildtools_core,
 // WATCH TASK ==================================================================
 
     gulp.task('watch', function () {
-        gulp.watch([
-            path + src + scss + '**/*.s+(a|c)ss',
-            path + src + js + '**/*.js'
-        ],['sass','sasslint', 'js_dev']);
+        gulp.watch([ path + src + scss + '**/*.s+(a|c)ss'],['sass','sasslint']);
+        gulp.watch([ path + src + js + '**/*.js'],['js_dev']);
     });
 
 // JSON MERGE ==================================================================
@@ -248,45 +245,49 @@ var buildtools_core = vars.buildtools.buildtools_core,
         .pipe(gulp.dest('./'));
     });
 
-// Common usable tasks ==========================================================
-
-gulp.task('default', gulpSequence(
-    ['sprite-png'],
-    'sass_minified',
-    'sasslint',
-    'js_minified',
-    'imagemin'
-));
-
-
-// Run gulp dev to get all files in a unminified version
-gulp.task('dev', [
-    'sass',
-    'sasslint',
-    'js_dev',
-    'imagemin'
-]);
-
-gulp.task('update-buildtool', [
-    'merge-json'
+    gulp.task('update-json', [
+        'merge-json'
     ], shell.task('npm install'));
 
-gulp.task('syscheck', [
 
-], shell.task(
-    [
-        'echo Node-Version:', 'node -v',
-        'echo NPM-Version:', 'npm -v',
-        'echo NPM-Outdated Packages:', 'npm outdated'
-    ]
-));
+// Common usable tasks ==========================================================
+
+    gulp.task('default', gulpSequence(
+        ['sprite-png'],
+        'sass_minified',
+        'sasslint',
+        'js_minified',
+        'imagemin'
+    ));
+
+// Run gulp dev to get all files in a unminified version
+    gulp.task('dev', [
+        'sass',
+        'sasslint',
+        'js_dev',
+        'imagemin'
+    ]);
+
+    gulp.task('update-packages', [
+        'merge-json'
+        ], shell.task('npm install'));
+
+    gulp.task('syscheck', [
+
+    ], shell.task(
+        [
+            'echo Node-Version:', 'node -v',
+            'echo NPM-Version:', 'npm -v',
+            'echo NPM-Outdated Packages:', 'npm outdated'
+        ]
+    ));
 
 // Sequenced tasks ==========================================================
 
-gulp.task('js_minified', gulpSequence(
-    ['jslint'], 'concat_footer_js', 'concat_head_js', 'concat_lib_js', 'minify_js'
-));
+    gulp.task('js_minified', gulpSequence(
+        ['jslint'], 'concat_footer_js', 'concat_head_js', 'concat_lib_js', 'minify_js'
+    ));
 
-gulp.task('js_dev', function(callback){
-    gulpSequence(['jslint'],'concat_head_js','concat_footer_js')(callback)
-});
+    gulp.task('js_dev', function(callback){
+        gulpSequence(['jslint'],'concat_head_js','concat_footer_js')(callback)
+    });

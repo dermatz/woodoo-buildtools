@@ -30,15 +30,8 @@ in the Getting Started section below this part.
 In this case the Buildtool setup will create and install all necessary files.
 
 ## 1. Installation
-### Installation With Composer
-If you want to add this repository with composer, please run these commands:
-```
-composer.phar config repositories.woodoo-buildtools vcs https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev
-```
-
-#### Woodoo in Root/Custom Folder (outside vendor)
-add following lines to your composer.json
+### Step 1: Installation Woodoo with Composer
+Add following lines to your composer.json
 ```
   "extra": {
     "installer-paths":{
@@ -47,18 +40,28 @@ add following lines to your composer.json
   }
 ```
 
-### Installation with Git Clone
-    ```
-    git clone https://gitlab.com/dermatz/woodoo-buildtools.git
-    ```
----
+Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
+```
+composer.phar config repositories.woodoo-buildtools vcs https://gitlab.com/dermatz/woodoo-buildtools.git
+composer.phar require dermatz/woodoo-buildtools --dev
+```
 
-## 2. Woodoo Setup
+### Step 2: Woodoo Setup
 
-Just switch into Woodoo-Buildtool folder and run in shell `sh core/setup.sh`.
-Follow the instructions in setup. After the Setup you can easily build your whole frontend project
-from woodoo-buildtools folder. Just run `gulp` from the woodoo buildtool folder in your console
-or add a alias in you bash config e.g. `alias woodoo='./woodoo-buildtool/ gulp'`
+Just switch into Woodoo-Buildtool folder and run the install script
+```
+cd woodow-buildtools
+sh core/setup.sh
+```
+
+Follow the instructions in setup. 
+During the setup you will get new files in the woodoo-buildtools folder, if they are not exist.
+After the Setup you can easily build your whole frontend project
+from woodoo-buildtools folder. Just run `gulp` from the woodoo buildtool folder in your console.
+
+## Update Woodoo with Project NPM Packages
+In this case you can run `gulp update-packages` in the woodoo-buildtools folder.
+The tool will look into your project folder and merge the json with the woodoo packages. 
 
 ## Issue-Reporting
 Feel free to report issues or add pull-requests. Thanks for your support!
