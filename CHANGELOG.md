@@ -1,9 +1,11 @@
-#### Planned Features in next Release
+#### Planned Features in one of the next releases
 - Ruby Compass Support - [Gulp-Compass](https://www.npmjs.com/package/gulp-compass)
 - node version manager for specific node version during build process
 - build differend themes with differend settings / packages
 
 ## Latest Release
+#### 1.2.0
+- dev-dependencies updates
 #### 1.1.0
 - updated readme install description
 - add update-packages task
