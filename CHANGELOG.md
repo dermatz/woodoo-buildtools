@@ -4,17 +4,24 @@
 - build differend themes with differend settings / packages
 
 ## Latest Release
+#### 1.2.1
+	- dev-dependencies updates
+		- gulp-rename
+	- update .sass-lint.yml to optimize lint for BEM Class-Nestings
+
 #### 1.2.0
-- dev-dependencies updates
+	- dev-dependencies updates
+
 #### 1.1.0
-- updated readme install description
-- add update-packages task
-- refactor gulpfile for better watch-task handling (now sass or js run only if necessary)
-- update gulp-sass and gulp-merge-json packages
+	- updated readme install description
+	- add update-packages task
+	- refactor gulpfile for better watch-task handling (now sass or js run only if necessary)
+	- update gulp-sass and gulp-merge-json packages
+
 #### 1.0.0
-- Woodoo Setup with automatic project package.json merging
-- Gulpfile Configuration
-- Gitlab ci pipeline
-- Fixed gulpfile.example for better development usability
-- Fixed minor variable bugs
-- Example files
+	- Woodoo Setup with automatic project package.json merging
+	- Gulpfile Configuration
+	- Gitlab ci pipeline
+	- Fixed gulpfile.example for better development usability
+	- Fixed minor variable bugs
+	- Example files
