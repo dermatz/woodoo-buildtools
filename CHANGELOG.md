@@ -4,6 +4,8 @@
 - build differend themes with differend settings / packages
 
 ## Latest Release
+#### 1.2.2
+	- disabled sass-lint rule 'no-vendor-prefixes' because in modern css it can be necessary to add `-webkit-xxxx` vendor prefixes direct in scss.
 #### 1.2.1
 	- dev-dependencies updates
 		- gulp-rename
