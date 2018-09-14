@@ -1,16 +1,28 @@
-#### Planned Features in one of the next releases
-- Ruby Compass Support - [Gulp-Compass](https://www.npmjs.com/package/gulp-compass)
-- node version manager for specific node version during build process
-- build differend themes with differend settings / packages
-
 ## Latest Release
+#### 1.4.0
+    - Refactored gulpfile and `gulp_config.json`
+        For a easier project configuration.
+        Now you can copy & paste your project folder structure (pathes) into 
+        the `gulp_config.json` to set the pathes for the gulp tasks.
+    
+    - Current Woodoo-Version 
+        Now you can see the current Woodoo Version in every gulp task output
+    
+    - Dependencies Outdate-Check
+        Add npm-dependencies outdate check was added to the gulp default task. 
+        Now you get informations about outdated packages before the compiled files are checked-in in your version control.
+  
+    - More than one Projects! (Work in Process)
+        Another project-root was added in the `gulp_config.json` to implement a secend project. 
+
 #### 1.3.0
 	- updated dev-dependencies
 		- gulp-autoprefixer to 6.0.0
 		- gulp-postcss to 8.0.0
 
 #### 1.2.2
-	- disabled sass-lint rule 'no-vendor-prefixes' because in modern css it can be necessary to add `-webkit-xxxx` vendor prefixes direct in scss.
+	- disabled sass-lint rule 'no-vendor-prefixes'
+	    because in modern css it can be necessary to add `-webkit-xxxx` vendor prefixes direct in scss.
 	
 #### 1.2.1
 	- dev-dependencies updates

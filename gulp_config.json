@@ -1,21 +1,29 @@
 {
   "buildtools": {
-    "buildtools_core" : "./core/"
+    "path" : "./core/"
   },
   "project" : {
     "path" : "themes/.../",
-    "src": "src/",
-    "dist": "dist/",
-    "scss" : "scss/",
-    "css": "css/",
-    "js" : "js/",
-    "head_js": "head/",
-    "footer_js": "footer/",
-    "lib_js": "lib/",
-    "images": "images/",
-    "sprites_dist": "sprites/",
-    "sprites_png_src": "sprites_src/",
-    "sprites_svg_src": "sprites/svg/",
-    "reports": "reports/"
+    "path_dist": "dist/",
+    "path_scss" : "scss/",
+    "path_head_js": "head/",
+    "path_footer_js": "footer/",
+    "path_lib_js": "lib/",
+    "path_images": "images/",
+    "path_sprites_dist": "sprites/",
+    "path_sprites_png": "sprites_src/",
+    "path_sprites_svg": "sprites/svg/"
+  },
+  "another_project" : {
+    "path" : "themes/.../",
+    "path_dist": "dist/",
+    "path_scss" : "scss/",
+    "path_head_js": "head/",
+    "path_footer_js": "footer/",
+    "path_lib_js": "lib/",
+    "path_images": "images/",
+    "path_sprites_dist": "sprites/",
+    "path_sprites_png": "sprites_src/",
+    "path_sprites_svg": "sprites/svg/"
   } 
 }
