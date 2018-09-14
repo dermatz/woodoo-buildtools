@@ -1,13 +1,13 @@
 'use strict';
 
 // Extern Config Files =========================================================
-
 var timestamp           = Date.now(),
     vars                = require('./gulp_config.json'),
+    packageinfo         = require(vars.buildtools.path + 'package.json'),
     externalPath        = ['node_modules'], // Include external pathes to get access via scss @import (like node_modules, bower, ..)
 
-// GULP MODULES=================================================================
 
+// GULP MODULES=================================================================
     gulp                = require('gulp'),
     log                 = require('fancy-log'),
     plumber             = require('gulp-plumber'),
@@ -28,35 +28,16 @@ var timestamp           = Date.now(),
     uglify              = require('gulp-uglify'),
     spritesmith         = require('gulp.spritesmith'),
     imagemin            = require('gulp-imagemin'),
-    newer               = require('gulp-newer'),
-    compass             = require('gulp-compass');
+    newer               = require('gulp-newer');
 
-log('You are blessed! 🚀 You are using the Woodoo-Buildtool');
+// Shell Messages ==============================================================
 
-// VARIABLE REWRITES ===========================================================
-// based on namings in > bin/gulp_config.json
-
-var buildtools_core = vars.buildtools.buildtools_core,
-    
-    // You can edit the variables here
-    path            = vars.project.path,
-    src             = vars.project.src,
-    dist            = vars.project.dist,
-    css             = vars.project.css,
-    scss            = vars.project.scss,
-    js              = vars.project.js,
-    head_js         = vars.project.head_js,
-    footer_js       = vars.project.footer_js,
-    lib_js          = vars.project.lib_js,
-    images          = vars.project.images,
-    sprites_map     = vars.project.sprites_dist,
-    sprites_png     = vars.project.sprites_png_src,
-    sprites_svg     = vars.project.sprites_svg_src;
-
+log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
+ 
 // SASS ========================================================================
 
     gulp.task('sass', function () {
-    return gulp.src(path + src + scss + '**/*.s+(a|c)ss')
+    return gulp.src(vars.project.path_scss + '**/*.s+(a|c)ss')
         .pipe(plumber({
             handleError: function (err) {
                 console.log(err);
@@ -73,11 +54,11 @@ var buildtools_core = vars.buildtools.buildtools_core,
         }))
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path + dist + css));
+        .pipe(gulp.dest(vars.project.path_dist + 'css'));
     });
 
     gulp.task('sass_minified', function () {
-        return gulp.src(path + src + scss + '**/*.s+(a|c)ss')
+        return gulp.src(vars.project.path_scss + '**/*.s+(a|c)ss')
             .pipe(plumber({
                 handleError: function (err) {
                     console.log(err);
@@ -97,15 +78,15 @@ var buildtools_core = vars.buildtools.buildtools_core,
                 sourceMap: true
             }))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(path + dist + css));
+            .pipe(gulp.dest(vars.project.path_dist + 'css'));
     });
 
 // SASS LINT ===================================================================
 
     gulp.task('sasslint', function () {
     return gulp.src([
-                '!' + path + src + scss + 'plugins/**/*.s+(a|c)ss',
-                path + src + scss + '**/*.s+(a|c)ss'
+                '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
+                vars.project.path_scss + '**/*.s+(a|c)ss'
             ]
         )
         .pipe(plumber({
@@ -115,87 +96,64 @@ var buildtools_core = vars.buildtools.buildtools_core,
             }
         }))
             .pipe(sassLint({
-                configFile: buildtools_core +'.sass-lint.yml'
+                configFile: vars.buildtools.path + '.sass-lint.yml'
             }))
             .pipe(sassLint.format())
             .pipe(sassLint.failOnError())
     });
 
-// RUBY COMPASS ================================================================
-// https://www.npmjs.com/package/gulp-compass
-
-    gulp.task('compass', function() {
-        gulp.src(path + src + scss + '**/*.s+(a|c)ss')
-            .pipe(plumber({
-                errorHandler: function (error) {
-                    log(error.message);
-                    this.emit('end');
-                }}))
-            .pipe(compass({
-                config_file: path + src + 'config.rb',
-                css: 'stylesheets',
-                sass: 'sass'
-            }))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
-                cascade: false
-            }))
-            .pipe(minifyCSS({
-                sourceMap: true
-            }))
-            .pipe(gulp.dest(path + dist + css));
-    });
-
 // JS CONCAT ===================================================================
 
-// Head JS
+    // Head JS
     gulp.task('concat_head_js', function() {
         return gulp.src(
-          [
-              path + src + js + head_js + '**/*.js'
-          ]
+            [
+                vars.project.path_head_js + '**/*.js'
+            ]
         )
         .pipe(plumber())
         .pipe(concat('head.min.js'))
-        .pipe(gulp.dest(path + dist + js));
+        .pipe(gulp.dest(vars.project.path_dist + 'js'));
     });
 
-// Footer JS
+    // Footer JS
     gulp.task('concat_footer_js', function() {
-        return gulp.src([
-            path + src + js + footer_js + '**/*.js'
-        ])
+        return gulp.src(
+            [
+                vars.project.path_footer_js + '**/*.js'
+            ]
+        )
         .pipe(plumber())
         .pipe(concat('footer.min.js'))
-        .pipe(gulp.dest(path + dist + js));
+        .pipe(gulp.dest(vars.project.path_dist + 'js'));
     });
 
-// Libruary JS
+    // Libruary JS
     gulp.task('concat_lib_js', function() {
-    return gulp.src(
-      [
-          path + src + js + lib_js + '**/*.js'
-      ]
-    )
-    .pipe(plumber())
-    .pipe(concat('lib.min.js'))
-    .pipe(gulp.dest(path + dist + js));
+        return gulp.src(
+            [
+              vars.project.path_lib_js + '**/*.js'
+            ]
+        )
+        .pipe(plumber())
+        .pipe(concat('lib.min.js'))
+        .pipe(gulp.dest(vars.project.path_dist + 'js'));
     });
 
     // MINIFING
     gulp.task('minify_js', function() {
-        return gulp.src(path + dist + js + '*.js')
+        return gulp.src(vars.project.path_dist + 'js' + '**/*.js')
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest(path + dist + js));
+        .pipe(gulp.dest(vars.project.path_dist + 'js'));
     });
 
 // JS LINT =====================================================================
 
     gulp.task('jslint', function() {
         return gulp.src([
-            '!' + path + src + js + lib_js + '**/*.js',
-            path + src + js + '**/*.js'
+            '!' + vars.project.path_lib_js + '**/*.js',
+            vars.project.path_js + '**/*.js'
         ])
         .pipe(plumber())
         .pipe(jshint())
@@ -205,40 +163,40 @@ var buildtools_core = vars.buildtools.buildtools_core,
 // SPRITEMAPS ==================================================================
 
     gulp.task('sprite-png', function () {
-        var spriteData = gulp.src(path + src + images + sprites_png + '**/*.png')
+        var spriteData = gulp.src(vars.project.path_sprites_png + '**/*.png')
         .pipe(spritesmith({
             imgName: 'sprite.png',
-            cssName: '../../../' + src + scss + 'sprite/_sprite.generated.scss'
+            cssName: vars.project.path_scss + 'sprite/_sprite.generated.scss'
         }));
-    return spriteData.pipe(gulp.dest(path + dist + images + sprites_map))});
+    return spriteData.pipe(gulp.dest(vars.project.path_sprites_dist))});
 
 // IMAGEMIN ====================================================================
 
     gulp.task('imagemin', function () {
-        var imageDest = path + dist + images;
+        var image_destination = vars.project.path_dist + 'images';
         gulp.src(
-            path + src + images + '**/*'
+            vars.project.path_images + '**/*'
         )
-            .pipe(newer(imageDest))
-            .pipe(imagemin())
-            .pipe(gulp.dest(imageDest))
+        .pipe(newer(image_destination))
+        .pipe(imagemin())
+        .pipe(gulp.dest(image_destination))
     });
 
 // WATCH TASK ==================================================================
 
     gulp.task('watch', function () {
-        gulp.watch([ path + src + scss + '**/*.s+(a|c)ss'],['sass','sasslint']);
-        gulp.watch([ path + src + js + '**/*.js'],['js_dev']);
+        gulp.watch([ vars.project.path_scss + '**/*.s+(a|c)ss'],['sass','sasslint']);
+        gulp.watch([ vars.project.path_js + '**/*.js'],['js_dev']);
     });
 
 // JSON MERGE ==================================================================
 
     gulp.task('merge-json', function () {
-        log('From Woodoo-Buildtools: ' + buildtools_core + 'package.json');
-        log('From Theme Path: ' + path + 'package.json');
+        log('From Woodoo-Buildtools: ' + vars.buildtools.path + 'package.json');
+        log('From Theme Path: ' + vars.project.path + 'package.json');
         gulp.src([
-            buildtools_core + 'package.json',
-            path + 'package.json'
+            vars.buildtools.path + 'package.json',
+            vars.project.path + 'package.json'
         ])
         .pipe(merge({
             fileName: 'package.json'
@@ -254,6 +212,7 @@ var buildtools_core = vars.buildtools.buildtools_core,
 // Common usable tasks ==========================================================
 
     gulp.task('default', gulpSequence(
+        ['dependencies-check'], // remove this line if you dont want a npm outdate-check
         ['sprite-png'],
         'sass_minified',
         'sasslint',
@@ -263,6 +222,7 @@ var buildtools_core = vars.buildtools.buildtools_core,
 
 // Run gulp dev to get all files in a unminified version
     gulp.task('dev', [
+        ['dependencies-check'], // remove this line if you dont want a npm outdate-check
         'sass',
         'sasslint',
         'js_dev',
@@ -271,14 +231,17 @@ var buildtools_core = vars.buildtools.buildtools_core,
 
     gulp.task('update-packages', [
         'merge-json'
-        ], shell.task('npm install'));
-    gulp.task('syscheck', [], shell.task(
-        [
-            'echo Node-Version:', 'node -v',
-            'echo NPM-Version:', 'npm -v',
-            'echo NPM-Outdated Packages:', 'npm outdated'
-        ]
-    ));
+    ], shell.task('npm install'));
+
+    gulp.task('dependencies-check', () => {
+        return gulp.src('*.js', {read: false})
+            .pipe(shell([
+            'echo ""',
+            'echo "Check outdated dependencies from package.json ... please wait"',
+            'npm outdated',
+            'echo ""'
+            ], { ignoreErrors: true }))
+    });
 
 // Sequenced tasks ==========================================================
 
