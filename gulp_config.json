@@ -4,26 +4,18 @@
   },
   "project" : {
     "path" : "themes/.../",
-    "path_dist": "dist/",
-    "path_scss" : "scss/",
-    "path_head_js": "head/",
-    "path_footer_js": "footer/",
-    "path_lib_js": "lib/",
-    "path_images": "images/",
-    "path_sprites_dist": "sprites/",
-    "path_sprites_png": "sprites_src/",
-    "path_sprites_svg": "sprites/svg/"
+    "path_dist": "output-folder",
+    "path_scss" : "src-scss/",
+    "path_js": "src-js/",
+    "path_head_js": "src-js-head/",
+    "path_footer_js": "src-js-footer/",
+    "path_lib_js": "src-js-lib/",
+    "path_images": "src-js-images/",
+    "path_sprites_dist": "output-folder-sprites/",
+    "path_sprites_png": "src-png",
+    "path_sprites_svg": "src-svg/"
   },
   "another_project" : {
-    "path" : "themes/.../",
-    "path_dist": "dist/",
-    "path_scss" : "scss/",
-    "path_head_js": "head/",
-    "path_footer_js": "footer/",
-    "path_lib_js": "lib/",
-    "path_images": "images/",
-    "path_sprites_dist": "sprites/",
-    "path_sprites_png": "sprites_src/",
-    "path_sprites_svg": "sprites/svg/"
-  } 
+    "path" : "themes/.../"
+ }
 }
