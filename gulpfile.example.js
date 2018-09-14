@@ -34,10 +34,11 @@ var timestamp           = Date.now(),
 log('You are blessed! 🚀 You are using the Woodoo-Buildtool');
 
 // VARIABLE REWRITES ===========================================================
-// bin/gulp_config.json
+// based on namings in > bin/gulp_config.json
 
 var buildtools_core = vars.buildtools.buildtools_core,
-
+    
+    // You can edit the variables here
     path            = vars.project.path,
     src             = vars.project.src,
     dist            = vars.project.dist,
@@ -271,10 +272,7 @@ var buildtools_core = vars.buildtools.buildtools_core,
     gulp.task('update-packages', [
         'merge-json'
         ], shell.task('npm install'));
-
-    gulp.task('syscheck', [
-
-    ], shell.task(
+    gulp.task('syscheck', [], shell.task(
         [
             'echo Node-Version:', 'node -v',
             'echo NPM-Version:', 'npm -v',
