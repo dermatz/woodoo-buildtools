@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Build Frontend Packages",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",

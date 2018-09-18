@@ -221,13 +221,13 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     ));
 
 // Run gulp dev to get all files in a unminified version
-    gulp.task('dev', [
-        ['dependencies-check'], // remove this line if you dont want a npm outdate-check
+    gulp.task('dev', gulpSequence(
+        ['dependencies-check'],
         'sass',
         'sasslint',
         'js_dev',
         'imagemin'
-    ]);
+    ));
 
     gulp.task('update-packages', [
         'merge-json'

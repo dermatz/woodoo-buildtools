@@ -1,4 +1,8 @@
 ## Latest Release
+#### 1.4.1 Hotfix
+    - fixed error during woodoo-setup
+        fixed js error in dev-task, gulpSequence Error in `gulpfile.example.js`
+    
 #### 1.4.0
     - Refactored gulpfile and `gulp_config.json`
         For a easier project configuration.
@@ -20,11 +24,11 @@
 		- gulp-autoprefixer to 6.0.0
 		- gulp-postcss to 8.0.0
 
-#### 1.2.2
+#### 1.2.2 Hotfix
 	- disabled sass-lint rule 'no-vendor-prefixes'
 	    because in modern css it can be necessary to add `-webkit-xxxx` vendor prefixes direct in scss.
 	
-#### 1.2.1
+#### 1.2.1 Hotfix
 	- dev-dependencies updates
 		- gulp-rename
 	- update .sass-lint.yml to optimize lint for BEM Class-Nestings
