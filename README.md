@@ -42,7 +42,7 @@ Add following lines to your composer.json
 
 Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
 ```
-composer.phar config repositories.woodoo-buildtools vcs https://gitlab.com/dermatz/woodoo-buildtools.git
+composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
 composer.phar require dermatz/woodoo-buildtools --dev "^1.4.0"
 ```
 
