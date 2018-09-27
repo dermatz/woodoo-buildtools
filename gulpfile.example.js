@@ -141,8 +141,8 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     });
 
     // MINIFING
-    gulp.task('minify_js', function() {
-        return gulp.src(vars.project.path_dist + 'js' + '**/*.js')
+    gulp.task(' minify_js', function() {
+        return gulp.src(vars.project.path_dist + 'js/**/*.js')
         .pipe(plumber())
         .pipe(uglify())
         .pipe(gulp.dest(vars.project.path_dist + 'js'));
