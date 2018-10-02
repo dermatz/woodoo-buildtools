@@ -141,7 +141,7 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     });
 
     // MINIFING
-    gulp.task(' minify_js', function() {
+    gulp.task('minify_js', function() {
         return gulp.src(vars.project.path_dist + 'js/**/*.js')
         .pipe(plumber())
         .pipe(uglify())
@@ -189,25 +189,6 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
         gulp.watch([ vars.project.path_js + '**/*.js'],['js_dev']);
     });
 
-// JSON MERGE ==================================================================
-
-    gulp.task('merge-json', function () {
-        log('From Woodoo-Buildtools: ' + vars.buildtools.path + 'package.json');
-        log('From Theme Path: ' + vars.project.path + 'package.json');
-        gulp.src([
-            vars.buildtools.path + 'package.json',
-            vars.project.path + 'package.json'
-        ])
-        .pipe(merge({
-            fileName: 'package.json'
-        }))
-        .pipe(gulp.dest('./'));
-    });
-
-    gulp.task('update-json', [
-        'merge-json'
-    ], shell.task('npm install'));
-
 
 // Common usable tasks ==========================================================
 
@@ -252,3 +233,47 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     gulp.task('js_dev', function(callback){
         gulpSequence(['jslint'],'concat_head_js','concat_footer_js')(callback)
     });
+
+
+
+
+// UPDATE BUILDTOOLS & PROJECT ==================================================================
+
+// Get all new depencies
+gulp.task('update-dependencies', [], shell.task(
+    [
+        'echo :::::::: Check for Woodoo Updates 🔎 ...',
+        'cd .. && composer update dermatz/woodoo-buildtools',
+        'echo :::::::: Update Node Packages'
+    ]
+));
+
+// Merge WoodooBuildtool package.json and project package-json
+gulp.task('merge-json', function () {
+    log('From Woodoo-Buildtools: ' + vars.buildtools.path + 'package.json');
+    log('From Theme Path: ' + vars.project.path + 'package.json');
+    gulp.src([
+        vars.buildtools.path + 'package.json',
+        vars.project.path + 'package.json'
+    ])
+        .pipe(merge({
+            fileName: 'package.json'
+        }))
+        .pipe(gulp.dest('./'));
+});
+
+// Install the new merged package-json inside the woodoo-folder
+gulp.task('install-json', [
+    'merge-json'
+], shell.task(
+    [
+        'npm install'
+    ]
+));
+
+// Run the update-procedure
+gulp.task('update',gulpSequence(
+    ['update-dependencies'],
+    ['install-json']
+));
+
