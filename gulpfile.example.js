@@ -243,7 +243,7 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
 gulp.task('update-dependencies', [], shell.task(
     [
         'echo :::::::: Check for Woodoo Updates 🔎 ...',
-        'cd .. && composer update dermatz/woodoo-buildtools',
+        'cd .. && composer.phar update dermatz/woodoo-buildtools',
         'echo :::::::: Update Node Packages'
     ]
 ));
