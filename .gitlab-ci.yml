@@ -7,7 +7,9 @@ production-env:
   stage: production
   script:
     - node -v
+    - composer.phar validate
     - npm -v
+    - npm outdated
     - npm install
   only:
     - master
