@@ -190,7 +190,7 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     });
 
 
-// Common usable tasks ==========================================================
+// Common usable tasks ================¢==========================================
 
     gulp.task('default', gulpSequence(
         ['dependencies-check'], // remove this line if you dont want a npm outdate-check
