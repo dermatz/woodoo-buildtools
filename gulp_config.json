@@ -3,19 +3,16 @@
     "path" : "./core/"
   },
   "project" : {
-    "path" : "themes/.../",
-    "path_dist": "output-folder",
-    "path_scss" : "src-scss/",
-    "path_js": "src-js/",
-    "path_head_js": "src-js-head/",
-    "path_footer_js": "src-js-footer/",
-    "path_lib_js": "src-js-lib/",
-    "path_images": "src-js-images/",
-    "path_sprites_dist": "output-folder-sprites/",
-    "path_sprites_png": "src-png",
-    "path_sprites_svg": "src-svg/"
-  },
-  "another_project" : {
-    "path" : "themes/.../"
- }
+    "path" : "../path/to/your/theme/",
+    "path_dist": "../path/to/your/asset/dist/folder/",
+    "path_scss" : "../path/to/your/scss/files/",
+    "path_js": "../path/to/your/js/files/",
+    "path_head_js": "../path/to/your/js/headerfiles/",
+    "path_footer_js": "../path/to/your/js/footerfiles/",
+    "path_lib_js": "../path/to/your/js/libruaryfiles/",
+    "path_images": "../path/to/your/images/",
+    "path_sprites_dist": "../path/to/your/sprite-destination",
+    "path_sprites_png": "../path/to/your/sprite-source-for/png",
+    "path_sprites_svg": "../path/to/your/sprite-source-for/svg"
+  }
 }

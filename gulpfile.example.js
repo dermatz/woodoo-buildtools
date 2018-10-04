@@ -57,34 +57,38 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
         .pipe(gulp.dest(vars.project.path_dist + 'css'));
     });
 
+// SASS MINIFY ===================================================================
+// https://www.npmjs.com/package/gulp-csso
+
     gulp.task('sass_minified', function () {
         return gulp.src(vars.project.path_scss + '**/*.s+(a|c)ss')
-            .pipe(plumber({
-                handleError: function (err) {
-                    console.log(err);
-                    this.emit('end')
-                }
-            }))
-            .pipe(sourcemaps.init())
-            .pipe(sass({
-                includePaths: require('node-neat').with(externalPath)
-            }))
-            .pipe(sass.sync().on('error', sass.logError))
-            .pipe(autoprefixer({
-                browsers: ['last 2 versions'],
-                cascade: false
-            }))
-            .pipe(minifyCSS({
-                sourceMap: true
-            }))
-            .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(vars.project.path_dist + 'css'));
+        .pipe(plumber({
+            handleError: function (err) {
+                console.log(err);
+                this.emit('end')
+            }
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: require('node-neat').with(externalPath)
+        }))
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(minifyCSS({
+            restructure: false, // enable this feature for maximum compression - check for css errors after minify!
+            sourceMap: true
+        }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(vars.project.path_dist + 'css'));
     });
 
 // SASS LINT ===================================================================
 
     gulp.task('sasslint', function () {
-    return gulp.src([
+        return gulp.src([
                 '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
                 vars.project.path_scss + '**/*.s+(a|c)ss'
             ]
@@ -95,11 +99,11 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
                 this.emit('end')
             }
         }))
-            .pipe(sassLint({
-                configFile: vars.buildtools.path + '.sass-lint.yml'
-            }))
-            .pipe(sassLint.format())
-            .pipe(sassLint.failOnError())
+        .pipe(sassLint({
+            configFile: vars.buildtools.path + '.sass-lint.yml'
+        }))
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
     });
 
 // JS CONCAT ===================================================================
@@ -140,7 +144,8 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
         .pipe(gulp.dest(vars.project.path_dist + 'js'));
     });
 
-    // MINIFING
+// JS MINIFY ====================================================================
+    
     gulp.task('minify_js', function() {
         return gulp.src(vars.project.path_dist + 'js/**/*.js')
         .pipe(plumber())
@@ -216,12 +221,12 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
 
     gulp.task('dependencies-check', () => {
         return gulp.src('*.js', {read: false})
-            .pipe(shell([
+        .pipe(shell([
             'echo ""',
             'echo "Check outdated dependencies from package.json ... please wait"',
             'npm outdated',
             'echo ""'
-            ], { ignoreErrors: true }))
+        ], { ignoreErrors: true }))
     });
 
 // Sequenced tasks ==========================================================
@@ -233,8 +238,6 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
     gulp.task('js_dev', function(callback){
         gulpSequence(['jslint'],'concat_head_js','concat_footer_js')(callback)
     });
-
-
 
 
 // UPDATE BUILDTOOLS & PROJECT ==================================================================
@@ -256,14 +259,14 @@ gulp.task('merge-json', function () {
         vars.buildtools.path + 'package.json',
         vars.project.path + 'package.json'
     ])
-        .pipe(merge({
-            fileName: 'package.json'
-        }))
-        .pipe(gulp.dest('./'));
+    .pipe(merge({
+        fileName: 'package.json'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
 // Install the new merged package-json inside the woodoo-folder
-gulp.task('install-json', [
+gulp.task('update-json', [
     'merge-json'
 ], shell.task(
     [
@@ -274,6 +277,6 @@ gulp.task('install-json', [
 // Run the update-procedure
 gulp.task('update',gulpSequence(
     ['update-dependencies'],
-    ['install-json']
+    ['update-json']
 ));
 
