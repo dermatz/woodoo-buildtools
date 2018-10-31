@@ -1,5 +1,8 @@
 ## Latest Release
 
+#### 1.5.2
+- update node package `gulp-sass` to version 4.0.2
+
 #### 1.5.1
 - update setup description in README.md and add notice for best asset-folder structure
 - improved task-dependencies (_chainings_) and task-namings
