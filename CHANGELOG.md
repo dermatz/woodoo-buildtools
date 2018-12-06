@@ -1,6 +1,13 @@
 ## Latest Release
 
-#### 1.5.2
+#### 1.5.3 - NPM Package updates
+
+- `fancy-log` from __1.3.2__ to __1.3.3__  
+- `graceful-fs` from __4.1.11__ to __4.1.15__  
+- `gulp-imagemin` from __4.1.0__ to __5.0.3__  
+- `gulp-plumber` from __1.2.0__ to __1.2.1__  
+
+#### 1.5.2 - NPM Package updates
 - update node package `gulp-sass` to version 4.0.2
 
 #### 1.5.1
