@@ -1,5 +1,10 @@
 ## Latest Release
-
+#### 2.0.0 - Update to GULP 4.x
+- completly change and refactor the gulpfile for gulp 4.x
+- rearrange the task sort order and groups
+- add .nvmrc for node 10.x
+- add browserSync (config root and port in gulp_config.json)
+ 
 #### 1.5.3 - NPM Package updates
 
 - `fancy-log` from __1.3.2__ to __1.3.3__  

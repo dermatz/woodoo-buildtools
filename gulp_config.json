@@ -2,6 +2,10 @@
   "buildtools": {
     "path" : "./core/"
   },
+  "dev": {
+    "browsersync_basedir" : "./",
+    "browsersync_port" : "3000"
+  },
   "project" : {
     "path" : "../path/to/your/theme/",
     "path_dist": "../path/to/your/asset/dist/folder/",
@@ -11,8 +15,5 @@
     "path_footer_js": "../path/to/your/js/footerfiles/",
     "path_lib_js": "../path/to/your/js/libruaryfiles/",
     "path_images": "../path/to/your/images/",
-    "path_sprites_dist": "../path/to/your/sprite-destination",
-    "path_sprites_png": "../path/to/your/sprite-source-for/png",
-    "path_sprites_svg": "../path/to/your/sprite-source-for/svg"
   }
 }
