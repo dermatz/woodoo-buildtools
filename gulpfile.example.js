@@ -42,8 +42,8 @@ log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 
 function browserSync(done) {
     browsersync.init({
-        server: {
-            baseDir: vars.dev.browsersync_basedir
+        proxy: {
+            target: vars.dev.browsersync_proxy_local_url
         },
         port: vars.dev.browsersync_port
     });
