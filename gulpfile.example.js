@@ -1,67 +1,64 @@
+/**
+ * Read for further information https://gulpjs.com
+ */
+
 'use strict';
 
-// Extern Config Files =========================================================
-var timestamp           = Date.now(),
-    vars                = require('./gulp_config.json'),
-    packageinfo         = require(vars.buildtools.path + 'package.json'),
-    externalPath        = ['node_modules'], // Include external pathes to get access via scss @import (like node_modules, bower, ..)
+// BUILDTOOL CONFIG
+const vars = require('./gulp_config.json');
+const packageinfo = require(vars.buildtools.path + 'package.json');
+const woodoo_hint = '';
+const externalPath = ['node_modules'];
 
+// Node Dependencies via NPM
+const {src, dest, parallel, series} = require('gulp');
+const gulp = require("gulp");
+const autoprefixer = require('gulp-autoprefixer');
+const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
+const jshint = require('gulp-jshint');
+const log = require('fancy-log');
+const plumber = require('gulp-plumber');
+const minifyCSS = require('gulp-csso');
+const merge = require('gulp-merge-json');
+const neat = require('node-neat');
+const newer = require('gulp-newer');
+const postcss = require('gulp-postcss');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const shell = require('gulp-shell');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const browsersync = require("browser-sync").create();
 
-// GULP MODULES=================================================================
-    gulp                = require('gulp'),
-    log                 = require('fancy-log'),
-    plumber             = require('gulp-plumber'),
-    sass                = require('gulp-sass'),
-    sassLint            = require('gulp-sass-lint'),
-    minifyCSS           = require('gulp-csso'),
-    postcss             = require('gulp-postcss'),
-    autoprefixer        = require('gulp-autoprefixer'),
-    sourcemaps          = require('gulp-sourcemaps'),
-    gutil               = require('gulp-util'),
-    jshint              = require('gulp-jshint'),
-    merge               = require('gulp-merge-json'),
-    shell               = require('gulp-shell'),
-    neat                = require('node-neat'),
-    concat              = require('gulp-concat'),
-    rename              = require('gulp-rename'),
-    gulpSequence        = require('gulp-sequence'),
-    uglify              = require('gulp-uglify'),
-    spritesmith         = require('gulp.spritesmith'),
-    imagemin            = require('gulp-imagemin'),
-    newer               = require('gulp-newer');
+/**
+ * Shell Messages
+ */
 
-// Shell Messages ==============================================================
+log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 
-log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
- 
-// SASS ========================================================================
+// BROWSER SYNC ==================================================================================================================
 
-    gulp.task('sass', function () {
-    return gulp.src(vars.project.path_scss + '**/*.s+(a|c)ss')
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end')
-            }
-        }))
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            includePaths: require('node-neat').with(externalPath)
-        }))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(vars.project.path_dist + 'css'));
+function browserSync(done) {
+    browsersync.init({
+        server: {
+            baseDir: vars.dev.browsersync_basedir
+        },
+        port: vars.dev.browsersync_port
     });
+    done();
+}
 
-// SASS MINIFY ===================================================================
-// https://www.npmjs.com/package/gulp-csso
+function browserSyncReload(done) {
+    browsersync.reload();
+    done();
+}
 
-    gulp.task('sass_minified', function () {
-        return gulp.src(vars.project.path_scss + '**/*.s+(a|c)ss')
+// SCSS WITH MINIFY ==============================================================================================================
+
+function scss() {
+    return src(vars.project.path_scss + '**/*.s+(a|c)ss')
         .pipe(plumber({
             handleError: function (err) {
                 console.log(err);
@@ -82,17 +79,18 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
             sourceMap: true
         }))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(vars.project.path_dist + 'css'));
-    });
+        .pipe(dest(vars.project.path_dist + 'css'))
+        .pipe(browsersync.stream());
+}
 
-// SASS LINT ===================================================================
+// SASS LINT =====================================================================================================================
 
-    gulp.task('sasslint', function () {
-        return gulp.src([
-                '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
-                vars.project.path_scss + '**/*.s+(a|c)ss'
-            ]
-        )
+function scsslint() {
+    return src([
+            '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
+            vars.project.path_scss + '**/*.s+(a|c)ss'
+        ]
+    )
         .pipe(plumber({
             handleError: function (err) {
                 console.log(err);
@@ -104,179 +102,183 @@ log('💪‍ You are using Woodoo-Buildtools ' + packageinfo.version);
         }))
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError())
-    });
+}
 
-// JS CONCAT ===================================================================
+// JS CONCAT =====================================================================================================================
+// Libruary JS
 
-    // Head JS
-    gulp.task('concat_head_js', function() {
-        return gulp.src(
-            [
-                vars.project.path_head_js + '**/*.js'
-            ]
-        )
-        .pipe(plumber())
-        .pipe(concat('head.min.js'))
-        .pipe(gulp.dest(vars.project.path_dist + 'js'));
-    });
-
-    // Footer JS
-    gulp.task('concat_footer_js', function() {
-        return gulp.src(
-            [
-                vars.project.path_footer_js + '**/*.js'
-            ]
-        )
-        .pipe(plumber())
-        .pipe(concat('footer.min.js'))
-        .pipe(gulp.dest(vars.project.path_dist + 'js'));
-    });
-
-    // Libruary JS
-    gulp.task('concat_lib_js', function() {
-        return gulp.src(
-            [
-              vars.project.path_lib_js + '**/*.js'
-            ]
-        )
+function concat_lib_js() {
+    return src(
+        [
+            vars.project.path_lib_js + '**/*.js'
+        ]
+    )
         .pipe(plumber())
         .pipe(concat('lib.min.js'))
-        .pipe(gulp.dest(vars.project.path_dist + 'js'));
-    });
+        .pipe(dest(vars.project.path_dist + 'js'));
+}
 
-// JS MINIFY ====================================================================
-    
-    gulp.task('minify_js', function() {
-        return gulp.src(vars.project.path_dist + 'js/**/*.js')
+// Head JS
+
+function concat_head_js() {
+    return src(
+        [
+            vars.project.path_head_js + '**/*.js'
+        ]
+    )
+        .pipe(plumber())
+        .pipe(concat('head.min.js'))
+        .pipe(dest(vars.project.path_dist + 'js'));
+}
+
+// Footer JS
+
+function concat_footer_js() {
+    return src(
+        [
+            vars.project.path_footer_js + '**/*.js'
+        ]
+    )
+        .pipe(plumber())
+        .pipe(concat('footer.min.js'))
+        .pipe(dest(vars.project.path_dist + 'js'));
+}
+
+// JS MINIFY =====================================================================================================================
+
+function minify_js() {
+    return src(vars.project.path_dist + 'js/**/*.js')
         .pipe(plumber())
         .pipe(uglify())
-        .pipe(gulp.dest(vars.project.path_dist + 'js'));
-    });
+        .pipe(dest(vars.project.path_dist + 'js'));
+}
 
-// JS LINT =====================================================================
+// JS LINT =======================================================================================================================
 
-    gulp.task('jslint', function() {
-        return gulp.src([
-            '!' + vars.project.path_lib_js + '**/*.js',
-            vars.project.path_js + '**/*.js'
-        ])
+function jslint() {
+    return src([
+        '!' + vars.project.path_lib_js + '**/*.js',
+        vars.project.path_js + '**/*.js'
+    ])
         .pipe(plumber())
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
-    });
+}
 
-// SPRITEMAPS ==================================================================
+// IMAGEMIN ======================================================================================================================
 
-    gulp.task('sprite-png', function () {
-        var spriteData = gulp.src(vars.project.path_sprites_png + '**/*.png')
-        .pipe(spritesmith({
-            imgName: 'sprite.png',
-            cssName: vars.project.path_scss + 'sprite/_sprite.generated.scss'
-        }));
-    return spriteData.pipe(gulp.dest(vars.project.path_sprites_dist))});
-
-// IMAGEMIN ====================================================================
-
-    gulp.task('imagemin', function () {
-        var image_destination = vars.project.path_dist + 'images';
-        gulp.src(
-            vars.project.path_images + '**/*'
+function image_minify() {
+    return src(
+        vars.project.path_images + '**/*'
+    )
+        .pipe(newer(vars.project.path_dist + 'images'))
+        .pipe(
+            imagemin([
+                imagemin.gifsicle({interlaced: true}),
+                imagemin.jpegtran({progressive: true}),
+                imagemin.optipng({optimizationLevel: 5}),
+                imagemin.svgo({
+                    plugins: [
+                        {
+                            removeViewBox: false,
+                            collapseGroups: true
+                        }
+                    ]
+                })
+            ])
         )
-        .pipe(newer(image_destination))
-        .pipe(imagemin())
-        .pipe(gulp.dest(image_destination))
-    });
+        .pipe(dest(vars.project.path_dist + 'images'))
+}
 
-// WATCH TASK ==================================================================
+// WATCH TASK ====================================================================================================================
 
-    gulp.task('watch', function () {
-        gulp.watch([ vars.project.path_scss + '**/*.s+(a|c)ss'],['sass','sasslint']);
-        gulp.watch([ vars.project.path_js + '**/*.js'],['js_dev']);
-    });
+function watchFiles() {
+    gulp.watch(
+        vars.project.path_scss + '**/*.s+(a|c)ss', series(scss, scsslint)
+    );
+    gulp.watch(
+        vars.project.path_js + '**/*.js', series(concat_lib_js, concat_head_js, concat_footer_js, jslint, browserSyncReload)
+    );
+    gulp.watch(
+        vars.project.path_dist + 'images' + '/**/*', series(image_minify, browserSyncReload)
+    );
+}
 
+// Tasks =========================================================================================================================
 
-// Common usable tasks ================¢==========================================
+const js = series(
+    concat_lib_js,
+    concat_head_js,
+    concat_footer_js,
+    minify_js
+);
 
-    gulp.task('default', gulpSequence(
-        ['dependencies-check'], // remove this line if you dont want a npm outdate-check
-        ['sprite-png'],
-        'sass_minified',
-        'sasslint',
-        'js_minified',
-        'imagemin'
-    ));
+const lints = parallel(
+    scsslint,
+    jslint
+);
 
-// Run gulp dev to get all files in a unminified version
-    gulp.task('dev', gulpSequence(
-        ['dependencies-check'],
-        'sass',
-        'sasslint',
-        'js_dev',
-        'imagemin'
-    ));
+const update_json = series(
+    npm_dependencies_check,
+    merge_json,
+    npm_install
+);
 
-    gulp.task('update-packages', [
-        'merge-json'
-    ], shell.task('npm install'));
+const build = series(
+    npm_dependencies_check,
+    scss,
+    js,
+    image_minify,
+    lints
+);
 
-    gulp.task('dependencies-check', () => {
-        return gulp.src('*.js', {read: false})
-        .pipe(shell([
-            'echo ""',
-            'echo "Check outdated dependencies from package.json ... please wait"',
-            'npm outdated',
-            'echo ""'
-        ], { ignoreErrors: true }))
-    });
-
-// Sequenced tasks ==========================================================
-
-    gulp.task('js_minified', gulpSequence(
-        ['jslint'], 'concat_footer_js', 'concat_head_js', 'concat_lib_js', 'minify_js'
-    ));
-
-    gulp.task('js_dev', function(callback){
-        gulpSequence(['jslint'],'concat_head_js','concat_footer_js')(callback)
-    });
+const watch = parallel(
+    watchFiles,
+    browserSync
+);
 
 
-// UPDATE BUILDTOOLS & PROJECT ==================================================================
+// Woodoo Buildtool specific tasks ===============================================================================================
 
-// Get all new depencies
-gulp.task('update-dependencies', [], shell.task(
-    [
-        'echo :::::::: Check for Woodoo Updates 🔎 ...',
-        'cd .. && composer.phar update dermatz/woodoo-buildtools',
-        'echo :::::::: Update Node Packages'
-    ]
-));
-
-// Merge WoodooBuildtool package.json and project package-json
-gulp.task('merge-json', function () {
+function merge_json() {
     log('From Woodoo-Buildtools: ' + vars.buildtools.path + 'package.json');
     log('From Theme Path: ' + vars.project.path + 'package.json');
-    gulp.src([
+    return src([
         vars.buildtools.path + 'package.json',
         vars.project.path + 'package.json'
     ])
-    .pipe(merge({
-        fileName: 'package.json'
-    }))
-    .pipe(gulp.dest('./'));
-});
+        .pipe(merge({
+            fileName: 'package.json'
+        }))
+        .pipe(dest('./'));
+}
 
-// Install the new merged package-json inside the woodoo-folder
-gulp.task('update-json', [
-    'merge-json'
-], shell.task(
-    [
-        'npm install'
-    ]
-));
+function npm_dependencies_check() {
+    return src('*.js', {read: false})
+        .pipe(shell([
+                'npm outdated',
+            ], {ignoreErrors: true}
+        ))
+}
 
-// Run the update-procedure
-gulp.task('update',gulpSequence(
-    ['update-dependencies'],
-    ['update-json']
-));
+function npm_install() {
+    return src('*.js', {read: false})
+        .pipe(shell([
+                'npm install',
+            ], {ignoreErrors: true}
+        ))
+}
 
+// export / register tasks =======================================================================================================
+
+exports.npm_install = npm_install;
+exports.update_json = update_json;
+exports.image_minify = image_minify;
+exports.scss = scss;
+exports.merge_json = merge_json;
+exports.npm_dependencies_check = npm_dependencies_check;
+exports.js = js;
+exports.build = build;
+exports.lints = lints;
+exports.watch = watch;
+exports.default = build;
