@@ -1,4 +1,5 @@
 ## Latest Release
+
 #### 2.0.0 - Update to GULP 4.x
 - completly change and refactor the gulpfile for gulp 4.x
 - rearrange the task sort order and groups
