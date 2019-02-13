@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/dermatz/woodoo-buildtools.svg?branch=master)](https://travis-ci.org/dermatz/woodoo-buildtools)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-# Woodoo Frontend Buildtool 2.0.1
+# Woodoo Frontend Buildtool 2.0.2
 - Creates you a own project independent build process
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de

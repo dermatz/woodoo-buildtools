@@ -3,7 +3,7 @@
     "path" : "./core/"
   },
   "dev": {
-    "browsersync_basedir" : "./",
+    "browsersync_proxy_local_url" : "localdomain.dev",
     "browsersync_port" : "3000"
   },
   "project" : {

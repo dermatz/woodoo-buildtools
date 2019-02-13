@@ -1,6 +1,9 @@
 ## Latest Release
 
-#### 2.0.1 - Hotfix 
+#### 2.0.2 
+- add browsersync proxy for local dev-domains 
+
+#### 2.0.1 
 - Fixed setup process task
 
 #### 2.0.0 - Update to GULP 4.x
