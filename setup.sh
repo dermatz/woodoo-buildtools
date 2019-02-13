@@ -83,7 +83,7 @@ echo "${cyan}Merge package.json ${white}"
 		    echo "${cyan}Start merge process ...!${white}"
 
 			echo "${cyan}Generate local package.json${white}"
-			gulp merge-json
+			gulp merge_json
 			if [[ -e "./package.json" ]];
 				then
 					echo "${green}✔ package.json succesfully merged!${white}"
