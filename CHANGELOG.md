@@ -1,5 +1,8 @@
 ## Latest Release
 
+#### 2.0.3
+- fixed syntax in gulp_config.json 
+
 #### 2.0.2 
 - add browsersync proxy for local dev-domains 
 
