@@ -1,5 +1,8 @@
 ## Latest Release
 
+#### 2.0.4
+- optimize error handling to prevent sass and js watcher brakes on error  
+
 #### 2.0.3
 - fixed syntax in gulp_config.json 
 

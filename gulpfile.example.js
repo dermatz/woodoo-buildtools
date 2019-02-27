@@ -59,12 +59,6 @@ function browserSyncReload(done) {
 
 function scss() {
     return src(vars.project.path_scss + '**/*.s+(a|c)ss')
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end')
-            }
-        }))
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: require('node-neat').with(externalPath)
@@ -79,6 +73,12 @@ function scss() {
             sourceMap: true
         }))
         .pipe(sourcemaps.write('.'))
+        .pipe(plumber({
+            handleError: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe(dest(vars.project.path_dist + 'css'))
         .pipe(browsersync.stream());
 }
@@ -87,21 +87,21 @@ function scss() {
 
 function scsslint() {
     return src([
-            '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
-            vars.project.path_scss + '**/*.s+(a|c)ss'
+            vars.project.path_scss + '**/*.s+(a|c)ss',
+            '!' + vars.project.path_scss + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end')
-            }
-        }))
         .pipe(sassLint({
             configFile: vars.buildtools.path + '.sass-lint.yml'
         }))
+        .pipe(plumber({
+            handleError: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe(sassLint.format())
-        .pipe(sassLint.failOnError())
+        .pipe(sassLint.failOnError());
 }
 
 // JS CONCAT =====================================================================================================================
@@ -110,11 +110,12 @@ function scsslint() {
 function concat_lib_js() {
     return src(
         [
-            vars.project.path_lib_js + '**/*.js'
+            vars.project.path_lib_js + '**/*.js',
+            '!' + vars.project.path_js+ 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(plumber())
         .pipe(concat('lib.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -126,8 +127,8 @@ function concat_head_js() {
             vars.project.path_head_js + '**/*.js'
         ]
     )
-        .pipe(plumber())
         .pipe(concat('head.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -139,8 +140,8 @@ function concat_footer_js() {
             vars.project.path_footer_js + '**/*.js'
         ]
     )
-        .pipe(plumber())
         .pipe(concat('footer.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -148,8 +149,8 @@ function concat_footer_js() {
 
 function minify_js() {
     return src(vars.project.path_dist + 'js/**/*.js')
-        .pipe(plumber())
         .pipe(uglify())
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -157,11 +158,11 @@ function minify_js() {
 
 function jslint() {
     return src([
-        '!' + vars.project.path_lib_js + '**/*.js',
-        vars.project.path_js + '**/*.js'
+        vars.project.path_js + '**/*.js',
+        '!' + vars.project.path_lib_js + '**'
     ])
-        .pipe(plumber())
         .pipe(jshint())
+        .pipe(plumber())
         .pipe(jshint.reporter('jshint-stylish'))
 }
 
@@ -187,7 +188,7 @@ function image_minify() {
                 })
             ])
         )
-        .pipe(dest(vars.project.path_dist + 'images'))
+        .pipe(dest(vars.project.path_dist + 'images'));
 }
 
 // WATCH TASK ====================================================================================================================
