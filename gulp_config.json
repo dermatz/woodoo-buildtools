@@ -3,17 +3,21 @@
     "path" : "./core/"
   },
   "dev": {
-    "browsersync_proxy_local_url" : "localdomain.dev",
-    "browsersync_port" : "3000"
+    "browsersync_proxy_local_url" : "localdomain.test",
+    "browsersync_port" : "3000",
+    "browsersync_port_ui" : "8080",
+    "browsersync_https" : false,
+    "browsersync_notify" : "true",
+    "browsersync_ghostmode" : "true"
   },
   "project" : {
-    "path" : "../path/to/your/theme/",
-    "path_dist": "../path/to/your/asset/dist/folder/",
-    "path_scss" : "../path/to/your/scss/files/",
-    "path_js": "../path/to/your/js/files/",
-    "path_head_js": "../path/to/your/js/headerfiles/",
-    "path_footer_js": "../path/to/your/js/footerfiles/",
-    "path_lib_js": "../path/to/your/js/libruaryfiles/",
-    "path_images": "../path/to/your/images/",
+    "path" : "../relative.path/to/your/theme/",
+    "path_dist": "../relative.path/to/your/asset/dist/folder/",
+    "path_scss" : "../relative.path/to/your/scss/files/",
+    "path_js": "../relative.path/to/your/js/files/",
+    "path_head_js": "../relative.path/to/your/js/headerfiles/",
+    "path_footer_js": "../relative.path/to/your/js/footerfiles/",
+    "path_lib_js": "../relative.path/to/your/js/libruaryfiles/",
+    "path_images": "../relative.path/to/your/images/"
   }
 }

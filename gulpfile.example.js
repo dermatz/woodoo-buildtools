@@ -43,9 +43,15 @@ log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 function browserSync(done) {
     browsersync.init({
         proxy: {
-            target: vars.dev.browsersync_proxy_local_url
+            target: vars.browsersync.proxy_local_url
         },
-        port: vars.dev.browsersync_port
+        port: vars.browsersync.port,
+        ui: {
+            port: vars.browsersync.port_ui
+        },
+        https: vars.browsersync.https,
+        notify: vars.browsersync.notify,
+        ghostMode: vars.browsersync.ghostmode,
     });
     done();
 }
@@ -59,12 +65,6 @@ function browserSyncReload(done) {
 
 function scss() {
     return src(vars.project.path_scss + '**/*.s+(a|c)ss')
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end')
-            }
-        }))
         .pipe(sourcemaps.init())
         .pipe(sass({
             includePaths: require('node-neat').with(externalPath)
@@ -79,6 +79,12 @@ function scss() {
             sourceMap: true
         }))
         .pipe(sourcemaps.write('.'))
+        .pipe(plumber({
+            handleError: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe(dest(vars.project.path_dist + 'css'))
         .pipe(browsersync.stream());
 }
@@ -87,21 +93,21 @@ function scss() {
 
 function scsslint() {
     return src([
-            '!' + vars.project.path_scss + 'plugins/**/*.s+(a|c)ss',
-            vars.project.path_scss + '**/*.s+(a|c)ss'
+            vars.project.path_scss + '**/*.s+(a|c)ss',
+            '!' + vars.project.path_scss + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end')
-            }
-        }))
         .pipe(sassLint({
             configFile: vars.buildtools.path + '.sass-lint.yml'
         }))
+        .pipe(plumber({
+            handleError: function (err) {
+                console.log(err);
+                this.emit('end');
+            }
+        }))
         .pipe(sassLint.format())
-        .pipe(sassLint.failOnError())
+        .pipe(sassLint.failOnError());
 }
 
 // JS CONCAT =====================================================================================================================
@@ -110,11 +116,12 @@ function scsslint() {
 function concat_lib_js() {
     return src(
         [
-            vars.project.path_lib_js + '**/*.js'
+            vars.project.path_lib_js + '**/*.js',
+            '!' + vars.project.path_js + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(plumber())
         .pipe(concat('lib.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -126,8 +133,8 @@ function concat_head_js() {
             vars.project.path_head_js + '**/*.js'
         ]
     )
-        .pipe(plumber())
         .pipe(concat('head.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -139,8 +146,8 @@ function concat_footer_js() {
             vars.project.path_footer_js + '**/*.js'
         ]
     )
-        .pipe(plumber())
         .pipe(concat('footer.min.js'))
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -148,8 +155,8 @@ function concat_footer_js() {
 
 function minify_js() {
     return src(vars.project.path_dist + 'js/**/*.js')
-        .pipe(plumber())
         .pipe(uglify())
+        .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
 
@@ -157,12 +164,12 @@ function minify_js() {
 
 function jslint() {
     return src([
-        '!' + vars.project.path_lib_js + '**/*.js',
-        vars.project.path_js + '**/*.js'
+        vars.project.path_js + '**/*.js',
+        '!' + vars.project.path_lib_js + '**'
     ])
-        .pipe(plumber())
         .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(plumber())
+        .pipe(jshint.reporter('jshint-stylish'));
 }
 
 // IMAGEMIN ======================================================================================================================
@@ -171,7 +178,7 @@ function image_minify() {
     return src(
         vars.project.path_images + '**/*'
     )
-        .pipe(newer(vars.project.path_dist + 'images'))
+        .pipe(newer(vars.project.path_images))
         .pipe(
             imagemin([
                 imagemin.gifsicle({interlaced: true}),
@@ -187,7 +194,7 @@ function image_minify() {
                 })
             ])
         )
-        .pipe(dest(vars.project.path_dist + 'images'))
+        .pipe(dest(vars.project.path_images));
 }
 
 // WATCH TASK ====================================================================================================================
@@ -200,7 +207,7 @@ function watchFiles() {
         vars.project.path_js + '**/*.js', series(concat_lib_js, concat_head_js, concat_footer_js, jslint, browserSyncReload)
     );
     gulp.watch(
-        vars.project.path_dist + 'images' + '/**/*', series(image_minify, browserSyncReload)
+        vars.project.path_images + '**/*', series(image_minify, browserSyncReload)
     );
 }
 
@@ -258,7 +265,7 @@ function npm_dependencies_check() {
         .pipe(shell([
                 'npm outdated',
             ], {ignoreErrors: true}
-        ))
+        ));
 }
 
 function npm_install() {
@@ -266,7 +273,7 @@ function npm_install() {
         .pipe(shell([
                 'npm install',
             ], {ignoreErrors: true}
-        ))
+        ));
 }
 
 // export / register tasks =======================================================================================================
