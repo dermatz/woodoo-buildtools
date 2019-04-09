@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -24,12 +24,12 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
+    "gulp-shell": "^0.7.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "jshint": "^2.10.1",
     "jshint-stylish": "^2.2.1",
     "node-neat": "^2.0.0-beta.0",
-    "node-sass": "^4.11.0",
-    "gulp-shell": "^0.6.5"
+    "node-sass": "^4.11.0"
   }
 }

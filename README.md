@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/dermatz/woodoo-buildtools.svg?branch=master)](https://travis-ci.org/dermatz/woodoo-buildtools)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-# Woodoo Frontend Buildtool 2.0.4
+# Woodoo Frontend Buildtool 2.0.5
 - Creates you a own project independent build process
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
@@ -21,6 +21,7 @@ in the Getting Started section below this part.
 - JS Concatination
 - JS Minify
 - JS Linter
+- Browser-Sync (Multi-Device Livepreview)
 - Imageoptimisation
 - Automatic Setup Process
 - Automatic merge of your Project package.json
@@ -42,7 +43,7 @@ Add following lines to your composer.json
 Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
 ```
 composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev "^2.0.3"
+composer.phar require dermatz/woodoo-buildtools --dev "^2.0.5"
 ```
 
 ### Step 2: Woodoo Setup

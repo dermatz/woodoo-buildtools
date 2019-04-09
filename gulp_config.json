@@ -3,8 +3,12 @@
     "path" : "./core/"
   },
   "dev": {
-    "browsersync_proxy_local_url" : "localdomain.dev",
-    "browsersync_port" : "3000"
+    "browsersync_proxy_local_url" : "localdomain.test",
+    "browsersync_port" : "3000",
+    "browsersync_port_ui" : "8080",
+    "browsersync_https" : false,
+    "browsersync_notify" : "true",
+    "browsersync_ghostmode" : "true"
   },
   "project" : {
     "path" : "../relative.path/to/your/theme/",

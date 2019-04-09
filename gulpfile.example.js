@@ -43,9 +43,15 @@ log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 function browserSync(done) {
     browsersync.init({
         proxy: {
-            target: vars.dev.browsersync_proxy_local_url
+            target: vars.browsersync.proxy_local_url
         },
-        port: vars.dev.browsersync_port
+        port: vars.browsersync.port,
+        ui: {
+            port: vars.browsersync.port_ui
+        },
+        https: vars.browsersync.https,
+        notify: vars.browsersync.notify,
+        ghostMode: vars.browsersync.ghostmode,
     });
     done();
 }
@@ -111,7 +117,7 @@ function concat_lib_js() {
     return src(
         [
             vars.project.path_lib_js + '**/*.js',
-            '!' + vars.project.path_js+ 'path/to/ignore/**/',  // Add a path to ignore files
+            '!' + vars.project.path_js + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
         .pipe(concat('lib.min.js'))
@@ -163,7 +169,7 @@ function jslint() {
     ])
         .pipe(jshint())
         .pipe(plumber())
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('jshint-stylish'));
 }
 
 // IMAGEMIN ======================================================================================================================
@@ -172,7 +178,7 @@ function image_minify() {
     return src(
         vars.project.path_images + '**/*'
     )
-        .pipe(newer(vars.project.path_dist + 'images'))
+        .pipe(newer(vars.project.path_images))
         .pipe(
             imagemin([
                 imagemin.gifsicle({interlaced: true}),
@@ -188,7 +194,7 @@ function image_minify() {
                 })
             ])
         )
-        .pipe(dest(vars.project.path_dist + 'images'));
+        .pipe(dest(vars.project.path_images));
 }
 
 // WATCH TASK ====================================================================================================================
@@ -201,7 +207,7 @@ function watchFiles() {
         vars.project.path_js + '**/*.js', series(concat_lib_js, concat_head_js, concat_footer_js, jslint, browserSyncReload)
     );
     gulp.watch(
-        vars.project.path_dist + 'images' + '/**/*', series(image_minify, browserSyncReload)
+        vars.project.path_images + '**/*', series(image_minify, browserSyncReload)
     );
 }
 
@@ -259,7 +265,7 @@ function npm_dependencies_check() {
         .pipe(shell([
                 'npm outdated',
             ], {ignoreErrors: true}
-        ))
+        ));
 }
 
 function npm_install() {
@@ -267,7 +273,7 @@ function npm_install() {
         .pipe(shell([
                 'npm install',
             ], {ignoreErrors: true}
-        ))
+        ));
 }
 
 // export / register tasks =======================================================================================================
