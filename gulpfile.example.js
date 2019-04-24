@@ -7,7 +7,7 @@
 // BUILDTOOL CONFIG
 const vars = require('./gulp_config.json');
 const packageinfo = require(vars.buildtools.path + 'package.json');
-const woodoo_hint = '';
+
 const externalPath = ['node_modules'];
 
 // Node Dependencies via NPM
@@ -111,6 +111,7 @@ function scsslint() {
 }
 
 // JS CONCAT =====================================================================================================================
+
 // Libruary JS
 
 function concat_lib_js() {
@@ -280,12 +281,15 @@ function npm_install() {
 
 exports.npm_install = npm_install;
 exports.update_json = update_json;
-exports.image_minify = image_minify;
-exports.scss = scss;
+exports.update = update_json;
 exports.merge_json = merge_json;
 exports.npm_dependencies_check = npm_dependencies_check;
-exports.js = js;
+exports.syscheck = npm_dependencies_check;
+
 exports.build = build;
+exports.js = js;
+exports.scss = scss;
+exports.image_minify = image_minify;
 exports.lints = lints;
 exports.watch = watch;
 exports.default = build;

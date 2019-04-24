@@ -1,4 +1,26 @@
+## Planned feature for a future release
+- WordPress Themestructure Support
+	- Parent Theme
+	- Child Themes
+
+
 ## Latest Release
+
+#### 2.0.6
+- add `tar` package to package.json for security vulnerability #803 [(see  nodesecurity report)](https://nodesecurity.io/advisories/803)
+- add some missing basic task to gulpfile (requires a compare and update of your local gulpfile)	
+- update dev dependencies 
+	- `gulp`
+	- `gulp-sourcemaps`
+	- `gulp-autoprefixer`
+	- `gulp-uglify`
+	- `browser-sync`
+	- `js-hint`
+
+##### How to update up to 2.0.6: 
+- `composer update dermatz/woodoo-buildtools`
+- `cd woodoo-buildtools`
+- `gulp update_json` 
 
 #### 2.0.5
 - update `gulp-shell` dependency to Version 0.7.0
