@@ -5,7 +5,17 @@
 
 
 ## Latest Release
-
+#### 2.1.0
+- add possibility to enable/disable browser-sync via `gulp_config.json`
+	- browsersync > enable > true/false (boolean)
+- add babel v8
+	- now you can write use Next Generation JavaScript in you Assets per default
+	- More Informations [https://babeljs.io/](https://babeljs.io/)
+- update dev dependencies 
+	- `gulp`
+	- `node-sass`
+	- `browser-sync`
+	
 #### 2.0.6
 - add `tar` package to package.json for security vulnerability #803 [(see  nodesecurity report)](https://nodesecurity.io/advisories/803)
 - add some missing basic task to gulpfile (requires a compare and update of your local gulpfile)	

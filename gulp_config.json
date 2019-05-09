@@ -3,6 +3,7 @@
     "path" : "./core/"
   },
   "browsersync": {
+    "enable": "true",
     "proxy_local_url" : "localdomain.test",
     "port" : 3000,
     "port_ui" : 8080,
