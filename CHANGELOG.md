@@ -3,23 +3,35 @@
 	- Parent Theme
 	- Child Themes
 
-
 ## Latest Release
+#### 2.1.1
+- Known issues
+	- Babel has problems with some jQuery libraries
+
+- update dev dependencies
+	Name										Old			New
+	- @babel/core          7.4.4   7.4.5
+	-	@babel/preset-env    7.4.4   7.4.5
+	- browser-sync        2.26.5  2.26.7
+	- gulp-imagemin        5.0.3   5.0.3
+	- gulp-shell           0.7.0   0.7.1
+	- tar                  4.4.8  4.4.10
+
 #### 2.1.0
 - add possibility to enable/disable browser-sync via `gulp_config.json`
 	- browsersync > enable > true/false (boolean)
 - add babel v8
 	- now you can write use Next Generation JavaScript in you Assets per default
 	- More Informations [https://babeljs.io/](https://babeljs.io/)
-- update dev dependencies 
+- update dev dependencies
 	- `gulp`
 	- `node-sass`
 	- `browser-sync`
-	
+
 #### 2.0.6
 - add `tar` package to package.json for security vulnerability #803 [(see  nodesecurity report)](https://nodesecurity.io/advisories/803)
-- add some missing basic task to gulpfile (requires a compare and update of your local gulpfile)	
-- update dev dependencies 
+- add some missing basic task to gulpfile (requires a compare and update of your local gulpfile)
+- update dev dependencies
 	- `gulp`
 	- `gulp-sourcemaps`
 	- `gulp-autoprefixer`
@@ -27,15 +39,15 @@
 	- `browser-sync`
 	- `js-hint`
 
-##### How to update up to 2.0.6: 
+##### How to update up to 2.0.6:
 - `composer update dermatz/woodoo-buildtools`
 - `cd woodoo-buildtools`
-- `gulp update_json` 
+- `gulp update_json`
 
 #### 2.0.5
 - update `gulp-shell` dependency to Version 0.7.0
 - update variable for `browsersync_proxy_local_url` in `gulp_config.json` because .dev domains are tld now
-- simple refactorings in `gulpfile.example.js`   
+- simple refactorings in `gulpfile.example.js`
 - add new browser-sync options to `gulp_config.json` __Important: update your gulp_config.json__
 - update gulpfile.js with new browser-sync options __Important: update your gulpfile.js__
 
@@ -43,21 +55,21 @@
 Yes, following files has been changed:
 - `gulp_config.json`
 - `gulpfile.js` ( diff with _gulpfile.example.js_ )
-   
-###### Vulnerabilities Found:   
-Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait for fix from package-author) 
+
+###### Vulnerabilities Found:
+Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait for fix from package-author)
 
 ---
 #### 2.0.4
-- optimize error handling to prevent sass and js watcher brakes on error  
+- optimize error handling to prevent sass and js watcher brakes on error
 ---
 #### 2.0.3
-- fixed syntax in gulp_config.json 
+- fixed syntax in gulp_config.json
 ---
-#### 2.0.2 
-- add browsersync proxy for local dev-domains 
+#### 2.0.2
+- add browsersync proxy for local dev-domains
 ---
-#### 2.0.1 
+#### 2.0.1
 - Fixed setup process task
 ---
 #### 2.0.0 - Update to GULP 4.x
@@ -68,10 +80,10 @@ Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait f
 ---
 #### 1.5.3 - NPM Package updates
 
-- `fancy-log` from __1.3.2__ to __1.3.3__  
-- `graceful-fs` from __4.1.11__ to __4.1.15__  
-- `gulp-imagemin` from __4.1.0__ to __5.0.3__  
-- `gulp-plumber` from __1.2.0__ to __1.2.1__  
+- `fancy-log` from __1.3.2__ to __1.3.3__
+- `graceful-fs` from __4.1.11__ to __4.1.15__
+- `gulp-imagemin` from __4.1.0__ to __5.0.3__
+- `gulp-plumber` from __1.2.0__ to __1.2.1__
 ---
 #### 1.5.2 - NPM Package updates
 - update node package `gulp-sass` to version 4.0.2
@@ -86,17 +98,17 @@ Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait f
 		.pipe(minifyCSS({
             restructure: false, // enable this feature for maximum compression - check for css errors after minify!
             sourceMap: true
-        })) 
+        }))
 ---
 ## 1.5.0
 - Fixed minor gulpfile syntax error for _minify_js_ task
 - Add new update process
-		
+
 		gulp update
 		gulp update-json
-	
-	Now it is new very easy to update the Buildtools and the project-json together with a single command. Just type `gulp update` to get the newest woodoo-package and automerge all dependencies from woodoo and your project. If you only want to merge the package.jsons without an update, just type `gulp update-json`.  
----		
+
+	Now it is new very easy to update the Buildtools and the project-json together with a single command. Just type `gulp update` to get the newest woodoo-package and automerge all dependencies from woodoo and your project. If you only want to merge the package.jsons without an update, just type `gulp update-json`.
+---
 #### 1.4.2
 -  gulpfile.example.js
 	└── fixed task `minify_js`: All js files will be correct minified now
@@ -107,18 +119,18 @@ Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait f
 ---
 ## 1.4.0
 - Refactored gulpfile and `gulp_config.json`
-	└──	For a easier project configuration. Now you can copy & paste your project 
+	└──	For a easier project configuration. Now you can copy & paste your project
 		folder structure (pathes) into the gulp_config.json to set the pathes for the gulp tasks.
 
-- Current Woodoo-Version 
+- Current Woodoo-Version
 	└── Now you can see the current Woodoo Version in every gulp task output
 
 - Dependencies Outdate-Check
-	├── Add npm-dependencies outdate check was added to the gulp default task. 
+	├── Add npm-dependencies outdate check was added to the gulp default task.
 	└── Now you get informations about outdated packages before the compiled files are checked-in in your version control.
 
 - More than one Projects! (Work in Process)
-	└── Another project-root was added in the `gulp_config.json` to implement a secend project. 
+	└── Another project-root was added in the `gulp_config.json` to implement a secend project.
 ---
 ## 1.3.0
 - updated dev-dependencies
