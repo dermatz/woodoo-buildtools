@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -9,8 +9,8 @@
     "url": "https://gitlab.com/dermatz/woodoo-buildtools.git"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "browser-sync": "^2.26.7",
     "fancy-log": "^1.3.3",
     "gulp": "^4.0.2",

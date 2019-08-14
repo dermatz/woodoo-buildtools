@@ -1,21 +1,21 @@
-## Planned feature for a future release
-- WordPress Themestructure Support
-	- Parent Theme
-	- Child Themes
-
 ## Latest Release
+#### 2.1.2
+- update dev dependencies
+	- @babel/core
+	- @babel/preset-env
+
 #### 2.1.1
 - Known issues
 	- Babel has problems with some jQuery libraries
 
 - update dev dependencies
-	Name										Old			New
-	- @babel/core          7.4.4   7.4.5
-	-	@babel/preset-env    7.4.4   7.4.5
-	- browser-sync        2.26.5  2.26.7
-	- gulp-imagemin        5.0.3   5.0.3
-	- gulp-shell           0.7.0   0.7.1
-	- tar                  4.4.8  4.4.10
+	Name
+	- @babel/core
+	- @babel/preset-env
+	- browser-sync
+	- gulp-imagemin
+	- gulp-shell
+	- tar
 
 #### 2.1.0
 - add possibility to enable/disable browser-sync via `gulp_config.json`

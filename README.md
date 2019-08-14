@@ -1,7 +1,7 @@
 [![Pipeline](https://gitlab.com/dermatz/woodoo-buildtools/badges/master/pipeline.svg)](https://gitlab.com/dermatz/woodoo-buildtools/)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
-# Woodoo Frontend Buildtool 2.1.1
+# Woodoo Frontend Buildtool 2.1.2
 - Creates you a own project independent build process
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
@@ -44,7 +44,7 @@ Add following lines to your composer.json
 Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
 ```
 composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev "^2.1.1"
+composer.phar require dermatz/woodoo-buildtools --dev "^2.1.2"
 ```
 
 ### Step 2: Woodoo Setup
