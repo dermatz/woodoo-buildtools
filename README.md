@@ -1,6 +1,8 @@
 [![Pipeline](https://gitlab.com/dermatz/woodoo-buildtools/badges/master/pipeline.svg)](https://gitlab.com/dermatz/woodoo-buildtools/)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
+[![Ahmad on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
+
 # Woodoo Frontend Buildtool 2.1.2
 - Creates you a own project independent build process
 - Author: Mathias Elle

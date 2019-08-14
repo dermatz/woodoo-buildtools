@@ -1,0 +1,35 @@
+# CHANGELOG
+
+All notable changes in this project are documented in this file.
+
+ [![Ahmad on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
+
+<br>
+
+{{#each releases}}
+    ### [{{title}}](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/{{tag}})
+    {{niceDate}}
+
+    #### Changelog for this Version:
+    {{#each commits}}
+        - [{{shorthash}}]({{href}}): {{subject}}
+    {{/each}}
+
+    {{! List commits with `Breaking change: ` somewhere in the message }}
+    {{#commit-list commits heading='#### Updated Dependencies' message='dependencies'}}
+        - [{{shorthash}}]({{href}}): {{subject}}
+    {{/commit-list}}
+
+    {{! List commits that add new features, but not those already listed above }}
+    {{#commit-list commits heading='#### Hotfixes' message='hotfix'}}
+        - [{{shorthash}}]({{href}}): {{subject}}
+    {{/commit-list}}
+
+    {{! List commits that add new features, but not those already listed above }}
+    {{#commit-list commits heading='#### New Features' message='FEATURE'}}
+        - [{{shorthash}}]({{href}}): {{subject}}
+    {{/commit-list}}
+
+
+    ___
+{{/each}}
