@@ -20,11 +20,16 @@ const printNextSteps = require('./helper/printNextSteps.js');
 clearConsole();
 const filesToDownload = [
     'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/gulpfile.example.js',
+    'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/gulp_config.json',
     'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',
+    'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/CHANGELOG.md',
     'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/.nvmrc',
+    'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/.jshintrc',
+    'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/.sass-lint.yml',
+    'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/.gitignore',
 ];
 // include hidden Dotfiles.
-const dotFiles = ['.nvmrc'];
+const dotFiles = ['.nvmrc','.sass-lint.yml','.jshintrc','.gitignore'];
 
 // Install Process ...
 console.log('\n');

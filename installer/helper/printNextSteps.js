@@ -23,7 +23,7 @@ module.exports = () => {
         `	${chalk.yellow( 'Get a Contributor →' )} https://github.com/dermatz/woodoo-buildtools/pulls`
     );
 
-    // Get started.
+    // Get started
     console.log( '\n\n🎯 ', chalk.black.bgGreen( ' Get Started → \n' ) );
     console.log( ' I suggest that you begin by: \n' );
     console.log( ` ${chalk.dim( '1.' )} Editing the ${chalk.green( 'gulp_config.json' )} file` );
