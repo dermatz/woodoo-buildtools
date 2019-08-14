@@ -7,7 +7,7 @@
 // BUILDTOOL CONFIG
 const vars = require('./gulp_config.json');
 const packageinfo = require(vars.buildtools.path + 'package.json');
-const woodoo_hint = '';
+
 const externalPath = ['node_modules'];
 
 // Node Dependencies via NPM
@@ -31,6 +31,7 @@ const shell = require('gulp-shell');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browsersync = require("browser-sync").create();
+const babel = require('gulp-babel');
 
 /**
  * Shell Messages
@@ -41,18 +42,22 @@ log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 // BROWSER SYNC ==================================================================================================================
 
 function browserSync(done) {
-    browsersync.init({
-        proxy: {
-            target: vars.browsersync.proxy_local_url
-        },
-        port: vars.browsersync.port,
-        ui: {
-            port: vars.browsersync.port_ui
-        },
-        https: vars.browsersync.https,
-        notify: vars.browsersync.notify,
-        ghostMode: vars.browsersync.ghostmode,
-    });
+    if(vars.browsersync.enable == 'true') {
+        browsersync.init({
+            proxy: {
+                target: vars.browsersync.proxy_local_url
+            },
+            port: vars.browsersync.port,
+            ui: {
+                port: vars.browsersync.port_ui
+            },
+            https: vars.browsersync.https,
+            notify: vars.browsersync.notify,
+            ghostMode: vars.browsersync.ghostmode,
+        });
+    } else {
+        log('Browsersync is disabled in gulp_config.json');
+    }
     done();
 }
 
@@ -111,6 +116,7 @@ function scsslint() {
 }
 
 // JS CONCAT =====================================================================================================================
+
 // Libruary JS
 
 function concat_lib_js() {
@@ -120,9 +126,14 @@ function concat_lib_js() {
             '!' + vars.project.path_js + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(concat('lib.min.js'))
-        .pipe(plumber())
-        .pipe(dest(vars.project.path_dist + 'js'));
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(concat('lib.min.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(vars.project.path_dist + 'js'));
 }
 
 // Head JS
@@ -133,9 +144,14 @@ function concat_head_js() {
             vars.project.path_head_js + '**/*.js'
         ]
     )
-        .pipe(concat('head.min.js'))
-        .pipe(plumber())
-        .pipe(dest(vars.project.path_dist + 'js'));
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(concat('head.min.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(vars.project.path_dist + 'js'));
 }
 
 // Footer JS
@@ -146,9 +162,14 @@ function concat_footer_js() {
             vars.project.path_footer_js + '**/*.js'
         ]
     )
-        .pipe(concat('footer.min.js'))
-        .pipe(plumber())
-        .pipe(dest(vars.project.path_dist + 'js'));
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
+    .pipe(concat('footer.min.js'))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(vars.project.path_dist + 'js'));
 }
 
 // JS MINIFY =====================================================================================================================
@@ -280,12 +301,15 @@ function npm_install() {
 
 exports.npm_install = npm_install;
 exports.update_json = update_json;
-exports.image_minify = image_minify;
-exports.scss = scss;
+exports.update = update_json;
 exports.merge_json = merge_json;
 exports.npm_dependencies_check = npm_dependencies_check;
-exports.js = js;
+exports.syscheck = npm_dependencies_check;
+
 exports.build = build;
+exports.js = js;
+exports.scss = scss;
+exports.image_minify = image_minify;
 exports.lints = lints;
 exports.watch = watch;
 exports.default = build;

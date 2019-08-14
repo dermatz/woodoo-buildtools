@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.0.5",
+  "version": "2.1.2",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -8,14 +8,37 @@
     "type": "git",
     "url": "https://gitlab.com/dermatz/woodoo-buildtools.git"
   },
+  "keywords": [
+    "gulp",
+    "Gulp Workflow",
+    "Gulp Buildtools",
+    "Buildtools",
+    "Frontend Buildtools"
+  ],
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "cLog/template.hbs",
+    "commitLimit": false,
+    "package": true,
+    "replaceText": {
+      "FIX: ": "",
+      "NEW: ": "",
+      "IMPROVE: ": "",
+      "DOC: ": ""
+    }
+  },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "auto-changelog": "^1.15.0",
+    "browser-sync": "^2.26.7",
     "fancy-log": "^1.3.3",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^6.0.0",
     "gulp-jshint": "^2.1.0",
     "gulp-merge-json": "^1.3.1",
     "gulp-newer": "^1.4.0",
@@ -24,12 +47,16 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-lint": "^1.4.0",
-    "gulp-shell": "^0.7.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1",
-    "jshint": "^2.10.1",
+    "gulp-shell": "^0.7.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.10.2",
     "jshint-stylish": "^2.2.1",
     "node-neat": "^2.0.0-beta.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.12.0",
+    "tar": "^4.4.10"
+  },
+  "scripts": {
+    "version": "auto-changelog -p && git add CHANGELOG.md"
   }
 }
