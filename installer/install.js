@@ -30,13 +30,13 @@ const dotFiles = ['.nvmrc'];
 console.log('\n');
 console.log(
     '📦 ',
-    chalk.black.bgBlueBright(` Downloading Woodoo-Buildtools Sourcefiles in: → ${chalk.black.bgYellowBright(` ${theDir} `)}\n`),
-    chalk.dim(`\n Current Install-Directory is: ${chalk.yellow(theCWD)}\n`),
-    chalk.dim('This might take a moment.\n')
+    chalk.black.bgBlueBright(` Downloading Woodoo-Buildtools source in: → ${chalk.black.bgYellowBright(` ${theDir} `)}\n`),
+    chalk.dim(`\n The current install directory is: ${chalk.yellow(theCWD)}\n`),
+    chalk.dim('This might take a moment...\n')
 );
 
 const spinner = ora({text: ''});
-spinner.start(`1. Install Woodoo-Buildtools Sourcefiles inside → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
+spinner.start(`1. Install Woodoo-Buildtools source in → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
 
 // Download.
 Promise.all(filesToDownload.map(x => download(x, `${theCWD}`))).then(async () => {
