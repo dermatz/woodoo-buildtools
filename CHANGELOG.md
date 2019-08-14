@@ -10,11 +10,16 @@ All notable changes in this project are documented in this file.
 14 August 2019
 
 #### Changelog for this Version:
+- [10bf123](https://gitlab.com/dermatz/woodoo-buildtools/commit/10bf1230a844a26f271c7e033577ba12c06ec46e): [FEATURE] add new automatic changelog logic
 - [b5446ca](https://gitlab.com/dermatz/woodoo-buildtools/commit/b5446ca25e89d7de9f802f4d179f27f41832936c): update npm dependencies
 
 #### Updated Dependencies
 
 - [b5446ca](https://gitlab.com/dermatz/woodoo-buildtools/commit/b5446ca25e89d7de9f802f4d179f27f41832936c): update npm dependencies
+
+#### New Features
+
+- [10bf123](https://gitlab.com/dermatz/woodoo-buildtools/commit/10bf1230a844a26f271c7e033577ba12c06ec46e): [FEATURE] add new automatic changelog logic
 
 ___
 ### [2.1.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.1)
