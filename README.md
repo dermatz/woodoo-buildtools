@@ -104,6 +104,9 @@ To get best results you can get this sample-project sturcture.
 ## Issue-Reporting
 Feel free to report issues or add pull-requests. Thanks for your support!
 
+## Thanks goes to 
+- Inspiration for the installation process by https://github.com/ahmadawais 
+
 ## License
 This project is licensed under the Open Software License 3.0. [Read more](https://choosealicense.com/licenses/osl-3.0/#)
 
