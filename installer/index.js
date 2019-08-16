@@ -8,5 +8,5 @@ const chalk = require( 'chalk' );
  * Run the entire program.
  * Runs all the functions with async/await.
  */
-const run = require( './helper/install' );
+const run = require( './install' );
 run();
