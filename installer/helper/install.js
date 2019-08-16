@@ -49,7 +49,7 @@ module.exports = () => {
 // Download
     Promise.all(filesToDownload.map(x => download(x, `${theCWD}`))).then(async () => {
         dotFiles.map(x => fs.rename(`${theCWD}/${x.slice(1)}`, `${theCWD}/${x}`, err => handleError(err)));
-        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json', 'core');
+        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json');
         spinner.succeed();
 
         // The npm install.
@@ -58,7 +58,29 @@ module.exports = () => {
         });
         spinner.succeed();
 
-        spinner.start('3. Install Woodoo-Buildtools dependencies ...');
+        // CHECK GULP CONFIG
+        const packages = new Promise(function (resolve, reject) {
+            spinner.start('3. Check if all Woodoo-Buildtools files are ready ...');
+            setTimeout(function () {
+                fs.access('./package.json', fs.F_OK, (notexist) => {
+                    if (notexist) {
+                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json');
+                        spinner.succeed(`3. Moew! Packages are installed successfully`);
+                        resolve('Packages downloadet');
+                    } else {
+                        spinner.start('Search gulp_config.json');
+                        spinner.succeed(`3. Moew! Packages are still ok`);
+                        resolve('Packages allready there.');
+                    }
+                });
+            }, 2000);
+        });
+
+        await packages.then(function whenOk(response) {
+            return response;
+        });
+
+        spinner.start('4. Install Woodoo-Buildtools dependencies ...');
         await execa('npm', ['install']);
         spinner.succeed();
 

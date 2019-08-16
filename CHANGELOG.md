@@ -6,11 +6,28 @@ All notable changes in this project are documented in this file.
 
 <br>
 
+### [2.1.9](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.9)
+16 August 2019
+
+#### Changelog for this Version:
+- [0e43de5](https://gitlab.com/dermatz/woodoo-buildtools/commit/0e43de50da5c767f373892eb4db4d17cf3f5b2e7): Merge tag &#x27;2.1.8&#x27; into develop
+
+___
+### [2.1.8](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.8)
+16 August 2019
+
+#### Changelog for this Version:
+- [054477e](https://gitlab.com/dermatz/woodoo-buildtools/commit/054477e8d473907c8fc35c33102349e2b6c7d5ba): [TASK] fix install helper path
+- [89ae86e](https://gitlab.com/dermatz/woodoo-buildtools/commit/89ae86ef6629f48bf2365f90b6e79d5171f22950): Merge tag &#x27;2.1.7&#x27; into develop
+
+___
 ### [2.1.7](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.7)
 16 August 2019
 
 #### Changelog for this Version:
-- [89ae86e](https://gitlab.com/dermatz/woodoo-buildtools/commit/89ae86ef6629f48bf2365f90b6e79d5171f22950): Merge tag &#x27;2.1.7&#x27; into develop
+- [a9785a9](https://gitlab.com/dermatz/woodoo-buildtools/commit/a9785a9884c4db6ccba918da20016fa64de0bd73): [TASK] improve setup process for npx
+- [4461355](https://gitlab.com/dermatz/woodoo-buildtools/commit/4461355f9f522facd251f9a021658c0c917a2acd): [TASK] Version bump
+- [800c5bd](https://gitlab.com/dermatz/woodoo-buildtools/commit/800c5bd91d498bfacd9e02861257601bdbe5e063): Merge tag &#x27;2.1.6&#x27; into develop
 
 ___
 ### [2.1.6](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.6)
