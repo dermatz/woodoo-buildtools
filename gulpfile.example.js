@@ -83,13 +83,13 @@ function scss() {
             restructure: false, // enable this feature for maximum compression - check for css errors after minify!
             sourceMap: true
         }))
-        .pipe(sourcemaps.write('.'))
         .pipe(plumber({
             handleError: function (err) {
                 console.log(err);
                 this.emit('end');
             }
         }))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(vars.project.path_dist + 'css'))
         .pipe(browsersync.stream());
 }
@@ -130,7 +130,7 @@ function concat_lib_js() {
     .pipe(babel({
         presets: ['@babel/env']
     }))
-    .pipe(concat('lib.min.js'))
+    .pipe(concat('lib.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
@@ -148,7 +148,7 @@ function concat_head_js() {
     .pipe(babel({
         presets: ['@babel/env']
     }))
-    .pipe(concat('head.min.js'))
+    .pipe(concat('head.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
@@ -166,7 +166,7 @@ function concat_footer_js() {
     .pipe(babel({
         presets: ['@babel/env']
     }))
-    .pipe(concat('footer.min.js'))
+    .pipe(concat('footer.js'))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
@@ -177,6 +177,7 @@ function concat_footer_js() {
 function minify_js() {
     return src(vars.project.path_dist + 'js/**/*.js')
         .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
         .pipe(plumber())
         .pipe(dest(vars.project.path_dist + 'js'));
 }
