@@ -4,16 +4,18 @@
  * Install WPGulp
  */
 const fs = require('fs');
-const theCWD = process.cwd();
-const theCWDArray = theCWD.split('/');
-const theDir = theCWDArray[theCWDArray.length - 1];
 const ora = require('ora');
 const execa = require('execa');
 const chalk = require('chalk');
 const download = require('download');
+
 const handleError = require('./helper/handleError.js');
 const clearConsole = require('./helper/clearConsole.js');
 const printNextSteps = require('./helper/printNextSteps.js');
+
+const theCWD = process.cwd();
+const theCWDArray = theCWD.split('/');
+const theDir = theCWDArray[theCWDArray.length - 1];
 
 module.exports = () => {
 
