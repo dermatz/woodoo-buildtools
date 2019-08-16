@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -10,7 +10,7 @@
   },
   "main": "./installer/install.js",
   "bin": {
-    "install": "./installer/install.js"
+    "woodoo-buildtools": "./installer/install.js"
   },
   "keywords": [
     "gulp",
