@@ -9,9 +9,9 @@ const execa = require('execa');
 const chalk = require('chalk');
 const download = require('download');
 
-const handleError = require('./helper/handleError.js');
-const clearConsole = require('./helper/clearConsole.js');
-const printNextSteps = require('./helper/printNextSteps.js');
+const handleError = require('./handleError.js');
+const clearConsole = require('./clearConsole.js');
+const printNextSteps = require('./printNextSteps.js');
 
 const theCWD = process.cwd();
 const theCWDArray = theCWD.split('/');
