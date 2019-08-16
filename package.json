@@ -10,7 +10,7 @@
   },
   "main": "./installer/install.js",
   "bin": {
-    "install": "./installer/install.js"
+    "woodoo-buildtools": "./installer/install.js"
   },
   "keywords": [
     "gulp",
