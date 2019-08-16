@@ -10,7 +10,7 @@ All notable changes in this project are documented in this file.
 16 August 2019
 
 #### Changelog for this Version:
-- [470e546](https://gitlab.com/dermatz/woodoo-buildtools/commit/470e5467b84bcbbd57d788cdd6a306b9ada31f20): Merge tag &#x27;2.1.9&#x27; into develop
+- [0e43de5](https://gitlab.com/dermatz/woodoo-buildtools/commit/0e43de50da5c767f373892eb4db4d17cf3f5b2e7): Merge tag &#x27;2.1.8&#x27; into develop
 
 ___
 ### [2.1.8](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.8)
