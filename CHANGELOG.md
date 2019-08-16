@@ -6,6 +6,21 @@ All notable changes in this project are documented in this file.
 
 <br>
 
+### [2.1.5](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.5)
+16 August 2019
+
+#### Changelog for this Version:
+- [9ade33a](https://gitlab.com/dermatz/woodoo-buildtools/commit/9ade33ac65fa63575af90364b19d2503e111a17b): Merge tag &#x27;2.1.5&#x27; into develop
+
+___
+### [2.1.4](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.4)
+16 August 2019
+
+#### Changelog for this Version:
+- [7090807](https://gitlab.com/dermatz/woodoo-buildtools/commit/70908071a9826d6e9aa85845c4a46175d483a86c): [TASK] update bin command
+- [526b929](https://gitlab.com/dermatz/woodoo-buildtools/commit/526b9295a314cf8e7e005d2dca1cfad7b2f0e0fd): Merge tag &#x27;2.1.3&#x27; into develop
+
+___
 ### [2.1.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.3)
 16 August 2019
 
@@ -15,11 +30,12 @@ All notable changes in this project are documented in this file.
 - [7aa2692](https://gitlab.com/dermatz/woodoo-buildtools/commit/7aa2692cc9a3435ff8167dbaac2f6f3bc830b233): [TASK] add rename methode for js concatinations
 - [be74ca0](https://gitlab.com/dermatz/woodoo-buildtools/commit/be74ca007bc3034d505b19a0c790f1b93fe601c4): [TASK] update gulpfile example for better sourcemaps in css files, improve setup
 - [5b442b4](https://gitlab.com/dermatz/woodoo-buildtools/commit/5b442b45eb08ff420abeaa9bb974b3527079709b): [TASK] change wording in install files
+- [5ea5383](https://gitlab.com/dermatz/woodoo-buildtools/commit/5ea5383a7c7afe0da6a6eb3d7096bab424de8027): release commit
 - [5d0f4c6](https://gitlab.com/dermatz/woodoo-buildtools/commit/5d0f4c6c408cb6b8b6f8b7d62536bfa7abde8674): [TASK] add files to setup process
 
 #### New Features
 
-- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] Improved new install process
+- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] add new install process
 
 ___
 ### [2.1.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.2)
