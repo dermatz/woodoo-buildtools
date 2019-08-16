@@ -2,16 +2,33 @@
 
 All notable changes in this project are documented in this file.
 
-[![Ahmad on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
+[![Dermatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
 <br>
 
+### [2.1.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.3)
+16 August 2019
+
+#### Changelog for this Version:
+- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] add new install process
+- [8b54b2f](https://gitlab.com/dermatz/woodoo-buildtools/commit/8b54b2faa1c443f7fb544800c0fdefa839c8d77e): [TASK] remove old files
+- [7aa2692](https://gitlab.com/dermatz/woodoo-buildtools/commit/7aa2692cc9a3435ff8167dbaac2f6f3bc830b233): [TASK] add rename methode for js concatinations
+- [be74ca0](https://gitlab.com/dermatz/woodoo-buildtools/commit/be74ca007bc3034d505b19a0c790f1b93fe601c4): [TASK] update gulpfile example for better sourcemaps in css files, improve setup
+- [5b442b4](https://gitlab.com/dermatz/woodoo-buildtools/commit/5b442b45eb08ff420abeaa9bb974b3527079709b): [TASK] change wording in install files
+- [5d0f4c6](https://gitlab.com/dermatz/woodoo-buildtools/commit/5d0f4c6c408cb6b8b6f8b7d62536bfa7abde8674): [TASK] add files to setup process
+
+#### New Features
+
+- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] Improved new install process
+
+___
 ### [2.1.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.2)
 14 August 2019
 
 #### Changelog for this Version:
 - [10bf123](https://gitlab.com/dermatz/woodoo-buildtools/commit/10bf1230a844a26f271c7e033577ba12c06ec46e): [FEATURE] add new automatic changelog logic
 - [b5446ca](https://gitlab.com/dermatz/woodoo-buildtools/commit/b5446ca25e89d7de9f802f4d179f27f41832936c): update npm dependencies
+- [c74fb5d](https://gitlab.com/dermatz/woodoo-buildtools/commit/c74fb5d761713a82ee7857df8a59f4e568afe16f): release commit
 
 #### Updated Dependencies
 
@@ -51,9 +68,10 @@ ___
 9 April 2019
 
 #### Changelog for this Version:
-- [9fbb217](https://gitlab.com/dermatz/woodoo-buildtools/commit/9fbb217ba860af87361a7e72418bacfd1056ecc0): [TASK] update to 2.0.5
 - [137245c](https://gitlab.com/dermatz/woodoo-buildtools/commit/137245c80ed4cd6ee5910dedab7e4435e089c20f): Update gulp_config
 - [bdadc5a](https://gitlab.com/dermatz/woodoo-buildtools/commit/bdadc5a285c4c5d8b4e84fca94a1b96da5eeee95): [TASK] fixed strings in gulp_config.json
+- [793638a](https://gitlab.com/dermatz/woodoo-buildtools/commit/793638a422babcf7bc90eb63ed1caf6e94fa5389): Merge tag &#x27;2.0.5&#x27; into develop
+- [9fbb217](https://gitlab.com/dermatz/woodoo-buildtools/commit/9fbb217ba860af87361a7e72418bacfd1056ecc0): [TASK] update to 2.0.5
 
 ___
 ### [2.0.4](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.4)

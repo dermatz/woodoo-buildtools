@@ -17,12 +17,12 @@ cat << "EOF"
 
 EOF
 
-echo "${cyan}Installing Woodoo Frontend Buildtool PreInstall ...${white}"
+echo "${cyan}Installing Woodoo-Buildtools PreInstall ...${white}"
 
 if [ -d "./core" ]; then
-    echo "${green}✔ Woodoo core folder found${white}"
+    echo "${green}✔ Woodoo core directory found${white}"
 else
-	echo "${red}Setup not finished!${white} - Woodoo core folder not found!"
+	echo "${red}Setup not finished!${white} - Woodoo core directory not found!"
 	exit
 fi
 
@@ -33,11 +33,11 @@ fi
 if [[ -e "gulp_config.json" ]]; then
     echo "${green}✔ gulp_config.json found!${white}"
 else
-	read -r -p "gulp_config.json not found. Create it? [Y/N]: " response
+	read -r -p "gulp_config.json not found. Do you want to create it? [Y/N]: " response
 	if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 	then
 		cp core/gulp_config.json gulp_config.json
-		echo "${green}✔ gulp_config.json successfully created!${white} - Please edit ${orange}gulp_config.json${cyan} and run this Setup ${red}again${white}."
+		echo "${green}✔ gulp_config.json successfully created!${white} - Please edit ${orange}gulp_config.json${cyan} and run the setup ${red}again${white}."
 		exit
 	else
 		echo "${red}Setup not finished! - gulp_config.json is necessary!${white}"
@@ -53,7 +53,7 @@ fi
 if [[ -e "gulpfile.js" ]]; then
     echo "${green}✔ Gulpfile found!${white}"
 else
-	read -r -p "gulpfile.js not found. Create it? [Y/N]: " response
+	read -r -p "gulpfile.js not found. Do you want to create it? [Y/N]: " response
 	if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 	then
 		cp core/gulpfile.example.js gulpfile.js
@@ -70,7 +70,7 @@ fi
 
 echo "\n"
 echo "${cyan}Merge package.json ${white}"
-	read -r -p "Did you already configured bin/gulp_config.json ...? [Y/N]: " configured
+	read -r -p "Did you configure bin/gulp_config.json ...? [Y/N]: " configured
 	if [[ "$configured" =~ ^([yY][eE][sS]|[yY])+$ ]]
 
 	then
@@ -79,8 +79,8 @@ echo "${cyan}Merge package.json ${white}"
 		then
 			cp core/package.json package.json
 		    npm install
-		    echo "${green}✔ Woodoo-Dependencies preinstalled!${white}"
-		    echo "${cyan}Start merge process ...!${white}"
+		    echo "${green}✔ Woodoo-Buildtools dependencies successfully pre-installed!${white}"
+		    echo "${cyan}Starting merge process ...!${white}"
 
 			echo "${cyan}Generate local package.json${white}"
 			gulp merge_json
@@ -89,13 +89,13 @@ echo "${cyan}Merge package.json ${white}"
 					echo "${green}✔ package.json succesfully merged!${white}"
 				fi
 			echo "\n"
-			echo "${cyan}Install Woodoo Buildtool with Project-Dependencies now ...${white}"
+			echo "${cyan}Install Woodoo-Buildtools with project dependencies now ...${white}"
 			npm install
 			echo "${green}✔ Setup finished!${white}"
 		else
-			echo "${red}Note: Merge is skipped! Package.json was not merged!${white}"
+			echo "${red}Note: Merge is skipped! package.json was not merged!${white}"
 			echo "\n"
-			echo "${cyan}Install Woodoo Buildtool ${red}without current${cyan} Project-Dependencies...${white}"
+			echo "${cyan}Install Woodoo-Buildtools ${red}without current${cyan} project dependencies...${white}"
 			cp core/package.json package.json
 			npm install
 			echo "${green}✔ Setup finished!${white}"
@@ -103,7 +103,7 @@ echo "${cyan}Merge package.json ${white}"
 		exit
 	else
 		echo "\n"
-		echo "${green}✔ ${red}Setup stopped!\n ${white}Please edit this file with your Project Variables: ${orange}./bin/gulp_config.json${white}"
+		echo "${green}✔ ${red}Setup stopped!\n ${white}Please edit the following file with your project-specific variables: ${orange}./bin/gulp_config.json${white}"
 		echo "\n"
 		exit
 	fi

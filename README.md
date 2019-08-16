@@ -3,7 +3,7 @@
 
 [![Ahmad on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.1.2
+# Woodoo Frontend Buildtool 2.1.3
 - Creates you a own project independent build process
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
@@ -103,6 +103,9 @@ To get best results you can get this sample-project sturcture.
 
 ## Issue-Reporting
 Feel free to report issues or add pull-requests. Thanks for your support!
+
+## Thanks goes to 
+- Inspiration for the installation process by https://github.com/ahmadawais 
 
 ## License
 This project is licensed under the Open Software License 3.0. [Read more](https://choosealicense.com/licenses/osl-3.0/#)
