@@ -83,13 +83,13 @@ function scss() {
             restructure: false, // enable this feature for maximum compression - check for css errors after minify!
             sourceMap: true
         }))
-        .pipe(sourcemaps.write('.'))
         .pipe(plumber({
             handleError: function (err) {
                 console.log(err);
                 this.emit('end');
             }
         }))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest(vars.project.path_dist + 'css'))
         .pipe(browsersync.stream());
 }
