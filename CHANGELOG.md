@@ -6,59 +6,67 @@ All notable changes in this project are documented in this file.
 
 <br>
 
+### [2.1.12](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.12)
+17 August 2019
+
+#### Changelog for this Version:
+- [5feea64](https://gitlab.com/dermatz/woodoo-buildtools/commit/5feea64d56b01872864d7ca743804c3002816744): Merge tag &#x27;2.1.11&#x27; into develop
+
+___
 ### [2.1.11](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.11)
 17 August 2019
 
 #### Changelog for this Version:
 - [6a570b9](https://gitlab.com/dermatz/woodoo-buildtools/commit/6a570b9b123170f313751129a59aa1e3e6b00c57): [TASK] improve Setup process. The setup now create a separate directory to install woodoo-buildtools.
-- [20f3bae](https://gitlab.com/dermatz/woodoo-buildtools/commit/20f3baed00b99653d1986aed606691d4fc6e97f1): Merge tag &#x27;2.1.10&#x27; into develop
+- [f500fa7](https://gitlab.com/dermatz/woodoo-buildtools/commit/f500fa701b1e31f3d0a8c0b78ab2835903f14a68): [TASK] Version Bump
 
 ___
 ### [2.1.10](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.10)
 16 August 2019
 
 #### Changelog for this Version:
+- [20f3bae](https://gitlab.com/dermatz/woodoo-buildtools/commit/20f3baed00b99653d1986aed606691d4fc6e97f1): Merge tag &#x27;2.1.10&#x27; into develop
 - [4e25925](https://gitlab.com/dermatz/woodoo-buildtools/commit/4e25925849615c305b0a19eb8c1f3cdf6c3aebb8): [TASK] improve setup and fixed some minor bugs
-- [470e546](https://gitlab.com/dermatz/woodoo-buildtools/commit/470e5467b84bcbbd57d788cdd6a306b9ada31f20): Merge tag &#x27;2.1.9&#x27; into develop
 
 ___
 ### [2.1.9](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.9)
 16 August 2019
 
 #### Changelog for this Version:
+- [470e546](https://gitlab.com/dermatz/woodoo-buildtools/commit/470e5467b84bcbbd57d788cdd6a306b9ada31f20): Merge tag &#x27;2.1.9&#x27; into develop
 - [5d4309d](https://gitlab.com/dermatz/woodoo-buildtools/commit/5d4309db5b216ea53e593ad7aafb69b91e61fe03): [TASK] Improve Installation
-- [0e43de5](https://gitlab.com/dermatz/woodoo-buildtools/commit/0e43de50da5c767f373892eb4db4d17cf3f5b2e7): Merge tag &#x27;2.1.8&#x27; into develop
 
 ___
 ### [2.1.8](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.8)
 16 August 2019
 
 #### Changelog for this Version:
+- [0e43de5](https://gitlab.com/dermatz/woodoo-buildtools/commit/0e43de50da5c767f373892eb4db4d17cf3f5b2e7): Merge tag &#x27;2.1.8&#x27; into develop
 - [054477e](https://gitlab.com/dermatz/woodoo-buildtools/commit/054477e8d473907c8fc35c33102349e2b6c7d5ba): [TASK] fix install helper path
-- [89ae86e](https://gitlab.com/dermatz/woodoo-buildtools/commit/89ae86ef6629f48bf2365f90b6e79d5171f22950): Merge tag &#x27;2.1.7&#x27; into develop
 
 ___
 ### [2.1.7](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.7)
 16 August 2019
 
 #### Changelog for this Version:
+- [89ae86e](https://gitlab.com/dermatz/woodoo-buildtools/commit/89ae86ef6629f48bf2365f90b6e79d5171f22950): Merge tag &#x27;2.1.7&#x27; into develop
 - [a9785a9](https://gitlab.com/dermatz/woodoo-buildtools/commit/a9785a9884c4db6ccba918da20016fa64de0bd73): [TASK] improve setup process for npx
 - [4461355](https://gitlab.com/dermatz/woodoo-buildtools/commit/4461355f9f522facd251f9a021658c0c917a2acd): [TASK] Version bump
-- [800c5bd](https://gitlab.com/dermatz/woodoo-buildtools/commit/800c5bd91d498bfacd9e02861257601bdbe5e063): Merge tag &#x27;2.1.6&#x27; into develop
 
 ___
 ### [2.1.6](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.6)
 16 August 2019
 
 #### Changelog for this Version:
+- [800c5bd](https://gitlab.com/dermatz/woodoo-buildtools/commit/800c5bd91d498bfacd9e02861257601bdbe5e063): Merge tag &#x27;2.1.6&#x27; into develop
 - [2b1dea8](https://gitlab.com/dermatz/woodoo-buildtools/commit/2b1dea8a07fea16f6837fc5de668739d2f98b3c7): [TASK] update install script
-- [9ade33a](https://gitlab.com/dermatz/woodoo-buildtools/commit/9ade33ac65fa63575af90364b19d2503e111a17b): Merge tag &#x27;2.1.5&#x27; into develop
 
 ___
 ### [2.1.5](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.5)
 16 August 2019
 
 #### Changelog for this Version:
+- [9ade33a](https://gitlab.com/dermatz/woodoo-buildtools/commit/9ade33ac65fa63575af90364b19d2503e111a17b): Merge tag &#x27;2.1.5&#x27; into develop
 - [1f7906b](https://gitlab.com/dermatz/woodoo-buildtools/commit/1f7906bc1b95b536e77a603f4553b3e8ceefdf9b): [TASK] update package-version
 
 ___
