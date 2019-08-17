@@ -12,13 +12,14 @@
     "ghostmode" : true
   },
   "project" : {
-    "path" : "../relative.path/to/your/theme/",
-    "path_dist": "../relative.path/to/your/asset/dist/folder/",
-    "path_scss" : "../relative.path/to/your/scss/files/",
-    "path_js": "../relative.path/to/your/js/files/",
-    "path_head_js": "../relative.path/to/your/js/headerfiles/",
-    "path_footer_js": "../relative.path/to/your/js/footerfiles/",
-    "path_lib_js": "../relative.path/to/your/js/libruaryfiles/",
-    "path_images": "../relative.path/to/your/images/"
+    "path" :          "../theme/",
+    "path_dist":      "../theme/dist/",
+    "path_scss" :     "../theme/scss/",
+    "path_js":        "../theme/js/",
+    "path_head_js":   "../theme/js/head/",
+    "path_footer_js": "../theme/js/footer/",
+    "path_lib_js":    "../theme/js/lib/",
+    "path_images":    "../theme/img/",
+    "path_sass_lint": ""
   }
 }
