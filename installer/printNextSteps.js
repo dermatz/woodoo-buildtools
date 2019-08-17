@@ -17,6 +17,8 @@ console.log(
 
 console.log('\n\n🎯 ', chalk.black.bgGreen(' Getting Started...\n'));
 console.log(' Next Steps → \n');
+console.log(` ${chalk.dim('👉')} ${chalk.green('cd woodoo-buildtools')} and ..`);
 console.log(` ${chalk.dim('1.')} Editing the ${chalk.green('gulp_config.json')} file to specify your theme structure.`);
-console.log(` ${chalk.dim('2.')} Running ${chalk.green('npm woodoo-setup')} to complete the Woodoo Buildtools installation.`, '\n\n');
+console.log(` ${chalk.dim('2.')} Run ${chalk.green('npm woodoo-init')} to complete the Woodoo Buildtools installation.`, '\n\n');
+console.log(` ${chalk.dim('3.')} If you want to update Woodoo-Buildtools, just run ${chalk.green('npm woodoo-update')} to get the newest version.`, '\n\n');
 };
