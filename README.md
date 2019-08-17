@@ -2,7 +2,7 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.1.12 
+# Woodoo Frontend Buildtool 2.1.13 
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
 - Website: https://www.dermatz.de
@@ -36,7 +36,16 @@ In this case the Buildtool setup will create and install all necessary files.
 🤩 This might take only a few seconds 
 
 ```
+
+# 1— Go nto your Project or Theme and run:
+
 npx woodoo-buildtools
+
+# 2— Now configure variables inside the woodoo-buildtools/gulp_config.json file
+# 3— Finish the Setup with:
+
+npm run woodoo-init
+
 ```
 Just follow the install instructions.
 
@@ -55,7 +64,7 @@ Add following lines to your composer.json
 Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
 ```
 composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev "^2.1.12"
+composer.phar require dermatz/woodoo-buildtools --dev "^2.1.13"
 ```
 
 #### Step 2: Woodoo Setup
