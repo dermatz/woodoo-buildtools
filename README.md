@@ -1,39 +1,48 @@
-[![Pipeline](https://gitlab.com/dermatz/woodoo-buildtools/badges/master/pipeline.svg)](https://gitlab.com/dermatz/woodoo-buildtools/)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.1.11
-- Creates you a own project independent build process
+# Woodoo Frontend Buildtool 2.1.12 
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
 - Website: https://www.dermatz.de
 
-Woodoo Buildtool is a standalone gulp setup with all necessary gulp tools to build
-and create your frontend projects. Woodoo Buildtool come with a config file to add
-your project specific pathes and variables (`gulp_config.json`). Read more about it
-in the Getting Started section below this part.
+Woodoo Buildtool is a standalone gulp setup with all necessary modern gulp dependencies to build
+and create your frontend projects. Woodoo Buildtool come with a config file to add your project specific pathes 
+and variables (`gulp_config.json`). 
+
+Read more about it in the Getting Started section below this part.
+
 
 ## Gulp Features
+- NPX Setup
 - Gulp 4.x
 - Sass 4 Support
 - Babel 8
 - CSS Minify & Sourcemaps
 - CSS Autoprefixer
-- CSS Linter
-- JS Concatination
-- JS Minify
+- SCSS Linter
+- JS Concatination for Head-js, Lib's and Footer-JS
+- JS Minification
 - JS Linter
 - Browser-Sync (Multi-Device Livepreview)
-- Imageoptimisation
-- Automatic Setup Process
-- Automatic merge of your Project package.json
+- Image-Optimisation
+- Automatic Setup Process via `npx woodoo-buildtools`
+- Automatic merge of your Project package.json with `gulp update_json` or `npm run woodoo-init`
 
-## Getting Started with automatic Setup
+## Getting Started with full automatic NPM Setup 
 In this case the Buildtool setup will create and install all necessary files.
 
-## 1. Installation
-### Step 1: Installation Woodoo with Composer
+🤩 This might take only a few seconds 
+
+```
+npx woodoo-buildtools
+```
+Just follow the install instructions.
+
+
+## Alternative: Installation via Composer
+#### 1. Installation
 Add following lines to your composer.json
 ```
   "extra": {
@@ -46,10 +55,10 @@ Add following lines to your composer.json
 Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
 ```
 composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev "^2.1.2"
+composer.phar require dermatz/woodoo-buildtools --dev "^2.1.12"
 ```
 
-### Step 2: Woodoo Setup
+#### Step 2: Woodoo Setup
 
 Just switch into Woodoo-Buildtool folder and run the install script
 ```
@@ -62,12 +71,12 @@ During the setup you will get new files in the woodoo-buildtools folder, if they
 After the Setup you can easily build your whole frontend project
 from woodoo-buildtools folder. Just run `gulp` from the woodoo buildtool folder in your console.
 
-## Update Woodoo with Project NPM Packages
+#### Update Woodoo with Project NPM Packages
 In this case you can run `gulp update` in the woodoo-buildtools folder.
 Otherwise you can run `gulp update-json` to simply just update the project- and wooodoo json files.
 
 ---
-## Just a tip: Get a perfect folderstructure for your asset
+#### Just a tip: Get a perfect folder structure
 To get best results you can get this sample-project sturcture.
 ```
 ../YourTheme/
@@ -101,15 +110,19 @@ To get best results you can get this sample-project sturcture.
 ```
 ---
 
-## Issue-Reporting
+Issue-Reporting
+---
 Feel free to report issues or add pull-requests. Thanks for your support!
 
-## Thanks goes to 
+Thanks goes to
+--- 
 - Inspiration for the installation process by https://github.com/ahmadawais 
 
-## License
+License
+---
 This project is licensed under the Open Software License 3.0. [Read more](https://choosealicense.com/licenses/osl-3.0/#)
 
-## Copyright
+
+### Copyright
 
 (c) 2018 - 2019 Mathias Elle
