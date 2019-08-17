@@ -1,8 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/**
- * Install WPGulp
- */
 const fs = require('fs');
 const ora = require('ora');
 const execa = require('execa');

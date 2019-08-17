@@ -33,6 +33,13 @@ const uglify = require('gulp-uglify');
 const browsersync = require("browser-sync").create();
 const babel = require('gulp-babel');
 
+// Path to .sass-lint (default via woodoo-buildtools)
+// change this option in the gulp_config.json file
+const path_sass_lint = '.sass-lint.yml';
+if (vars.project.path_sass_lint) {
+    const path_sass_lint = vars.project.path_sass_lint + '.sass-lint.yml';
+}
+
 /**
  * Shell Messages
  */
@@ -70,28 +77,28 @@ function browserSyncReload(done) {
 
 function scss() {
     return src(vars.project.path_scss + '**/*.s+(a|c)ss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            includePaths: require('node-neat').with(externalPath)
-        }))
-        .pipe(sass.sync().on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(minifyCSS({
-            restructure: false, // enable this feature for maximum compression - check for css errors after minify!
-            sourceMap: true
-        }))
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest(vars.project.path_dist + 'css'))
-        .pipe(browsersync.stream());
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+        includePaths: require('node-neat').with(externalPath)
+    }))
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 2 versions'],
+        cascade: false
+    }))
+    .pipe(minifyCSS({
+        restructure: false, // enable this feature for maximum compression - check for css errors after minify!
+        sourceMap: true
+    }))
+    .pipe(plumber({
+        handleError: function (err) {
+            console.log(err);
+            this.emit('end');
+        }
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(vars.project.path_dist + 'css'))
+    .pipe(browsersync.stream());
 }
 
 // SASS LINT =====================================================================================================================
@@ -102,17 +109,17 @@ function scsslint() {
             '!' + vars.project.path_scss + 'path/to/ignore/**/',  // Add a path to ignore files
         ]
     )
-        .pipe(sassLint({
-            configFile: vars.buildtools.path + '.sass-lint.yml'
-        }))
-        .pipe(plumber({
-            handleError: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
+    .pipe(sassLint({
+        configFile: path_sass_lint
+    }))
+    .pipe(plumber({
+        handleError: function (err) {
+            console.log(err);
+            this.emit('end');
+        }
+    }))
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
 }
 
 // JS CONCAT =====================================================================================================================
@@ -127,10 +134,9 @@ function concat_lib_js() {
         ]
     )
     .pipe(sourcemaps.init())
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
     .pipe(concat('lib.js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
@@ -145,10 +151,9 @@ function concat_head_js() {
         ]
     )
     .pipe(sourcemaps.init())
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
     .pipe(concat('head.js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
@@ -163,23 +168,12 @@ function concat_footer_js() {
         ]
     )
     .pipe(sourcemaps.init())
-    .pipe(babel({
-        presets: ['@babel/env']
-    }))
     .pipe(concat('footer.js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(plumber())
     .pipe(dest(vars.project.path_dist + 'js'));
-}
-
-// JS MINIFY =====================================================================================================================
-
-function minify_js() {
-    return src(vars.project.path_dist + 'js/**/*.js')
-        .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(plumber())
-        .pipe(dest(vars.project.path_dist + 'js'));
 }
 
 // JS LINT =======================================================================================================================
@@ -189,9 +183,9 @@ function jslint() {
         vars.project.path_js + '**/*.js',
         '!' + vars.project.path_lib_js + '**'
     ])
-        .pipe(jshint())
-        .pipe(plumber())
-        .pipe(jshint.reporter('jshint-stylish'));
+    .pipe(jshint())
+    .pipe(plumber())
+    .pipe(jshint.reporter('jshint-stylish'));
 }
 
 // IMAGEMIN ======================================================================================================================
@@ -200,23 +194,23 @@ function image_minify() {
     return src(
         vars.project.path_images + '**/*'
     )
-        .pipe(newer(vars.project.path_images))
-        .pipe(
-            imagemin([
-                imagemin.gifsicle({interlaced: true}),
-                imagemin.jpegtran({progressive: true}),
-                imagemin.optipng({optimizationLevel: 5}),
-                imagemin.svgo({
-                    plugins: [
-                        {
-                            removeViewBox: false,
-                            collapseGroups: true
-                        }
-                    ]
-                })
-            ])
-        )
-        .pipe(dest(vars.project.path_images));
+    .pipe(newer(vars.project.path_images))
+    .pipe(
+        imagemin([
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.jpegtran({progressive: true}),
+            imagemin.optipng({optimizationLevel: 5}),
+            imagemin.svgo({
+                plugins: [
+                    {
+                        removeViewBox: false,
+                        collapseGroups: true
+                    }
+                ]
+            })
+        ])
+    )
+    .pipe(dest(vars.project.path_images));
 }
 
 // WATCH TASK ====================================================================================================================
@@ -238,8 +232,7 @@ function watchFiles() {
 const js = series(
     concat_lib_js,
     concat_head_js,
-    concat_footer_js,
-    minify_js
+    concat_footer_js
 );
 
 const lints = parallel(
@@ -276,26 +269,26 @@ function merge_json() {
         vars.buildtools.path + 'package.json',
         vars.project.path + 'package.json'
     ])
-        .pipe(merge({
-            fileName: 'package.json'
-        }))
-        .pipe(dest('./'));
+    .pipe(merge({
+        fileName: 'package.json'
+    }))
+    .pipe(dest('./'));
 }
 
 function npm_dependencies_check() {
     return src('*.js', {read: false})
-        .pipe(shell([
-                'npm outdated',
-            ], {ignoreErrors: true}
-        ));
+    .pipe(shell([
+            'npm outdated',
+        ], {ignoreErrors: true}
+    ));
 }
 
 function npm_install() {
     return src('*.js', {read: false})
-        .pipe(shell([
-                'npm install',
-            ], {ignoreErrors: true}
-        ));
+    .pipe(shell([
+            'npm install',
+        ], {ignoreErrors: true}
+    ));
 }
 
 // export / register tasks =======================================================================================================
