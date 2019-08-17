@@ -13,12 +13,11 @@ const handleError = require('./handleError.js');
 const clearConsole = require('./clearConsole.js');
 const printNextSteps = require('./printNextSteps.js');
 
-const theCWD = process.cwd();
+const theCWD = process.cwd() + '/woodoo-buildtools';
 const theCWDArray = theCWD.split('/');
 const theDir = theCWDArray[theCWDArray.length - 1];
 
 module.exports = () => {
-
     clearConsole();
     const filesToDownload = [
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/gulpfile.example.js',
@@ -45,7 +44,7 @@ module.exports = () => {
     );
 
     const spinner = ora({text: ''});
-    spinner.start(`1. Install Woodoo-Buildtools source in → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
+    spinner.start(`1. Downloading Woodoo-Buildtools source in → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
 
 // Download
     Promise.all(filesToDownload.map(x => download(x, `${theCWD}`))).then(async () => {
@@ -62,19 +61,19 @@ module.exports = () => {
         const packages = new Promise(function (resolve, reject) {
             spinner.start('3. Check if all Woodoo-Buildtools files are ready ...');
             setTimeout(function () {
-                fs.access('core/package.json', fs.F_OK, (notexist) => {
+                fs.access(theCWD +'/core/package.json', fs.F_OK, (notexist) => {
                     if (notexist) {
-                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json','core');
+                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',theCWD +'/core');
                         spinner.succeed(`3. Moew! Packages are installed successfully`);
                         resolve('Packages downloadet');
                     } else {
-                        fs.unlink('core/package.json',function(){});
-                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json','core');
+                        fs.unlink(theCWD + '/core/package.json',function(){});
+                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',theCWD + '/core');
                         spinner.succeed(`3. Moew! Core-Dependencies are up to date now`);
                         resolve('Packages renewed');
                     }
                 });
-            }, 2000);
+            }, 3000);
         });
 
         await packages.then(function whenOk(response) {
@@ -82,16 +81,16 @@ module.exports = () => {
         });
 
         spinner.start('4. Install Woodoo-Buildtools dependencies ...');
-        await execa('npm', ['install']);
+        await execa('npm', ['--prefix', 'woodoo-buildtools', 'install', 'woodoo-buildtools']);
         spinner.succeed();
 
         // CHECK GULPFILE
         const check_gulpfile = new Promise(function (resolve, reject) {
             spinner.start('Check Gulpfile ...');
             setTimeout(function () {
-                fs.access('./gulpfile.js', fs.F_OK, (notFound) => {
+                fs.access(theCWD + '/gulpfile.js', fs.F_OK, (notFound) => {
                     if (notFound) {
-                        fs.rename('./gulpfile.example.js', './gulpfile.js', function () {
+                        fs.rename(theCWD + '/gulpfile.example.js', theCWD + '/gulpfile.js', function () {
                         });
                         spinner.succeed(`4. All right. The ${chalk.yellow('gulpfile.example.js')} was renamed to ${chalk.green('gulpfile.js')}`);
                         resolve('renamed');
@@ -111,7 +110,7 @@ module.exports = () => {
         const check_gulp_config = new Promise(function (resolve, reject) {
             spinner.start('Check Gulp Config file ...');
             setTimeout(function () {
-                fs.access('./gulp_config.json', fs.F_OK, (exist) => {
+                fs.access(theCWD + '/gulp_config.json', fs.F_OK, (exist) => {
                     if (exist) {
                         const ext_download = [
                             'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/gulp_config.json',
