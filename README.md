@@ -2,7 +2,7 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.1.14
+# Woodoo Frontend Buildtool 2.1.15
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
 - Website: https://www.dermatz.de
@@ -33,11 +33,11 @@ Read more about it in the Getting Started section below this part.
 ## Getting Started with full automatic NPM Setup 
 In this case the Buildtool setup will create and install all necessary files.
 
-🤩 This might take only a few seconds 
+This might take only a few seconds 
 
 ```
 
-# 1— Go nto your Project or Theme and run:
+# 1— Navigate into your Project/Theme and run:
 
 npx woodoo-buildtools
 
@@ -49,44 +49,9 @@ npm run woodoo-init
 ```
 Just follow the install instructions.
 
-
-## Alternative: Installation via Composer
-#### 1. Installation
-Add following lines to your composer.json
-```
-  "extra": {
-    "installer-paths":{
-      "./woodoo-buildtools/core": ["dermatz/woodoo-buildtools"]
-    }
-  }
-```
-
-Now run these commands in your project root to install woodoo buildtools in root/woodoo-buildtools
-```
-composer.phar config repositories.woodoo-buildtools git https://gitlab.com/dermatz/woodoo-buildtools.git
-composer.phar require dermatz/woodoo-buildtools --dev "^2.1.13"
-```
-
-#### Step 2: Woodoo Setup
-
-Just switch into Woodoo-Buildtool folder and run the install script
-```
-cd woodow-buildtools
-sh core/setup.sh
-```
-
-Follow the instructions in setup.
-During the setup you will get new files in the woodoo-buildtools folder, if they are not exist.
-After the Setup you can easily build your whole frontend project
-from woodoo-buildtools folder. Just run `gulp` from the woodoo buildtool folder in your console.
-
-#### Update Woodoo with Project NPM Packages
-In this case you can run `gulp update` in the woodoo-buildtools folder.
-Otherwise you can run `gulp update-json` to simply just update the project- and wooodoo json files.
-
 ---
 #### Just a tip: Get a perfect folder structure
-To get best results you can get this sample-project sturcture.
+To get best results you can get this sample-project structure.
 ```
 ../YourTheme/
   |

@@ -31,14 +31,7 @@ const shell = require('gulp-shell');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browsersync = require("browser-sync").create();
-const babel = require('gulp-babel');
 
-// Path to .sass-lint (default via woodoo-buildtools)
-// change this option in the gulp_config.json file
-const path_sass_lint = '.sass-lint.yml';
-if (vars.project.path_sass_lint) {
-    const path_sass_lint = vars.project.path_sass_lint + '.sass-lint.yml';
-}
 
 /**
  * Shell Messages
@@ -73,9 +66,18 @@ function browserSyncReload(done) {
     done();
 }
 
-// SCSS WITH MINIFY ==============================================================================================================
+// SCSS, SCSS-LINT, MINIFY =======================================================================================================
+
+// Path to .sass-lint (default is woodoo-buildtools/core/.sass-lint.yml)
+// change the path in the gulp_config.json (project > path_sass_lint) if you want a new location with your own sass-lint.yml
+
+const path_sass_lint = '.sass-lint.yml';
+if (vars.project.path_sass_lint) {
+    const path_sass_lint = vars.project.path_sass_lint + '.sass-lint.yml';
+}
 
 function scss() {
+
     return src(vars.project.path_scss + '**/*.s+(a|c)ss')
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -83,7 +85,6 @@ function scss() {
     }))
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(minifyCSS({
