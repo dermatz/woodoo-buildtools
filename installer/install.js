@@ -17,13 +17,13 @@ const theDir = theCWDArray[theCWDArray.length - 1];
 module.exports = () => {
     clearConsole();
     const filesToDownload = [
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/LICENSE',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/README.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulpfile.example.js',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/CHANGELOG.md',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/package.json',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.jshintrc',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/README.md',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/LICENSE',
     ];
 
 // include hidden Dotfiles
