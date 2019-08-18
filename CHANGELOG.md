@@ -10,12 +10,6 @@ All notable changes in this project are documented in this file.
 18 August 2019
 
 #### Changelog for this Version:
-- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
-- [4b45fe8](https://gitlab.com/dermatz/woodoo-buildtools/commit/4b45fe8fcc0f4a270cb50d73bafa0f629568163e): Merge tag &#x27;2.1.14&#x27; into develop
-
-#### New Features
-
-- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
 
 ___
 ### [2.1.14](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.14)
