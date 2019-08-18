@@ -6,10 +6,19 @@ All notable changes in this project are documented in this file.
 
 <br>
 
+### [2.2.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.3)
+18 August 2019
+
+#### Changelog for this Version:
+- [1d57ad8](https://gitlab.com/dermatz/woodoo-buildtools/commit/1d57ad87f4b4289ce4f4dfa6a9c5ed5ae29eb6e5): Merge tag &#x27;2.2.2&#x27; into develop
+
+___
 ### [2.2.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.2)
 18 August 2019
 
 #### Changelog for this Version:
+- [87344da](https://gitlab.com/dermatz/woodoo-buildtools/commit/87344daa89abed72eb068186debc40378af2ce80): [TASK] Version bump
+- [66dcaa5](https://gitlab.com/dermatz/woodoo-buildtools/commit/66dcaa5f9c6204e76065229b81bf71810db76246): Merge tag &#x27;2.2.1&#x27; into develop
 
 ___
 ### [2.2.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.1)
@@ -17,6 +26,7 @@ ___
 
 #### Changelog for this Version:
 - [7c42ec7](https://gitlab.com/dermatz/woodoo-buildtools/commit/7c42ec749e82c1a43a0a6c3ab0a832717f48431d): [TASK] fix install dependencies and file structure after download
+- [ae31a80](https://gitlab.com/dermatz/woodoo-buildtools/commit/ae31a80d85c501111222579089eac9548fc90a7e): Merge tag &#x27;2.2.0&#x27; into develop
 
 #### Updated Dependencies
 
