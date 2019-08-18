@@ -23,6 +23,7 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/README.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/CHANGELOG.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulpfile.example.js',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp_config.json',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.jshintrc',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
     ];
@@ -106,8 +107,7 @@ module.exports = () => {
             setTimeout(function () {
                 fs.access(theCWD + '/gulp_config.json', fs.F_OK, (notFound) => {
                     if (notFound) {
-                        fs.rename(theCWD + '/core/gulp_config.json', theCWD + '/gulp_config.json', function () {
-                        });
+                        fs.copyFile(core + '/gulp_config.json', theCWD + '/gulp_config.json', () => {});
                         spinner.succeed(`4. Yeah. The ${chalk.yellow('gulp_config.json')} is ready now.`);
                         resolve('renamed');
                     } else {
