@@ -6,10 +6,39 @@ All notable changes in this project are documented in this file.
 
 <br>
 
+### [2.2.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.0)
+18 August 2019
+
+#### Changelog for this Version:
+- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
+- [4b45fe8](https://gitlab.com/dermatz/woodoo-buildtools/commit/4b45fe8fcc0f4a270cb50d73bafa0f629568163e): Merge tag &#x27;2.1.14&#x27; into develop
+
+#### New Features
+
+- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
+
+___
+### [2.1.14](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.14)
+17 August 2019
+
+#### Changelog for this Version:
+- [87181f8](https://gitlab.com/dermatz/woodoo-buildtools/commit/87181f8e0328de3022c744e8de69beb20f08ad8e): [TASK] improved js uglify and file handling during build process
+- [2c0559c](https://gitlab.com/dermatz/woodoo-buildtools/commit/2c0559ceedeb7c530f23f4b8d9c4e09bb185fb0c): Merge tag &#x27;2.1.13&#x27; into develop
+
+___
+### [2.1.13](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.13)
+17 August 2019
+
+#### Changelog for this Version:
+- [e788e87](https://gitlab.com/dermatz/woodoo-buildtools/commit/e788e8719534496101fb190d021455783c111564): [TASK] update readme
+- [a06454f](https://gitlab.com/dermatz/woodoo-buildtools/commit/a06454ffef03157f79b0f6d542a221d4242e059d): Merge tag &#x27;2.1.12&#x27; into develop
+
+___
 ### [2.1.12](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.12)
 17 August 2019
 
 #### Changelog for this Version:
+- [df2d9a9](https://gitlab.com/dermatz/woodoo-buildtools/commit/df2d9a9c089f2a0fa2750e4a35d0f0e3b3b64040): [TASK] Version Bump and add new setup description to readme.md
 - [5feea64](https://gitlab.com/dermatz/woodoo-buildtools/commit/5feea64d56b01872864d7ca743804c3002816744): Merge tag &#x27;2.1.11&#x27; into develop
 
 ___
