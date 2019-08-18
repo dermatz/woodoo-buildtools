@@ -11,6 +11,7 @@ const clearConsole = require('./clearConsole.js');
 const printNextSteps = require('./printNextSteps.js');
 
 const theCWD = process.cwd() + '/woodoo-buildtools';
+const core = process.cwd() + '/woodoo-buildtools/core';
 const theCWDArray = theCWD.split('/');
 const theDir = theCWDArray[theCWDArray.length - 1];
 
@@ -20,8 +21,8 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/LICENSE',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/README.md',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/CHANGELOG.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulpfile.example.js',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/CHANGELOG.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.jshintrc',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
     ];
@@ -33,7 +34,7 @@ module.exports = () => {
     console.log('\n');
     console.log(
         '📦 ',
-        chalk.black.bgBlueBright(` Downloading Woodoo-Buildtools source in: → ${chalk.black.bgYellowBright(` ${theDir} + /core `)}\n`),
+        chalk.black.bgBlueBright(` Downloading Woodoo-Buildtools source in: → ${chalk.black.bgYellowBright(` ${theDir} `)}\n`),
         chalk.dim(`\n The current install directory is: ${chalk.yellow(theCWD)}\n`),
         chalk.dim('This might take a moment...\n')
     );
@@ -42,22 +43,20 @@ module.exports = () => {
     spinner.start(`1. Downloading Woodoo-Buildtools source in → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
 
 // Download
-    Promise.all(filesToDownload.map(x => download(x, `${theCWD} + /core`))).then(async () => {
-        dotFiles.map(x => fs.rename(`${theCWD}+/core/${x.slice(1)}`, `${theCWD} + /core/${x}`, err => handleError(err)));
+    Promise.all(filesToDownload.map(x => download(x, `${core}`))).then(async () => {
+        dotFiles.map(x => fs.rename(`${core}/${x.slice(1)}`, `${core}/${x}`, err => handleError(err)));
         spinner.succeed();
 
         const packages = new Promise(function (resolve, reject) {
             spinner.start('2. Check if all Woodoo-Buildtools files are ready ...');
             setTimeout(function () {
-                fs.access(theCWD +'/core/package.json', fs.F_OK, (notexist) => {
+                fs.access(theCWD +'/package.json', fs.F_OK, (notexist) => {
                     if (notexist) {
-                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',theCWD +'/core');
-                        spinner.succeed(`2. Moew! Packages are installed successfully`);
+                        fs.copyFile( core + '/package.json', theCWD + '/package.json', () => {});
+                        spinner.succeed(`2. Packages are installed successfully`);
                         resolve('Packages downloadet');
                     } else {
-                        fs.unlink(theCWD + '/core/package.json',function(){});
-                        download('https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/package.json',theCWD + '/core');
-                        spinner.succeed(`2. Moew! Core-Dependencies are up to date now`);
+                        spinner.succeed(`2. Core-Dependencies already downloaded.`);
                         resolve('Packages renewed');
                     }
                 });
@@ -70,14 +69,13 @@ module.exports = () => {
 
         // The prepare files.
         spinner.start(`3. Copy files from Woodoo-Buildtools Core ...`);
-        await fs.copyFile('./core/package.json', 'package.json', () => {});
-        await fs.copyFile('./core/.jshintrc', '.jshintrc', () => {});
-        await fs.copyFile('./core/.sass-lint.yml', '.sass-lint.yml', () => {});
+        await fs.copyFile(core + '/.jshintrc', theCWD + '/.jshintrc', () => {});
+        await fs.copyFile(core + '/.sass-lint.yml', theCWD + '/.sass-lint.yml', () => {});
         spinner.succeed();
 
         // The npm install.
         spinner.start('4. Install Woodoo-Buildtools dependencies ...');
-        await execa('npm', ['--prefix', 'woodoo-buildtools', 'install', 'woodoo-buildtools']);
+        await execa('npm', ['--prefix', theCWD, 'install', theCWD]);
         spinner.succeed();
 
         // CHECK GULPFILE
