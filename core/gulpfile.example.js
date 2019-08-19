@@ -31,7 +31,7 @@ const shell = require('gulp-shell');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const browsersync = require("browser-sync").create();
-
+const browserSyncReuseTab = require('browser-sync-reuse-tab')(browsersync);
 
 /**
  * Shell Messages
@@ -54,7 +54,8 @@ function browserSync(done) {
             https: vars.browsersync.https,
             notify: vars.browsersync.notify,
             ghostMode: vars.browsersync.ghostmode,
-        });
+            open: false
+        }, browserSyncReuseTab);
     } else {
         log('Browsersync is disabled in gulp_config.json');
     }
