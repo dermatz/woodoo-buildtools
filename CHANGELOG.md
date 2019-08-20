@@ -6,13 +6,23 @@ All notable changes in this project are documented in this file.
 
 <br>
 
-### [2.2.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.3)
+### [2.3.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.3.1)
 20 August 2019
 
 #### Changelog for this Version:
+
+___
+### [2.3.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.3.0)
+20 August 2019
+
+#### Changelog for this Version:
+- [05691d5](https://gitlab.com/dermatz/woodoo-buildtools/commit/05691d51cf73a25ab2830818e265e2ae2cf7b701): [TASK] Version bump
+- [1b48fcc](https://gitlab.com/dermatz/woodoo-buildtools/commit/1b48fcc6c67621f27fe53ac266cf3140d9c94cd8): Merge master into develop
+- [380fa3a](https://gitlab.com/dermatz/woodoo-buildtools/commit/380fa3a5bb06f4744391f26163161e6a1cc93221): [FEATURE] Improved BrowserSync - reuse existing Tab
 - [3d75e2a](https://gitlab.com/dermatz/woodoo-buildtools/commit/3d75e2a08bdf4f47cc300b4c4ef9bf7b8bc70c8c): [FEATURE] Improve bette Browser-Tab handling for BroserSync
 - [cb81a43](https://gitlab.com/dermatz/woodoo-buildtools/commit/cb81a43437e807fab4f6235b5169bcc0f58e7cc9): [TASK] update npm dependencies
 - [cf4db27](https://gitlab.com/dermatz/woodoo-buildtools/commit/cf4db27faa317f3b022d0851ec74013eebb84f24): [TASK] update npm dependencies
+- [46154a5](https://gitlab.com/dermatz/woodoo-buildtools/commit/46154a5f4c9e35aeeafd947a4521ae65ad484b94): Merge tag &#x27;2.2.3&#x27; into develop
 
 #### Updated Dependencies
 
@@ -21,22 +31,30 @@ All notable changes in this project are documented in this file.
 
 #### New Features
 
+- [380fa3a](https://gitlab.com/dermatz/woodoo-buildtools/commit/380fa3a5bb06f4744391f26163161e6a1cc93221): [FEATURE] Improved BrowserSync - reuse existing Tab
 - [3d75e2a](https://gitlab.com/dermatz/woodoo-buildtools/commit/3d75e2a08bdf4f47cc300b4c4ef9bf7b8bc70c8c): [FEATURE] Improve bette Browser-Tab handling for BroserSync
+
+___
+### [2.2.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.3)
+18 August 2019
+
+#### Changelog for this Version:
+- [2de599d](https://gitlab.com/dermatz/woodoo-buildtools/commit/2de599dd29a84e18b803f50f4c8691bbf522c2d4): [TASK] add new json to install process
+- [1d57ad8](https://gitlab.com/dermatz/woodoo-buildtools/commit/1d57ad87f4b4289ce4f4dfa6a9c5ed5ae29eb6e5): Merge tag &#x27;2.2.2&#x27; into develop
 
 ___
 ### [2.2.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.2)
 18 August 2019
 
 #### Changelog for this Version:
-- [1d57ad8](https://gitlab.com/dermatz/woodoo-buildtools/commit/1d57ad87f4b4289ce4f4dfa6a9c5ed5ae29eb6e5): Merge tag &#x27;2.2.2&#x27; into develop
 - [87344da](https://gitlab.com/dermatz/woodoo-buildtools/commit/87344daa89abed72eb068186debc40378af2ce80): [TASK] Version bump
+- [66dcaa5](https://gitlab.com/dermatz/woodoo-buildtools/commit/66dcaa5f9c6204e76065229b81bf71810db76246): Merge tag &#x27;2.2.1&#x27; into develop
 
 ___
 ### [2.2.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.1)
 18 August 2019
 
 #### Changelog for this Version:
-- [66dcaa5](https://gitlab.com/dermatz/woodoo-buildtools/commit/66dcaa5f9c6204e76065229b81bf71810db76246): Merge tag &#x27;2.2.1&#x27; into develop
 - [7c42ec7](https://gitlab.com/dermatz/woodoo-buildtools/commit/7c42ec749e82c1a43a0a6c3ab0a832717f48431d): [TASK] fix install dependencies and file structure after download
 - [ae31a80](https://gitlab.com/dermatz/woodoo-buildtools/commit/ae31a80d85c501111222579089eac9548fc90a7e): Merge tag &#x27;2.2.0&#x27; into develop
 
