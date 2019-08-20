@@ -1,413 +1,188 @@
 # CHANGELOG
-
 All notable changes in this project are documented in this file.
 
 [![Dermatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-<br>
 
-### [2.3.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.3.1)
-20 August 2019
-
-#### Changelog for this Version:
-
-___
-### [2.3.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.3.0)
-20 August 2019
-
-#### Changelog for this Version:
-- [05691d5](https://gitlab.com/dermatz/woodoo-buildtools/commit/05691d51cf73a25ab2830818e265e2ae2cf7b701): [TASK] Version bump
-- [1b48fcc](https://gitlab.com/dermatz/woodoo-buildtools/commit/1b48fcc6c67621f27fe53ac266cf3140d9c94cd8): Merge master into develop
-- [380fa3a](https://gitlab.com/dermatz/woodoo-buildtools/commit/380fa3a5bb06f4744391f26163161e6a1cc93221): [FEATURE] Improved BrowserSync - reuse existing Tab
-- [3d75e2a](https://gitlab.com/dermatz/woodoo-buildtools/commit/3d75e2a08bdf4f47cc300b4c4ef9bf7b8bc70c8c): [FEATURE] Improve bette Browser-Tab handling for BroserSync
-- [cb81a43](https://gitlab.com/dermatz/woodoo-buildtools/commit/cb81a43437e807fab4f6235b5169bcc0f58e7cc9): [TASK] update npm dependencies
-- [cf4db27](https://gitlab.com/dermatz/woodoo-buildtools/commit/cf4db27faa317f3b022d0851ec74013eebb84f24): [TASK] update npm dependencies
-- [46154a5](https://gitlab.com/dermatz/woodoo-buildtools/commit/46154a5f4c9e35aeeafd947a4521ae65ad484b94): Merge tag &#x27;2.2.3&#x27; into develop
-
-#### Updated Dependencies
-
-- [cb81a43](https://gitlab.com/dermatz/woodoo-buildtools/commit/cb81a43437e807fab4f6235b5169bcc0f58e7cc9): [TASK] update npm dependencies
-- [cf4db27](https://gitlab.com/dermatz/woodoo-buildtools/commit/cf4db27faa317f3b022d0851ec74013eebb84f24): [TASK] update npm dependencies
-
-#### New Features
-
-- [380fa3a](https://gitlab.com/dermatz/woodoo-buildtools/commit/380fa3a5bb06f4744391f26163161e6a1cc93221): [FEATURE] Improved BrowserSync - reuse existing Tab
-- [3d75e2a](https://gitlab.com/dermatz/woodoo-buildtools/commit/3d75e2a08bdf4f47cc300b4c4ef9bf7b8bc70c8c): [FEATURE] Improve bette Browser-Tab handling for BroserSync
-
-___
-### [2.2.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.3)
-18 August 2019
-
-#### Changelog for this Version:
-- [2de599d](https://gitlab.com/dermatz/woodoo-buildtools/commit/2de599dd29a84e18b803f50f4c8691bbf522c2d4): [TASK] add new json to install process
-- [1d57ad8](https://gitlab.com/dermatz/woodoo-buildtools/commit/1d57ad87f4b4289ce4f4dfa6a9c5ed5ae29eb6e5): Merge tag &#x27;2.2.2&#x27; into develop
-
-___
-### [2.2.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.2)
-18 August 2019
-
-#### Changelog for this Version:
-- [87344da](https://gitlab.com/dermatz/woodoo-buildtools/commit/87344daa89abed72eb068186debc40378af2ce80): [TASK] Version bump
-- [66dcaa5](https://gitlab.com/dermatz/woodoo-buildtools/commit/66dcaa5f9c6204e76065229b81bf71810db76246): Merge tag &#x27;2.2.1&#x27; into develop
-
-___
-### [2.2.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.1)
-18 August 2019
-
-#### Changelog for this Version:
-- [7c42ec7](https://gitlab.com/dermatz/woodoo-buildtools/commit/7c42ec749e82c1a43a0a6c3ab0a832717f48431d): [TASK] fix install dependencies and file structure after download
-- [ae31a80](https://gitlab.com/dermatz/woodoo-buildtools/commit/ae31a80d85c501111222579089eac9548fc90a7e): Merge tag &#x27;2.2.0&#x27; into develop
-
-#### Updated Dependencies
-
-- [7c42ec7](https://gitlab.com/dermatz/woodoo-buildtools/commit/7c42ec749e82c1a43a0a6c3ab0a832717f48431d): [TASK] fix install dependencies and file structure after download
-
-___
-### [2.2.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.2.0)
-18 August 2019
-
-#### Changelog for this Version:
-- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
-- [2d2c04b](https://gitlab.com/dermatz/woodoo-buildtools/commit/2d2c04bed03dc718dbf178ae2dcd02147e313c00): [TASK] Version Bump
-- [4b45fe8](https://gitlab.com/dermatz/woodoo-buildtools/commit/4b45fe8fcc0f4a270cb50d73bafa0f629568163e): Merge tag &#x27;2.1.14&#x27; into develop
-
-#### New Features
-
-- [a50f943](https://gitlab.com/dermatz/woodoo-buildtools/commit/a50f943feccc98c99849ad743741b71bf4c8ae62): [FEATURE] improve setup process, remove composer installation
-
-___
-### [2.1.14](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.14)
-17 August 2019
-
-#### Changelog for this Version:
-- [87181f8](https://gitlab.com/dermatz/woodoo-buildtools/commit/87181f8e0328de3022c744e8de69beb20f08ad8e): [TASK] improved js uglify and file handling during build process
-- [2c0559c](https://gitlab.com/dermatz/woodoo-buildtools/commit/2c0559ceedeb7c530f23f4b8d9c4e09bb185fb0c): Merge tag &#x27;2.1.13&#x27; into develop
-
-___
-### [2.1.13](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.13)
-17 August 2019
-
-#### Changelog for this Version:
-- [e788e87](https://gitlab.com/dermatz/woodoo-buildtools/commit/e788e8719534496101fb190d021455783c111564): [TASK] update readme
-- [a06454f](https://gitlab.com/dermatz/woodoo-buildtools/commit/a06454ffef03157f79b0f6d542a221d4242e059d): Merge tag &#x27;2.1.12&#x27; into develop
-
-___
-### [2.1.12](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.12)
-17 August 2019
-
-#### Changelog for this Version:
-- [df2d9a9](https://gitlab.com/dermatz/woodoo-buildtools/commit/df2d9a9c089f2a0fa2750e4a35d0f0e3b3b64040): [TASK] Version Bump and add new setup description to readme.md
-- [5feea64](https://gitlab.com/dermatz/woodoo-buildtools/commit/5feea64d56b01872864d7ca743804c3002816744): Merge tag &#x27;2.1.11&#x27; into develop
-
-___
-### [2.1.11](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.11)
-17 August 2019
-
-#### Changelog for this Version:
-- [6a570b9](https://gitlab.com/dermatz/woodoo-buildtools/commit/6a570b9b123170f313751129a59aa1e3e6b00c57): [TASK] improve Setup process. The setup now create a separate directory to install woodoo-buildtools.
-- [f500fa7](https://gitlab.com/dermatz/woodoo-buildtools/commit/f500fa701b1e31f3d0a8c0b78ab2835903f14a68): [TASK] Version Bump
-
-___
-### [2.1.10](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.10)
-16 August 2019
-
-#### Changelog for this Version:
-- [20f3bae](https://gitlab.com/dermatz/woodoo-buildtools/commit/20f3baed00b99653d1986aed606691d4fc6e97f1): Merge tag &#x27;2.1.10&#x27; into develop
-- [4e25925](https://gitlab.com/dermatz/woodoo-buildtools/commit/4e25925849615c305b0a19eb8c1f3cdf6c3aebb8): [TASK] improve setup and fixed some minor bugs
-
-___
-### [2.1.9](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.9)
-16 August 2019
-
-#### Changelog for this Version:
-- [470e546](https://gitlab.com/dermatz/woodoo-buildtools/commit/470e5467b84bcbbd57d788cdd6a306b9ada31f20): Merge tag &#x27;2.1.9&#x27; into develop
-- [5d4309d](https://gitlab.com/dermatz/woodoo-buildtools/commit/5d4309db5b216ea53e593ad7aafb69b91e61fe03): [TASK] Improve Installation
-
-___
-### [2.1.8](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.8)
-16 August 2019
-
-#### Changelog for this Version:
-- [0e43de5](https://gitlab.com/dermatz/woodoo-buildtools/commit/0e43de50da5c767f373892eb4db4d17cf3f5b2e7): Merge tag &#x27;2.1.8&#x27; into develop
-- [054477e](https://gitlab.com/dermatz/woodoo-buildtools/commit/054477e8d473907c8fc35c33102349e2b6c7d5ba): [TASK] fix install helper path
-
-___
-### [2.1.7](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.7)
-16 August 2019
-
-#### Changelog for this Version:
-- [89ae86e](https://gitlab.com/dermatz/woodoo-buildtools/commit/89ae86ef6629f48bf2365f90b6e79d5171f22950): Merge tag &#x27;2.1.7&#x27; into develop
-- [a9785a9](https://gitlab.com/dermatz/woodoo-buildtools/commit/a9785a9884c4db6ccba918da20016fa64de0bd73): [TASK] improve setup process for npx
-- [4461355](https://gitlab.com/dermatz/woodoo-buildtools/commit/4461355f9f522facd251f9a021658c0c917a2acd): [TASK] Version bump
-
-___
-### [2.1.6](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.6)
-16 August 2019
-
-#### Changelog for this Version:
-- [800c5bd](https://gitlab.com/dermatz/woodoo-buildtools/commit/800c5bd91d498bfacd9e02861257601bdbe5e063): Merge tag &#x27;2.1.6&#x27; into develop
-- [2b1dea8](https://gitlab.com/dermatz/woodoo-buildtools/commit/2b1dea8a07fea16f6837fc5de668739d2f98b3c7): [TASK] update install script
-
-___
-### [2.1.5](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.5)
-16 August 2019
-
-#### Changelog for this Version:
-- [9ade33a](https://gitlab.com/dermatz/woodoo-buildtools/commit/9ade33ac65fa63575af90364b19d2503e111a17b): Merge tag &#x27;2.1.5&#x27; into develop
-- [1f7906b](https://gitlab.com/dermatz/woodoo-buildtools/commit/1f7906bc1b95b536e77a603f4553b3e8ceefdf9b): [TASK] update package-version
-
-___
-### [2.1.4](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.4)
-16 August 2019
-
-#### Changelog for this Version:
-- [7090807](https://gitlab.com/dermatz/woodoo-buildtools/commit/70908071a9826d6e9aa85845c4a46175d483a86c): [TASK] update bin command
-- [526b929](https://gitlab.com/dermatz/woodoo-buildtools/commit/526b9295a314cf8e7e005d2dca1cfad7b2f0e0fd): Merge tag &#x27;2.1.3&#x27; into develop
-
-___
-### [2.1.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.3)
-16 August 2019
-
-#### Changelog for this Version:
-- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] add new install process
-- [8b54b2f](https://gitlab.com/dermatz/woodoo-buildtools/commit/8b54b2faa1c443f7fb544800c0fdefa839c8d77e): [TASK] remove old files
-- [7aa2692](https://gitlab.com/dermatz/woodoo-buildtools/commit/7aa2692cc9a3435ff8167dbaac2f6f3bc830b233): [TASK] add rename methode for js concatinations
-- [be74ca0](https://gitlab.com/dermatz/woodoo-buildtools/commit/be74ca007bc3034d505b19a0c790f1b93fe601c4): [TASK] update gulpfile example for better sourcemaps in css files, improve setup
-- [5b442b4](https://gitlab.com/dermatz/woodoo-buildtools/commit/5b442b45eb08ff420abeaa9bb974b3527079709b): [TASK] change wording in install files
-- [5ea5383](https://gitlab.com/dermatz/woodoo-buildtools/commit/5ea5383a7c7afe0da6a6eb3d7096bab424de8027): release commit
-- [5d0f4c6](https://gitlab.com/dermatz/woodoo-buildtools/commit/5d0f4c6c408cb6b8b6f8b7d62536bfa7abde8674): [TASK] add files to setup process
-
-#### New Features
-
-- [7cd7a37](https://gitlab.com/dermatz/woodoo-buildtools/commit/7cd7a3726db960286f7a3a5840af7d7b121cb629): [FEATURE] add new install process
-
-___
-### [2.1.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.2)
-14 August 2019
-
-#### Changelog for this Version:
-- [10bf123](https://gitlab.com/dermatz/woodoo-buildtools/commit/10bf1230a844a26f271c7e033577ba12c06ec46e): [FEATURE] add new automatic changelog logic
-- [b5446ca](https://gitlab.com/dermatz/woodoo-buildtools/commit/b5446ca25e89d7de9f802f4d179f27f41832936c): update npm dependencies
-- [c74fb5d](https://gitlab.com/dermatz/woodoo-buildtools/commit/c74fb5d761713a82ee7857df8a59f4e568afe16f): release commit
-
-#### Updated Dependencies
-
-- [b5446ca](https://gitlab.com/dermatz/woodoo-buildtools/commit/b5446ca25e89d7de9f802f4d179f27f41832936c): update npm dependencies
-
-#### New Features
-
-- [10bf123](https://gitlab.com/dermatz/woodoo-buildtools/commit/10bf1230a844a26f271c7e033577ba12c06ec46e): [FEATURE] add new automatic changelog logic
-
-___
-### [2.1.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.1)
-26 June 2019
-
-#### Changelog for this Version:
-- [12dc963](https://gitlab.com/dermatz/woodoo-buildtools/commit/12dc9630f956bad13b12f2afa84512165ad4e88a): update dev dependencies
-
-#### Updated Dependencies
-
-- [12dc963](https://gitlab.com/dermatz/woodoo-buildtools/commit/12dc9630f956bad13b12f2afa84512165ad4e88a): update dev dependencies
-
-___
-### [2.1.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.1.0)
-9 May 2019
-
-#### Changelog for this Version:
-- [044cb5b](https://gitlab.com/dermatz/woodoo-buildtools/commit/044cb5b24e5fc4783fcd51226c630edd264d1c9f): applied 2.1.0 features
-
-___
-### [2.0.6](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.6)
-24 April 2019
-
-#### Changelog for this Version:
-- [fb0625c](https://gitlab.com/dermatz/woodoo-buildtools/commit/fb0625cd600d5550fbbf548d75b61a806ffeaa35): [TASK] update to 2.0.6
-
-___
-### [2.0.5](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.5)
-9 April 2019
-
-#### Changelog for this Version:
-- [137245c](https://gitlab.com/dermatz/woodoo-buildtools/commit/137245c80ed4cd6ee5910dedab7e4435e089c20f): Update gulp_config
-- [bdadc5a](https://gitlab.com/dermatz/woodoo-buildtools/commit/bdadc5a285c4c5d8b4e84fca94a1b96da5eeee95): [TASK] fixed strings in gulp_config.json
-- [793638a](https://gitlab.com/dermatz/woodoo-buildtools/commit/793638a422babcf7bc90eb63ed1caf6e94fa5389): Merge tag &#x27;2.0.5&#x27; into develop
-- [9fbb217](https://gitlab.com/dermatz/woodoo-buildtools/commit/9fbb217ba860af87361a7e72418bacfd1056ecc0): [TASK] update to 2.0.5
-
-___
-### [2.0.4](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.4)
-27 February 2019
-
-#### Changelog for this Version:
-- [56b5a3a](https://gitlab.com/dermatz/woodoo-buildtools/commit/56b5a3afacbf0f8d672e25731306c7f89d1c8330): [TASK] optimize error handling
-
-___
-### [2.0.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.3)
-25 February 2019
-
-#### Changelog for this Version:
-- [03b1735](https://gitlab.com/dermatz/woodoo-buildtools/commit/03b1735b4f5956d956a57808ddd05f45a3adbc67): [QA] fixed syntax in gulp config file
-- [86577e8](https://gitlab.com/dermatz/woodoo-buildtools/commit/86577e80f80e7e76afac425774e0f754871b0569): Merge tag &#x27;2.0.2&#x27; into develop
-
-___
-### [2.0.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.2)
-13 February 2019
-
-#### Changelog for this Version:
-- [aa08171](https://gitlab.com/dermatz/woodoo-buildtools/commit/aa08171c8310785eb666a45d0a7bd378ef7cb534): [FEATURE] improve local development with browsersync proxy
-- [985e80e](https://gitlab.com/dermatz/woodoo-buildtools/commit/985e80eaf5384576e8a9d1aef0a42320d5340f55): Merge tag &#x27;2.0.1&#x27; into develop
-
-#### New Features
-
-- [aa08171](https://gitlab.com/dermatz/woodoo-buildtools/commit/aa08171c8310785eb666a45d0a7bd378ef7cb534): [FEATURE] improve local development with browsersync proxy
-
-___
-### [2.0.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.1)
-13 February 2019
-
-#### Changelog for this Version:
-- [d7ff308](https://gitlab.com/dermatz/woodoo-buildtools/commit/d7ff3083c18de4c168820f687a06d1a3863d9007): [QS] fixed setup process gulp task
-- [80bd41a](https://gitlab.com/dermatz/woodoo-buildtools/commit/80bd41a67b55d97b20511a206162cf095e0ee1b9): Merge tag &#x27;2.0.0&#x27; into develop
-
-___
-### [2.0.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/2.0.0)
-13 February 2019
-
-#### Changelog for this Version:
-- [3053027](https://gitlab.com/dermatz/woodoo-buildtools/commit/30530275cc5413115416869f82232c4e3993dd46): [FEATURE] prepare wooodoo for 2.0.0, update gulp to version 4 and update all dev-dependencies
-- [c8f4ff5](https://gitlab.com/dermatz/woodoo-buildtools/commit/c8f4ff52f84a824f80903fa64a1da10f32c0df76): [TASK] Version bump
-
-#### Updated Dependencies
-
-- [3053027](https://gitlab.com/dermatz/woodoo-buildtools/commit/30530275cc5413115416869f82232c4e3993dd46): [FEATURE] prepare wooodoo for 2.0.0, update gulp to version 4 and update all dev-dependencies
-
-#### New Features
-
-- [3053027](https://gitlab.com/dermatz/woodoo-buildtools/commit/30530275cc5413115416869f82232c4e3993dd46): [FEATURE] prepare wooodoo for 2.0.0, update gulp to version 4 and update all dev-dependencies
-
-___
-### [1.5.3](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.5.3)
-6 December 2018
-
-#### Changelog for this Version:
-- [fca5190](https://gitlab.com/dermatz/woodoo-buildtools/commit/fca5190ecb980ccdb7f1a01b5f39cd6b5b545eba): [TASK] update node packages
-- [c348db5](https://gitlab.com/dermatz/woodoo-buildtools/commit/c348db5258d6a3e2ea8379bb2418acb915ebadab): [DEVOPS] update gitlab-ci artefacts handling
-- [9a716ea](https://gitlab.com/dermatz/woodoo-buildtools/commit/9a716ea576940192df59fb525189a8dc061dd0be): Merge tag &#x27;1.5.2&#x27; into develop
-
-___
-### [1.5.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.5.2)
-31 October 2018
-
-#### Changelog for this Version:
-- [819b2d1](https://gitlab.com/dermatz/woodoo-buildtools/commit/819b2d18d8ac521407875e90376438eeeb8d5a8a): [TASK] update node packages
-- [b14967a](https://gitlab.com/dermatz/woodoo-buildtools/commit/b14967a2aff42d75a4e9aa3789bd2ddf0c4cbc39): Merge tag &#x27;1.5.1&#x27; into develop
-
-___
-### [1.5.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.5.1)
-4 October 2018
-
-#### Changelog for this Version:
-- [eb7e4f8](https://gitlab.com/dermatz/woodoo-buildtools/commit/eb7e4f83b352512c392c5f1bef247a443f8f47da): [TASK] update to 1.5.1, see changes in changelog.md
-- [9ef9899](https://gitlab.com/dermatz/woodoo-buildtools/commit/9ef98999e1102b21d55e64b03535c598bacfc0b0): Merge tag &#x27;1.5.0&#x27; into develop
-
-___
-### [1.5.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.5.0)
-2 October 2018
-
-#### Changelog for this Version:
-- [f7767e3](https://gitlab.com/dermatz/woodoo-buildtools/commit/f7767e37d15aed41a6021a5f2b2af88fff904a44): [TASK] add new update-behavior
-- [94ae003](https://gitlab.com/dermatz/woodoo-buildtools/commit/94ae0036b355d1d5b9a951c465fa209ca6a30cc2): [FEATRE] add new update task behavoirs, minor syntax fixes, Version bump
-- [2729d7a](https://gitlab.com/dermatz/woodoo-buildtools/commit/2729d7a940c08337b7b1fd3887971c05a25f89fc): [TASK] update composer install process
-- [4d64cee](https://gitlab.com/dermatz/woodoo-buildtools/commit/4d64cee468d5ac82e855da86f5822274df50fafa): [TASK] add new update-behavior
-- [b4e42b4](https://gitlab.com/dermatz/woodoo-buildtools/commit/b4e42b47fc2d1ba3f1fdc6dc3d0bd53fc70cf509): [QS] update readme for install instructions
-
-___
-### [1.4.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.4.2)
-27 September 2018
-
-#### Changelog for this Version:
-- [6e70494](https://gitlab.com/dermatz/woodoo-buildtools/commit/6e70494191de4b4677963a3f3d5ec6b99c7f11a5): [TASK] fixed minify task
-
-___
-### [1.4.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.4.1)
-18 September 2018
-
-#### Changelog for this Version:
-- [18faea6](https://gitlab.com/dermatz/woodoo-buildtools/commit/18faea67ae5389f63f9d3acda25481458d661c7e): [TASK] Version bump
-- [54882ec](https://gitlab.com/dermatz/woodoo-buildtools/commit/54882ec68eab974161658e7c93d72e9531a7d4af): [HOTFIX] fixed arrgs, string Error
-- [3129e91](https://gitlab.com/dermatz/woodoo-buildtools/commit/3129e9159cba01c7a5ea34e45365cbadc83919bf): [TASK] update readme
-
-___
-### [1.4.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.4.0)
-14 September 2018
-
-#### Changelog for this Version:
-- [0977a1f](https://gitlab.com/dermatz/woodoo-buildtools/commit/0977a1fd70956186713c8f315db8dac0ab2db873): [FEATURE] Version bump to 1.4.0
-- [ee41332](https://gitlab.com/dermatz/woodoo-buildtools/commit/ee413323192108159a590ca651b3e134caa76947): [TASK] Version bump, updated config-variables
-- [7ea2f7a](https://gitlab.com/dermatz/woodoo-buildtools/commit/7ea2f7a514c32c2760f74cdf27702dc2ed663957): [TASK] Version bump 1.4.0
-
-#### New Features
-
-- [0977a1f](https://gitlab.com/dermatz/woodoo-buildtools/commit/0977a1fd70956186713c8f315db8dac0ab2db873): [FEATURE] Version bump to 1.4.0
-
-___
-### [1.3.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.3.0)
-14 September 2018
-
-#### Changelog for this Version:
-- [abd160e](https://gitlab.com/dermatz/woodoo-buildtools/commit/abd160e4c62a34b5ac5bd35921d247a6a0372f68): Merge tag &#x27;1.3.0&#x27; into develop
-- [bd080a1](https://gitlab.com/dermatz/woodoo-buildtools/commit/bd080a1342aa29fe73f6e03d454308d2910e2847): [TASK] update dependencies
-
-#### Updated Dependencies
-
-- [abd160e](https://gitlab.com/dermatz/woodoo-buildtools/commit/abd160e4c62a34b5ac5bd35921d247a6a0372f68): Merge tag &#x27;1.3.0&#x27; into develop
-- [bd080a1](https://gitlab.com/dermatz/woodoo-buildtools/commit/bd080a1342aa29fe73f6e03d454308d2910e2847): [TASK] update dependencies
-
-___
-### [1.2.2](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.2.2)
-28 August 2018
-
-#### Changelog for this Version:
-- [75a2165](https://gitlab.com/dermatz/woodoo-buildtools/commit/75a2165f620a9cbca08ce9eb394599e86ad648df): Merge tag &#x27;1.2.2&#x27; into develop
-- [e62d14b](https://gitlab.com/dermatz/woodoo-buildtools/commit/e62d14bcf1a41946c5e93f76a5aab1bb03070dc4): [QS] update .sass-lint rules
-
-___
-### [1.2.1](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.2.1)
-21 August 2018
-
-#### Changelog for this Version:
-- [848f102](https://gitlab.com/dermatz/woodoo-buildtools/commit/848f10270d30febe0dd77d1aece4d00608589641): Merge tag &#x27;1.2.1&#x27; into develop
-- [ccc0b4c](https://gitlab.com/dermatz/woodoo-buildtools/commit/ccc0b4c1923bd52de07dff2e9c1546b5a1bba73c): [TASK] update dev-dependencies and bem lint workflows
-
-#### Updated Dependencies
-
-- [ccc0b4c](https://gitlab.com/dermatz/woodoo-buildtools/commit/ccc0b4c1923bd52de07dff2e9c1546b5a1bba73c): [TASK] update dev-dependencies and bem lint workflows
-
-___
-### [1.2.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.2.0)
-20 July 2018
-
-#### Changelog for this Version:
-- [4673c8f](https://gitlab.com/dermatz/woodoo-buildtools/commit/4673c8f7196cebb782c0a01fe51522f9c2236e4d): [TASK] update dev-dependencies, Version bump
-- [75d678a](https://gitlab.com/dermatz/woodoo-buildtools/commit/75d678ab42cd66db92f414475399d4f817fea85d): Update README.md
-
-#### Updated Dependencies
-
-- [4673c8f](https://gitlab.com/dermatz/woodoo-buildtools/commit/4673c8f7196cebb782c0a01fe51522f9c2236e4d): [TASK] update dev-dependencies, Version bump
-
-___
-### [1.1.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.1.0)
-16 April 2018
-
-#### Changelog for this Version:
-- [6d8ea9e](https://gitlab.com/dermatz/woodoo-buildtools/commit/6d8ea9e613d1b4a87538105e65270d3d700f7c1a): [TASK] update readme installdescription, update gulpfile.example with better watch-task handling, update npm packages
-- [e75f1c7](https://gitlab.com/dermatz/woodoo-buildtools/commit/e75f1c7133223d9fd959e68f107c1278842772a0): [TASK] add .travis.yml
-- [a0b54ce](https://gitlab.com/dermatz/woodoo-buildtools/commit/a0b54ce009f050a169f0c8026754376169321abb): [TASK] add travis build badge
-
-___
-### [1.0.0](https://gitlab.com/dermatz/woodoo-buildtools/-/tags/1.0.0)
-6 April 2018
-
-#### Changelog for this Version:
-- [71ff0e0](https://gitlab.com/dermatz/woodoo-buildtools/commit/71ff0e0d0658387172580d88b23a4455f828bb7b): inital commit
-
-___
+## Latest Release
+### [2.1.2 - 2.3.2](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+- Woodoo Buildtools is listed now on [https://www.npmjs.com/package/woodoo-buildtools](https://www.npmjs.com/package/woodoo-buildtools) 🤩
+- complete new setup process based on `npx`
+- BrowserSync now use opened Browser-Tabs for Sync Task. You can turn this off in the `gulp_config.json`
+- New File-Structure for the Woodoo-Buildtools Core to improve the installation and update handling
+- The `sass-lint.yml` will is delivered from Woodoo-Buildtools per default. Now you can specify your own path in the `gulp_config.json`
+- Changed the behavior for Autoprefixer with the new `.browserlistrc` file to your autoprefix scss / css
+- removed installion via composer 
+- removed Babel temporarily from the gulpfile (will come back in the futures)
+- removed autolog for Changelog updates
+
+#### Getting Started with the new Setup
+To install woodoo-Buildtools just open your project directory and run `npx woodoo-buildtools`
+```
+npx woodoo-buildtools   - install the current NPM Package of Woodoo-Buildtools automaticly 
+
+npm wodooo-init         - initialize the Woodoo-Buildtools merge with your Project Files (run this after setup) 
+npm woodoo-update       - runs the update task 
+```
+#### ⚠️ Update from Version 2.1.3 or newer to this Version:
+If you use Version 2.1.3 or newer, please remove `woodoo-buildtools/package-lock.json` and `woodoo-buildtools/package.json` and run `cd .. && npx woodoo-buildtoools`
+to get the latest version.
+
+### [2.1.1](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+- Known issues
+	- Babel has problems with some jQuery libraries
+
+- update dev dependencies
+	Name										Old			New
+	- @babel/core          7.4.4   7.4.5
+	- @babel/preset-env    7.4.4   7.4.5
+	- browser-sync        2.26.5  2.26.7
+	- gulp-imagemin        5.0.3   5.0.3
+	- gulp-shell           0.7.0   0.7.1
+	- tar                  4.4.8  4.4.10
+
+### [2.1.0](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+- add possibility to enable/disable browser-sync via `gulp_config.json`
+	- browsersync > enable > true/false (boolean)
+- add babel v8
+	- now you can write use Next Generation JavaScript in you Assets per default
+	- More Informations [https://babeljs.io/](https://babeljs.io/)
+- update dev dependencies
+	- `gulp`
+	- `node-sass`
+	- `browser-sync`
+
+## 2.0.6
+- add `tar` package to package.json for security vulnerability #803 [(see  nodesecurity report)](https://nodesecurity.io/advisories/803)
+- add some missing basic task to gulpfile (requires a compare and update of your local gulpfile)
+- update dev dependencies
+	- `gulp`
+	- `gulp-sourcemaps`
+	- `gulp-autoprefixer`
+	- `gulp-uglify`
+	- `browser-sync`
+	- `js-hint`
+
+### How to update up to 2.0.6:
+- `composer update dermatz/woodoo-buildtools`
+- `cd woodoo-buildtools`
+- `gulp update_json`
+
+## 2.0.5
+- update `gulp-shell` dependency to Version 0.7.0
+- update variable for `browsersync_proxy_local_url` in `gulp_config.json` because .dev domains are tld now
+- simple refactorings in `gulpfile.example.js`
+- add new browser-sync options to `gulp_config.json` __Important: update your gulp_config.json__
+- update gulpfile.js with new browser-sync options __Important: update your gulpfile.js__
+
+#### Files DIFF needed?:
+Yes, following files has been changed:
+- `gulp_config.json`
+- `gulpfile.js` ( diff with _gulpfile.example.js_ )
+
+#### Vulnerabilities Found:
+Regular Expression Denial of Service (ReDos) of the npm `braces` package (wait for fix from package-author)
+
+---
+## 2.0.4
+- optimize error handling to prevent sass and js watcher brakes on error
+---
+## 2.0.3
+- fixed syntax in gulp_config.json
+---
+## 2.0.2
+- add browsersync proxy for local dev-domains
+---
+## 2.0.1
+- Fixed setup process task
+---
+## 2.0.0 - Update to GULP 4.x
+- completly change and refactor the gulpfile for gulp 4.x
+- rearrange the task sort order and groups
+- add .nvmrc for node 10.x
+- add browserSync (config root and port in gulp_config.json)
+---
+## 1.5.3 - NPM Package updates
+
+- `fancy-log` from __1.3.2__ to __1.3.3__
+- `graceful-fs` from __4.1.11__ to __4.1.15__
+- `gulp-imagemin` from __4.1.0__ to __5.0.3__
+- `gulp-plumber` from __1.2.0__ to __1.2.1__
+---
+## 1.5.2 - NPM Package updates
+- update node package `gulp-sass` to version 4.0.2
+---
+## 1.5.1
+- update setup description in README.md and add notice for best asset-folder structure
+- improved task-dependencies (_chainings_) and task-namings
+- improved `gulp_config.json` folder description
+- add an important css-minify compatibility setting (`restructure`) to prevent css restructuring
+	I disable this feature to prevent errors during restructuring of css-code in the minified css file with a lot of lib's. Of course, you can everytime enable this setting in the `sass_minified` task.
+
+		.pipe(minifyCSS({
+            restructure: false, // enable this feature for maximum compression - check for css errors after minify!
+            sourceMap: true
+        }))
+---
+## 1.5.0
+- Fixed minor gulpfile syntax error for _minify_js_ task
+- Add new update process
+
+		gulp update
+		gulp update-json
+
+	Now it is new very easy to update the Buildtools and the project-json together with a single command. Just type `gulp update` to get the newest woodoo-package and automerge all dependencies from woodoo and your project. If you only want to merge the package.jsons without an update, just type `gulp update-json`.
+---
+## 1.4.2
+-  gulpfile.example.js
+	└── fixed task `minify_js`: All js files will be correct minified now
+---
+## 1.4.1
+- fixed error during woodoo-setup
+	└── fixed js error in dev-task, gulpSequence Error in `gulpfile.example.js`
+---
+## 1.4.0
+- Refactored gulpfile and `gulp_config.json`
+	└──	For a easier project configuration. Now you can copy & paste your project
+		folder structure (pathes) into the gulp_config.json to set the pathes for the gulp tasks.
+
+- Current Woodoo-Version
+	└── Now you can see the current Woodoo Version in every gulp task output
+
+- Dependencies Outdate-Check
+	├── Add npm-dependencies outdate check was added to the gulp default task.
+	└── Now you get informations about outdated packages before the compiled files are checked-in in your version control.
+
+- More than one Projects! (Work in Process)
+	└── Another project-root was added in the `gulp_config.json` to implement a secend project.
+---
+## 1.3.0
+- updated dev-dependencies
+	├── gulp-autoprefixer to 6.0.0
+	└── gulp-postcss to 8.0.0
+---
+## 1.2.2
+- disabled sass-lint rule no-vendor-prefixes
+	└── because in modern css it can be necessary to add "-webkit-xxxx" vendor prefixes direct in scss.
+---
+## 1.2.1
+- dev-dependencies updates
+	└── `gulp-rename`
+- update .sass-lint.yml to optimize lint for BEM Class-Nestings
+---
+## 1.2.0
+- dev-dependencies updates
+---
+## 1.1.0
+- updated readme install description
+- add update-packages task
+- refactor gulpfile for better watch-task handling (now sass or js run only if necessary)
+- update gulp-sass and gulp-merge-json packages
+---
+## 1.0.0
+- Woodoo Setup with automatic project package.json merging
+- Gulpfile Configuration
+- Gitlab ci pipeline
+- Fixed gulpfile.example for better development usability
+- Fixed minor variable bugs
+- Example files

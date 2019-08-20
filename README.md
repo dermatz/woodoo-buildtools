@@ -2,33 +2,32 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.3.1
-- Author: Mathias Elle
-- E-Mail: hello@dermatz.de
-- Website: https://www.dermatz.de
+# Woodoo Frontend Buildtool 2.4.0
+>- Author: Mathias Elle
+>- E-Mail: hello@dermatz.de
+>- Website: https://www.dermatz.de
 
-Woodoo Buildtool is a standalone gulp setup with all necessary modern gulp dependencies to build
-and create your frontend projects. Woodoo Buildtool come with a config file to add your project specific pathes
+Woodoo Buildtool is a standalone gulp workflow with all modern gulp dependencies to build
+and create your frontend assets in few moments. Woodoo Buildtool come with a config file to add your project specific pathes
 and variables (`gulp_config.json`).
 
 Read more about it in the Getting Started section below this part.
 
+## Current Features
+Read [CHANGELOG](https://gitlab.com/dermatz/woodoo-buildtools/blob/master/CHANGELOG.md) for further Information about the latest Version
 
-## Gulp Features
-- NPX Setup
-- Gulp 4.x
-- Sass 4 Support
-- Babel 8
-- CSS Minify & Sourcemaps
-- CSS Autoprefixer
-- SCSS Linter
-- JS Concatination for Head-js, Lib's and Footer-JS
-- JS Minification
-- JS Linter
-- Browser-Sync (Multi-Device Livepreview)
-- Image-Optimisation
-- Automatic Setup Process via `npx woodoo-buildtools`
-- Automatic merge of your Project package.json with `gulp update_json` or `npm run woodoo-init`
+>- Automatic Setup Process via `npx woodoo-buildtools`
+>- Automatic merge of your Project package.json with `gulp update_json` or `npm run woodoo-init`
+>- Gulp 4.x
+>- Sass 4 Support
+>- CSS Minify & Sourcemaps
+>- CSS Autoprefixer (based on .browserlistrc)
+>- SCSS Linter (Show SCSS Errors based on .sass-lint.yml)
+>- JS Linter (Show JS-Errors based on .jshintrc)
+>- JS Concatination for Head-js, Lib's and Footer-JS
+>- JS Minification (*.min.js)
+>- Browser-Sync (Multi-Device Livepreview)
+>- Image-Optimisation
 
 ## Getting Started with full automatic NPM Setup
 In this case the Buildtool setup will create and install all necessary files.
