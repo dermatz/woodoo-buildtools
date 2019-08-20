@@ -2,14 +2,14 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.3.0
+# Woodoo Frontend Buildtool 2.3.1
 - Author: Mathias Elle
 - E-Mail: hello@dermatz.de
 - Website: https://www.dermatz.de
 
 Woodoo Buildtool is a standalone gulp setup with all necessary modern gulp dependencies to build
-and create your frontend projects. Woodoo Buildtool come with a config file to add your project specific pathes 
-and variables (`gulp_config.json`). 
+and create your frontend projects. Woodoo Buildtool come with a config file to add your project specific pathes
+and variables (`gulp_config.json`).
 
 Read more about it in the Getting Started section below this part.
 
@@ -30,10 +30,10 @@ Read more about it in the Getting Started section below this part.
 - Automatic Setup Process via `npx woodoo-buildtools`
 - Automatic merge of your Project package.json with `gulp update_json` or `npm run woodoo-init`
 
-## Getting Started with full automatic NPM Setup 
+## Getting Started with full automatic NPM Setup
 In this case the Buildtool setup will create and install all necessary files.
 
-This might take only a few seconds 
+This might take only a few seconds
 
 ```
 
@@ -50,6 +50,14 @@ npm run woodoo-init
 Just follow the install instructions.
 
 ---
+## Update Woodoo-Buildtools
+To update just run
+```
+     npm run woodoo-update
+```
+
+---
+
 #### Just a tip: Get a perfect folder structure
 To get best results you can get this sample-project structure.
 ```
@@ -89,8 +97,8 @@ Issue-Reporting
 Feel free to report issues or add pull-requests. Thanks for your support!
 
 Thanks goes to
---- 
-- Inspiration for the installation process by https://github.com/ahmadawais 
+---
+- Inspiration for the installation process by https://github.com/ahmadawais
 
 License
 ---
