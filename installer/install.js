@@ -26,6 +26,7 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp_config.json',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.jshintrc',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.browserslistrc',
     ];
 
 // include hidden Dotfiles
@@ -72,6 +73,7 @@ module.exports = () => {
         spinner.start(`3. Copy files from Woodoo-Buildtools Core ...`);
         await fs.copyFile(core + '/.jshintrc', theCWD + '/.jshintrc', () => {});
         await fs.copyFile(core + '/.sass-lint.yml', theCWD + '/.sass-lint.yml', () => {});
+        await fs.copyFile(core + '/.browserslistrc', theCWD + '/.browserslistrc', () => {});
         spinner.succeed();
 
         // The npm install.
