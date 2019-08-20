@@ -54,7 +54,7 @@ function browserSync(done) {
             https: vars.browsersync.https,
             notify: vars.browsersync.notify,
             ghostMode: vars.browsersync.ghostmode,
-            open: false
+            open: vars.browsersync.new_tab
         }, browserSyncReuseTab);
     } else {
         log('Browsersync is disabled in gulp_config.json');

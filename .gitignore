@@ -3,4 +3,4 @@ package-lock.json
 yarn.lock
 .idea
 test
-s
+woodoo-buildtools
