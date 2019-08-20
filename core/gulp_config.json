@@ -9,7 +9,8 @@
     "port_ui" : 8080,
     "https" : false,
     "notify" : true,
-    "ghostmode" : true
+    "ghostmode" : true,
+    "new_tab": false
   },
   "project" : {
     "path" :          "../theme/",
