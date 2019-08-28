@@ -106,6 +106,7 @@ function scss() {
 // SASS LINT =====================================================================================================================
 
 function scsslint() {
+    log('Using ' + path_sass_lint); // Shows the current loaded Sass-Lint path the shell-output
     return src([
             vars.project.path_scss + '**/*.s+(a|c)ss',
             '!' + vars.project.path_scss + 'path/to/ignore/**/',  // Add a path to ignore files
@@ -212,7 +213,7 @@ function image_minify() {
             })
         ])
     )
-    .pipe(dest(vars.project.path_images));
+    .pipe(dest(vars.project.path_dist + 'images'));
 }
 
 // WATCH TASK ====================================================================================================================
