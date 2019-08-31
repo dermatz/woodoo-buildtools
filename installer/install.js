@@ -23,16 +23,17 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/README.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/CHANGELOG.md',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulpfile.example.js',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp_config.json',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.jshintrc',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp.config.js',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.eslintrc',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.babelrc',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.browserslistrc',
     ];
 
-// include hidden Dotfiles
-    const dotFiles = ['.sass-lint.yml', '.jshintrc'];
+    // include hidden Dotfiles
+    const dotFiles = ['.sass-lint.yml', '.babelrc', '.browserslistrc', '.eslintrc'];
 
-// Install Process ...
+    // Install Process ...
     console.log('\n');
     console.log(
         '📦 ',
@@ -44,7 +45,7 @@ module.exports = () => {
     const spinner = ora({text: ''});
     spinner.start(`1. Downloading Woodoo-Buildtools source in → ${chalk.black.bgGreenBright(` ${theDir} `)}`);
 
-// Download
+    // Download
     Promise.all(filesToDownload.map(x => download(x, `${core}`))).then(async () => {
         dotFiles.map(x => fs.rename(`${core}/${x.slice(1)}`, `${core}/${x}`, err => handleError(err)));
         spinner.succeed();
@@ -71,8 +72,6 @@ module.exports = () => {
 
         // The prepare files.
         spinner.start(`3. Copy files from Woodoo-Buildtools Core ...`);
-        await fs.copyFile(core + '/.jshintrc', theCWD + '/.jshintrc', () => {});
-        await fs.copyFile(core + '/.sass-lint.yml', theCWD + '/.sass-lint.yml', () => {});
         await fs.copyFile(core + '/.browserslistrc', theCWD + '/.browserslistrc', () => {});
         spinner.succeed();
 
@@ -105,15 +104,15 @@ module.exports = () => {
 
         // CHECK GULP CONFIG
         const check_gulp_config = new Promise(function (resolve, reject) {
-            spinner.start('Check Gulp Config file ...');
+            spinner.start('Check the new Gulp Config file ...');
             setTimeout(function () {
-                fs.access(theCWD + '/gulp_config.json', fs.F_OK, (notFound) => {
+                fs.access(theCWD + '/gulp.config.js', fs.F_OK, (notFound) => {
                     if (notFound) {
-                        fs.copyFile(core + '/gulp_config.json', theCWD + '/gulp_config.json', () => {});
-                        spinner.succeed(`4. Yeah. The ${chalk.yellow('gulp_config.json')} is ready now.`);
+                        fs.copyFile(core + '/gulp.config.js', theCWD + '/gulp.config.js', () => {});
+                        spinner.succeed(`4. Yeah. The new s${chalk.yellow('gulp.config.js')} is ready now.`);
                         resolve('renamed');
                     } else {
-                        spinner.succeed(`4. The ${chalk.yellow('gulp_config.json')} found!`);
+                        spinner.succeed(`4. The ${chalk.yellow('gulp.config.js')} found!`);
                         resolve('found');
                     }
                 });
