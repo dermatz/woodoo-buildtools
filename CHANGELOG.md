@@ -5,16 +5,45 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
-### [2.1.2 - 2.3.2](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
-- Woodoo Buildtools is listed now on [https://www.npmjs.com/package/woodoo-buildtools](https://www.npmjs.com/package/woodoo-buildtools) 🤩
-- complete new setup process based on `npx`
-- BrowserSync now use opened Browser-Tabs for Sync Task. You can turn this off in the `gulp_config.json`
-- New File-Structure for the Woodoo-Buildtools Core to improve the installation and update handling
-- The `sass-lint.yml` will is delivered from Woodoo-Buildtools per default. Now you can specify your own path in the `gulp_config.json`
-- Changed the behavior for Autoprefixer with the new `.browserlistrc` file to your autoprefix scss / css
-- removed installion via composer 
-- removed Babel temporarily from the gulpfile (will come back in the futures)
-- removed autolog for Changelog updates
+### [2.5.0](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- New `gulp.config.js` file which replace the old `gulp_config.json`. Now you can add you project variables here!
+>- New Support of BabelJS 7. JavaScript will be automatically compile in ES6 during concat- and minify task of your project js assets.
+>- The JSHint Linter is replaced by eslint. The linter is compatible to ES6 now. 
+>- There are 2 new config files in the Woodoo Core Folder: `.babelrc` and `.eslintrc`.
+>- The default `.sass-lint.yml` is moved back in the core folder of Woodoo-Buildtools. So we can update easierly. If you want to change the rules, just copy the file out of
+the folder edit the rules. After editing just set the new path to your new `.sass-lint.yml` in the config file `gulp.config.js`.
+>- __New way to Concat your JS Files!__ :
+> Now you can specify you js concatination in the `gulp.config.js` file. Add all files in the `JS CONCATINATION` area.
+> This is necessary for a better gulpfile update in the future. You dont need to edit the gulpfile anymore in the future.
+
+__For Example - The new JS Concatination in the gulp.config.js:__
+Compile all lib-files like this example
+```
+const project_js_lib_files = [
+   'node_modules/jquery/jquery.js',
+   'node_modules/bootstrap/bootstrap.js',
+   project_js_lib + "**/*.js"
+];
+```
+
+### Update to this new Version:
+1. switch into the woodoo-buildtools directory
+2. run `npm run woodoo-update`
+3. make a backup of your `gulpfile.js` like `gulpfile.bak.js` > `mv gulpfile.js gulpfile.bak.js`
+4. Get the new Gulpfile-Version. Copy the file from the core `cp ./core/gulpfile.example.js gulpfile.js`
+5. Copy the concatination pathes for `lib`, `head` and `footer` from your `gulpfile.bak.js` into the new `gulp.config.js`  
+6. run `npm run woodoo-init` ... finish.
+
+### [2.1.2 - 2.4.0](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- Woodoo Buildtools is listed now on [https://www.npmjs.com/package/woodoo-buildtools](https://www.npmjs.com/package/woodoo-buildtools) 🤩
+>- complete new setup process based on `npx`
+>- BrowserSync now use opened Browser-Tabs for Sync Task. You can turn this off in the `gulp_config.json`
+>- New File-Structure for the Woodoo-Buildtools Core to improve the installation and update handling
+>- The `sass-lint.yml` will is delivered from Woodoo-Buildtools per default. Now you can specify your own path in the `gulp_config.json`
+>- Changed the behavior for Autoprefixer with the new `.browserlistrc` file to your autoprefix scss / css
+>- removed installion via composer 
+>- removed Babel temporarily from the gulpfile (will come back in the futures)
+>- removed autolog for Changelog updates
 
 #### Getting Started with the new Setup
 To install woodoo-Buildtools just open your project directory and run `npx woodoo-buildtools`

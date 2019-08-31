@@ -1,0 +1,13 @@
+{
+  "rules":{
+    "camelcase": 1,
+    "comma-dangle": 2,
+    "quotes": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true
+  }
+}

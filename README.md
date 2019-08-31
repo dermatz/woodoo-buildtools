@@ -2,7 +2,7 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.4.0
+# Woodoo Frontend Buildtool 2.5.0
 >- Author: Mathias Elle
 >- E-Mail: hello@dermatz.de
 >- Website: https://www.dermatz.de
@@ -20,6 +20,7 @@ Read [CHANGELOG](https://gitlab.com/dermatz/woodoo-buildtools/blob/master/CHANGE
 >- Automatic merge of your Project package.json with `gulp update_json` or `npm run woodoo-init`
 >- Gulp 4.x
 >- Sass 4 Support
+>- BabelJS 7 Support
 >- CSS Minify & Sourcemaps
 >- CSS Autoprefixer (based on .browserlistrc)
 >- SCSS Linter (Show SCSS Errors based on .sass-lint.yml)
