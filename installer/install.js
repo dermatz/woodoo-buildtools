@@ -26,7 +26,7 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp.config.js',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.eslintrc',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.babelrc'
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/babel.config.js',
     ];
 
     // include hidden Dotfiles
