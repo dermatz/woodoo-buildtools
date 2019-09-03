@@ -79,9 +79,7 @@ function scss() {
             includePaths: require('node-neat').with(externalPath)
         }))
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
+        .pipe(autoprefixer(wb.browserslist))
         .pipe(minifyCSS({
             restructure: false, // enable this feature for maximum compression - check for css errors after minify!
             sourceMap: true // enable Source Maps for css files

@@ -68,6 +68,24 @@ const imagemin_collapsegroups       =   true;               // default true
 const dependency_check              =   true;               // default is true - enable or disable the npm dependency check during build process
 
 //================================================================================================================================
+// BROWSERSLIST
+// Browserlist https://github.com/ai/browserslist
+//================================================================================================================================
+const browserlist =  [
+    'last 3 version',
+    '> 1%',
+    'ie >= 11',
+    'last 2 Android versions',
+    'last 2 ChromeAndroid versions',
+    'last 2 Chrome versions',
+    'last 2 Firefox versions',
+    'last 2 Safari versions',
+    'last 2 iOS versions',
+    'last 2 Edge versions',
+    'last 2 Opera versions'
+]
+
+//================================================================================================================================
 // MODULE EXPORTS
 // ⚠️ DO NOT EDIT BELOW THIS LINE !!!
 //================================================================================================================================
@@ -100,5 +118,6 @@ module.exports = {
     imagemin_progressive:       imagemin_progressive,
     imagemin_removeviewbox:     imagemin_removeviewbox,
     imagemin_collapsegroups:    imagemin_collapsegroups,
-    dependency_check:           dependency_check
+    dependency_check:           dependency_check,
+    browserslist:               browserlist
 };
