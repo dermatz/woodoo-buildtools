@@ -21,11 +21,12 @@ const project_js_head   =   project_js + 'head/';            // path to the head
 const project_js_footer =   project_js + 'footer/';          // path to the footer-js folder (includes files close before the </body>)
 
 //================================================================================================================================
-// LINTER CONFIG FILES
+// CONFIG FILES
 //================================================================================================================================
-const sassLint          =   woodoo_buildtools_core + '.sass-lint.yml';               // Name and Path to the sass-lint config file
+const sassLint          =   woodoo_buildtools_core + '.sass-lint.yml';      // Name and Path to the sass-lint config file
 const esLint            =   woodoo_buildtools_core + '.eslintrc';
 const babelLint         =   woodoo_buildtools_core + '.babelrc';
+const babelconfigFile   =   woodoo_buildtools_core + 'babel.config.js';                       // Name and Path to the babel.config.js file
 
 //================================================================================================================================
 // BROWSERSYNC
@@ -41,14 +42,20 @@ const browsersync_new_tab   =   false;
 
 //================================================================================================================================
 // JS CONCATINATION
+// Add your JavaScript Files and Frameworks here to minify as *.min.js into the dist folder
 //================================================================================================================================
+// Add all files for lib.min.js here
 const project_js_lib_files = [
     // "node_modules/path/to/libruary/...",                 // Add more locations in this array if you need
     project_js_lib + "**/*.js"
 ];
+
+// Add all files for head.min.js here
 const project_js_head_files = [
     project_js_head + "**/*.js"                             // Add more locations in this array if you need
 ];
+
+// Add all files for Footer.min.js here
 const project_js_footer_files = [
     project_js_footer + "**/*.js"                           // Add more locations in this array if you need
 ];
@@ -66,6 +73,31 @@ const imagemin_collapsegroups       =   true;               // default true
 // BUILD SETTINGS
 //================================================================================================================================
 const dependency_check              =   true;               // default is true - enable or disable the npm dependency check during build process
+
+//================================================================================================================================
+// BROWSERSLIST
+// Browserlist https://github.com/ai/browserslist
+//================================================================================================================================
+const browserlist =  [
+    'last 3 version',
+    '> 1%',
+    'ie >= 11',
+    'last 2 Android versions',
+    'last 2 ChromeAndroid versions',
+    'last 2 Chrome versions',
+    'last 2 Firefox versions',
+    'last 2 Safari versions',
+    'last 2 iOS versions',
+    'last 2 Edge versions',
+    'last 2 Opera versions'
+]
+
+
+
+
+
+
+
 
 //================================================================================================================================
 // MODULE EXPORTS
@@ -100,5 +132,7 @@ module.exports = {
     imagemin_progressive:       imagemin_progressive,
     imagemin_removeviewbox:     imagemin_removeviewbox,
     imagemin_collapsegroups:    imagemin_collapsegroups,
-    dependency_check:           dependency_check
+    dependency_check:           dependency_check,
+    browserslist:               browserlist,
+    babelconfigFile:            babelconfigFile
 };

@@ -79,9 +79,7 @@ function scss() {
             includePaths: require('node-neat').with(externalPath)
         }))
         .pipe(sass.sync().on('error', sass.logError))
-        .pipe(autoprefixer({
-            cascade: false
-        }))
+        .pipe(autoprefixer(wb.browserslist))
         .pipe(minifyCSS({
             restructure: false, // enable this feature for maximum compression - check for css errors after minify!
             sourceMap: true // enable Source Maps for css files
@@ -128,9 +126,18 @@ function concat_lib_js() {
         .pipe(sourcemaps.init())
         .pipe(eslint({ configFile: wb.eslint }))
         .pipe(eslint.format())
-        .pipe(babel({
-            presets: ['@babel/preset-env']
-        }))
+        .pipe(
+            babel({
+                configFile: wb.babelconfigFile,
+                presets: [
+                    [
+                        '@babel/preset-env', {
+                            targets: { browsers: wb.browserslist },
+                        }
+                    ]
+                ]
+            })
+        )
         .pipe(concat('lib.js'))
         .pipe(terser({
             keep_fnames: true,
@@ -150,9 +157,18 @@ function concat_head_js() {
         .pipe(sourcemaps.init())
         .pipe(eslint({ configFile: wb.eslint }))
         .pipe(eslint.format())
-        .pipe(babel({
-            presets: ['@babel/preset-env']
-        }))
+        .pipe(
+            babel({
+                configFile: wb.babelconfigFile,
+                presets: [
+                    [
+                        '@babel/preset-env', {
+                            targets: { browsers: wb.browserslist },
+                        }
+                    ]
+                ]
+            })
+        )
         .pipe(concat('head.js'))
         .pipe(terser({
             keep_fnames: true,
@@ -171,9 +187,18 @@ function concat_footer_js() {
         .pipe(sourcemaps.init())
         .pipe(eslint({ configFile: wb.eslint }))
         .pipe(eslint.format())
-        .pipe(babel({
-            presets: ['@babel/preset-env']
-        }))
+        .pipe(
+            babel({
+                configFile: wb.babelconfigFile,
+                presets: [
+                    [
+                        '@babel/preset-env', {
+                            targets: { browsers: wb.browserslist },
+                        }
+                    ]
+                ]
+            })
+        )
         .pipe(concat('footer.js'))
         .pipe(terser({
             keep_fnames: true,
@@ -207,7 +232,7 @@ function image_minify() {
                 })
             ])
         )
-        .pipe(dest(wb.project_path + 'images'));
+        .pipe(dest(wb.project_dist + 'images'));
 }
 
 // WATCH TASK ====================================================================================================================

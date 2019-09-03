@@ -26,12 +26,11 @@ module.exports = () => {
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/gulp.config.js',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.sass-lint.yml',
         'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.eslintrc',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.babelrc',
-        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/.browserslistrc',
+        'https://raw.githubusercontent.com/dermatz/woodoo-buildtools/master/core/babel.config.js',
     ];
 
     // include hidden Dotfiles
-    const dotFiles = ['.sass-lint.yml', '.babelrc', '.browserslistrc', '.eslintrc'];
+    const dotFiles = ['.sass-lint.yml', '.babelrc', '.eslintrc'];
 
     // Install Process ...
     console.log('\n');
@@ -70,19 +69,14 @@ module.exports = () => {
             return response;
         });
 
-        // The prepare files.
-        spinner.start(`3. Copy files from Woodoo-Buildtools Core ...`);
-        await fs.copyFile(core + '/.browserslistrc', theCWD + '/.browserslistrc', () => {});
-        spinner.succeed();
-
         // The npm install.
-        spinner.start('4. Install Woodoo-Buildtools dependencies ...');
+        spinner.start('3. Install Woodoo-Buildtools dependencies ...');
         await execa('npm', ['--prefix', theCWD, 'install', theCWD]);
         spinner.succeed();
 
         // CHECK GULPFILE
         const check_gulpfile = new Promise(function (resolve, reject) {
-            spinner.start('Check Gulpfile ...');
+            spinner.start('4. Check Gulpfile ...');
             setTimeout(function () {
                 fs.access(theCWD + '/gulpfile.js', fs.F_OK, (notFound) => {
                     if (notFound) {
@@ -104,15 +98,15 @@ module.exports = () => {
 
         // CHECK GULP CONFIG
         const check_gulp_config = new Promise(function (resolve, reject) {
-            spinner.start('Check the new Gulp Config file ...');
+            spinner.start('5. Check the new Gulp Config file ...');
             setTimeout(function () {
                 fs.access(theCWD + '/gulp.config.js', fs.F_OK, (notFound) => {
                     if (notFound) {
                         fs.copyFile(core + '/gulp.config.js', theCWD + '/gulp.config.js', () => {});
-                        spinner.succeed(`4. Yeah. The new s${chalk.yellow('gulp.config.js')} is ready now.`);
+                        spinner.succeed(`5. Yeah. The new s${chalk.yellow('gulp.config.js')} is ready now.`);
                         resolve('renamed');
                     } else {
-                        spinner.succeed(`4. The ${chalk.yellow('gulp.config.js')} found!`);
+                        spinner.succeed(`5. The ${chalk.yellow('gulp.config.js')} found!`);
                         resolve('found');
                     }
                 });

@@ -5,6 +5,13 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+### [2.5.2](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- Updated `core/gulpfile.example.js`: Changed destination directory for minified Images to `project_dist` + `images`
+>- Remove `core/.babelrc` and replace it with `core/babel.config.js` to ignore ES5 libraries in the `node_modules`.
+>- Remove `core/.browserlistrc` - Move all Parameters to the new `gulp.config.js`.
+>- Fixed Autoprefixer with new Config Settings. All SCSS Files inside monorepositories will be correct autoprefixed.
+>- Updated readme.md
+
 ### [2.5.1](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- Fixed true/false condition at line 44 in the `gulpfile-example.js`. Now the BrowserSync works like expected.
 
