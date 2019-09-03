@@ -41,7 +41,7 @@ log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
 // BROWSER SYNC ==================================================================================================================
 
 function browserSync(done) {
-    if(wb.browsersync_support === 'true') {
+    if(wb.browsersync_support === true) {
         browsersync.init({
             proxy: {
                 target: wb.browsersync_proxyUrl
