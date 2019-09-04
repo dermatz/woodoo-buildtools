@@ -216,7 +216,7 @@ function image_minify() {
     return src(
         wb.project_images + '**/*'
     )
-        .pipe(newer(wb.project_images))
+        .pipe(newer(wb.project_dist + 'images')) // check if newer images are available from src for this target folder
         .pipe(
             imagemin([
                 imagemin.gifsicle({interlaced: wb.imagemin_interlaced}),
