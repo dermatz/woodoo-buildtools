@@ -5,6 +5,10 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+### [2.5.3](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- Improved update script: `npm run woodoo-update` removes the complete core folder and prepare for a clean reinstall now
+>- NPX Install Script: Fixed an missing file error during the setup process in step 2.
+
 ### [2.5.2](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- Updated `core/gulpfile.example.js`: Changed destination directory for minified Images to `project_dist` + `images`
 >- Remove `core/.babelrc` and replace it with `core/babel.config.js` to ignore ES5 libraries in the `node_modules`.
