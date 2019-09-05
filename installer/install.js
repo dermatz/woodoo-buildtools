@@ -9,7 +9,6 @@ const download = require('download');
 const handleError = require('./handleError.js');
 const clearConsole = require('./clearConsole.js');
 const printNextSteps = require('./printNextSteps.js');
-
 const theCWD = process.cwd() + '/woodoo-buildtools';
 const core = process.cwd() + '/woodoo-buildtools/core';
 const theCWDArray = theCWD.split('/');
@@ -30,7 +29,7 @@ module.exports = () => {
     ];
 
     // include hidden Dotfiles
-    const dotFiles = ['.sass-lint.yml', '.babelrc', '.eslintrc'];
+    const dotFiles = ['.sass-lint.yml', '.eslintrc'];
 
     // Install Process ...
     console.log('\n');
