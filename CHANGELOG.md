@@ -5,6 +5,10 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+
+### [2.5.4](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- update node packages
+
 ### [2.5.3](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- Improved update script: `npm run woodoo-update` removes the complete core folder and prepare for a clean reinstall now
 >- NPX Install Script: Fixed an missing file error during the setup process in step 2.

@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.5.3",
+  "version": "2.5.4",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -52,7 +52,7 @@
   },
   "scripts": {
     "woodoo-init": "gulp update_json",
-    "woodoo-update": "rm -f package.json package-lock.json && rm -rf woodoo-buildtools/core && cd .. && npx woodoo-buildtools && cd woodoo-buildtools && npm run woodoo-init"
+    "woodoo-update": "rm -f package.json package-lock.json && rm -rf core && cd .. && npx woodoo-buildtools && cd woodoo-buildtools && npm run woodoo-init"
   },
   "dependencies": {
     "chalk": "^2.4.2",

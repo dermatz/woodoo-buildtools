@@ -2,7 +2,7 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.5.3
+# Woodoo Frontend Buildtool 2.5.4
 >- Author: Mathias Elle
 >- E-Mail: hello@dermatz.de
 >- Website: https://www.dermatz.de
