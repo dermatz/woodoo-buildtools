@@ -99,11 +99,7 @@ function scss() {
 
 function scsslint() {
     log('Using ' + wb.sasslint); // Shows the current loaded Sass-Lint path the shell-output
-    return src([
-            wb.project_scss + '**/*.s+(a|c)ss',
-            '!' + wb.project_scss + 'path/to/ignore/**/',  // Add a path to ignore files
-        ]
-    )
+    return src(wb.sasslintFiles)
         .pipe(sassLint({
             configFile: wb.sasslint
         }))

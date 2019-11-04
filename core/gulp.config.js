@@ -40,6 +40,15 @@ const browsersync_notify    =   false;
 const browsersync_ghostmod  =   true;
 const browsersync_new_tab   =   false;
 
+
+//================================================================================================================================
+// Lint Files
+//================================================================================================================================
+const project_sassfilesToLint = [
+    project_scss + '**/*.s+(a|c)ss',
+    '!' + project_scss + 'path/to/ignore/**/',  // Add a path to ignore files
+];
+
 //================================================================================================================================
 // JS CONCATINATION
 // Add your JavaScript Files and Frameworks here to minify as *.min.js into the dist folder
@@ -116,6 +125,7 @@ module.exports = {
     sasslint:                   sassLint,
     eslint:                     esLint,
     babellint:                  babelLint,
+    sasslintFiles:              project_sassfilesToLint,
     concat_JS_lib:              project_js_lib_files,
     concat_JS_head:             project_js_head_files,
     concat_JS_footer:           project_js_footer_files,
