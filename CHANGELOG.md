@@ -5,6 +5,13 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+### [2.5.5](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- Updated Node packages
+>- Add sasslint files as an configurable option to `gulp.config.js` file.   
+> **Update:** 
+> Please compare these two files in your local Project with the files in the core folder:  
+>   - `gulp.config.js`
+>   - `gulpfile.js`   
 
 ### [2.5.4](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- update node packages
