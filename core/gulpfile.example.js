@@ -20,9 +20,7 @@ const log = require('fancy-log');
 const plumber = require('gulp-plumber');
 const minifyCSS = require('gulp-csso');
 const merge = require('gulp-merge-json');
-const neat = require('node-neat');
 const newer = require('gulp-newer');
-const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
@@ -128,7 +126,7 @@ function concat_lib_js() {
                 presets: [
                     [
                         '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist },
+                            targets: { browsers: wb.browserslist }
                         }
                     ]
                 ]
@@ -159,7 +157,7 @@ function concat_head_js() {
                 presets: [
                     [
                         '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist },
+                            targets: { browsers: wb.browserslist }
                         }
                     ]
                 ]
@@ -189,7 +187,7 @@ function concat_footer_js() {
                 presets: [
                     [
                         '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist },
+                            targets: { browsers: wb.browserslist }
                         }
                     ]
                 ]
@@ -303,7 +301,7 @@ function npm_dependencies_check() {
     if(wb.dependency_check) {
         return src('*.js', {read: false})
             .pipe(shell([
-                    'npm outdated',
+                    'npm outdated'
                 ], {ignoreErrors: true}
             ));
     } else {
@@ -315,7 +313,7 @@ function npm_dependencies_check() {
 function npm_install() {
     return src('*.js', {read: false})
         .pipe(shell([
-                'npm install',
+                'npm install'
             ], {ignoreErrors: true}
         ));
 }
