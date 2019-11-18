@@ -8,7 +8,7 @@ console.log(
     '\nYou can now support this open source project: \n'
 );
 console.log(
-    `	${chalk.yellow('Support with coffee (via PayPal) →')} paypal.me/dermatz`,
+    `	${chalk.yellow('Support with coffee (via PayPal) →')} https://paypal.me/dermatz`,
     '\n',
     `	${chalk.yellow('Report an issue →')} https://github.com/dermatz/woodoo-buildtools/issues`,
     '\n',
