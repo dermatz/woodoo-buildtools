@@ -53,7 +53,7 @@ module.exports = () => {
             setTimeout(function () {
                 fs.access(theCWD +'/package.json', fs.F_OK, (notexist) => {
                     if (notexist) {
-                        fs.copyFile( core + '/package.json', theCWD + '/package.json', () => {});
+                        fs.copyFileSync( core + '/package.json', theCWD + '/package.json');
                         spinner.succeed(`2. Packages are installed successfully`);
                         resolve('Packages downloadet');
                     } else {
@@ -79,8 +79,7 @@ module.exports = () => {
             setTimeout(function () {
                 fs.access(theCWD + '/gulpfile.js', fs.F_OK, (notFound) => {
                     if (notFound) {
-                        fs.rename(theCWD + '/core/gulpfile.example.js', theCWD + '/gulpfile.js', function () {
-                        });
+                        fs.renameSync(theCWD + '/core/gulpfile.example.js', theCWD + '/gulpfile.js');
                         spinner.succeed(`4. All right. The ${chalk.yellow('gulpfile.js')} is ready now.`);
                         resolve('renamed');
                     } else {
@@ -101,7 +100,7 @@ module.exports = () => {
             setTimeout(function () {
                 fs.access(theCWD + '/gulp.config.js', fs.F_OK, (notFound) => {
                     if (notFound) {
-                        fs.copyFile(core + '/gulp.config.js', theCWD + '/gulp.config.js', () => {});
+                        fs.copyFileSync(core + '/gulp.config.js', theCWD + '/gulp.config.js');
                         spinner.succeed(`5. Yeah. The new s${chalk.yellow('gulp.config.js')} is ready now.`);
                         resolve('renamed');
                     } else {
