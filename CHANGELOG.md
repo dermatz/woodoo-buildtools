@@ -5,13 +5,20 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+### [2.6.0](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- Updated node packages, dependencies in the `package.json`
+>- Merge Pull-Request: Add missing protocol to make URL clickable (by https://github.com/DanielRuf)
+>- Merge Pull-Request: Remove unused dependencies (by https://github.com/DanielRuf)
+>- Merge Pull-Request: Merge the duplicate code blocks into one branch (by https://github.com/DanielRuf)
+>- Merge Pull-Request: Use synchronous methods to prevent race conditions (by https://github.com/DanielRuf)
+
 ### [2.5.5](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- Updated Node packages
->- Add sasslint files as an configurable option to `gulp.config.js` file.   
-> **Update:** 
-> Please compare these two files in your local Project with the files in the core folder:  
+>- Add sasslint files as an configurable option to `gulp.config.js` file.
+> **Update:**
+> Please compare these two files in your local Project with the files in the core folder:
 >   - `gulp.config.js`
->   - `gulpfile.js`   
+>   - `gulpfile.js`
 
 ### [2.5.4](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- update node packages

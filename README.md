@@ -2,7 +2,7 @@
 
 [![DerMatz on Twitter](https://img.shields.io/twitter/follow/_dermatz.svg?style=social&label=Follow%20@_dermatz)](https://twitter.com/_dermatz/)
 
-# Woodoo Frontend Buildtool 2.5.5
+# Woodoo Frontend Buildtool 2.6.0
 >- Author: Mathias Elle
 >- E-Mail: hello@dermatz.de
 >- Website: https://www.dermatz.de
@@ -100,6 +100,7 @@ Feel free to report issues or add pull-requests. Thanks for your support!
 
 Thanks goes to
 ---
+- [Daniel Ruf](https://github.com/DanielRuf) for contribution with Pull-Requests
 - Inspiration for the installation process by https://github.com/ahmadawais
 
 License
