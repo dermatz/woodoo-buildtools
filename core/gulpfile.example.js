@@ -116,92 +116,98 @@ function scsslint() {
 // Libruary JS
 
 function concat_lib_js() {
-    return src(wb.concat_JS_lib)
-        .pipe(sourcemaps.init())
-        .pipe(eslint({ configFile: wb.eslint }))
-        .pipe(eslint.format())
-        .pipe(
-            babel({
-                configFile: wb.babelconfigFile,
-                presets: [
-                    [
-                        '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist }
-                        }
-                    ]
+    return src(wb.concat_JS_lib, {
+        allowEmpty: true
+    })
+    .pipe(sourcemaps.init())
+    .pipe(eslint({ configFile: wb.eslint }))
+    .pipe(eslint.format())
+    .pipe(
+        babel({
+            configFile: wb.babelconfigFile,
+            presets: [
+                [
+                    '@babel/preset-env', {
+                        targets: { browsers: wb.browserslist }
+                    }
                 ]
-            })
-        )
-        .pipe(concat('lib.js'))
-        .pipe(terser({
-            keep_fnames: true,
-            mangle: false
-        }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(plumber())
-        .pipe(dest(wb.project_dist + 'js'));
+            ]
+        })
+    )
+    .pipe(concat('lib.js'))
+    .pipe(terser({
+        keep_fnames: true,
+        mangle: false
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(wb.project_dist + 'js'));
 }
 
 // Head JS
 
 function concat_head_js() {
 
-    return src(wb.concat_JS_head)
-        .pipe(sourcemaps.init())
-        .pipe(eslint({ configFile: wb.eslint }))
-        .pipe(eslint.format())
-        .pipe(
-            babel({
-                configFile: wb.babelconfigFile,
-                presets: [
-                    [
-                        '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist }
-                        }
-                    ]
+    return src(wb.concat_JS_head, {
+        allowEmpty: true
+    })
+    .pipe(sourcemaps.init())
+    .pipe(eslint({ configFile: wb.eslint }))
+    .pipe(eslint.format())
+    .pipe(
+        babel({
+            configFile: wb.babelconfigFile,
+            presets: [
+                [
+                    '@babel/preset-env', {
+                        targets: { browsers: wb.browserslist }
+                    }
                 ]
-            })
-        )
-        .pipe(concat('head.js'))
-        .pipe(terser({
-            keep_fnames: true,
-            mangle: false
-        }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(plumber())
-        .pipe(dest(wb.project_dist + 'js'));
+            ]
+        })
+    )
+    .pipe(concat('head.js'))
+    .pipe(terser({
+        keep_fnames: true,
+        mangle: false
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(wb.project_dist + 'js'));
 }
 
 // Footer JS
 
 function concat_footer_js() {
-    return src(wb.concat_JS_footer)
-        .pipe(sourcemaps.init())
-        .pipe(eslint({ configFile: wb.eslint }))
-        .pipe(eslint.format())
-        .pipe(
-            babel({
-                configFile: wb.babelconfigFile,
-                presets: [
-                    [
-                        '@babel/preset-env', {
-                            targets: { browsers: wb.browserslist }
-                        }
-                    ]
+    return src(wb.concat_JS_footer, {
+        allowEmpty: true
+    })
+    .pipe(sourcemaps.init())
+    .pipe(eslint({ configFile: wb.eslint }))
+    .pipe(eslint.format())
+    .pipe(
+        babel({
+            configFile: wb.babelconfigFile,
+            presets: [
+                [
+                    '@babel/preset-env', {
+                        targets: { browsers: wb.browserslist }
+                    }
                 ]
-            })
-        )
-        .pipe(concat('footer.js'))
-        .pipe(terser({
-            keep_fnames: true,
-            mangle: false
-        }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(sourcemaps.write('.'))
-        .pipe(plumber())
-        .pipe(dest(wb.project_dist + 'js'));
+            ]
+        })
+    )
+    .pipe(concat('footer.js'))
+    .pipe(terser({
+        keep_fnames: true,
+        mangle: false
+    }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(plumber())
+    .pipe(dest(wb.project_dist + 'js'));
 }
 
 // IMAGEMIN ======================================================================================================================
@@ -210,23 +216,23 @@ function image_minify() {
     return src(
         wb.project_images + '**/*'
     )
-        .pipe(newer(wb.project_dist + 'images')) // check if newer images are available from src for this target folder
-        .pipe(
-            imagemin([
-                imagemin.gifsicle({interlaced: wb.imagemin_interlaced}),
-                imagemin.jpegtran({progressive: wb.imagemin_progressive}),
-                imagemin.optipng({optimizationLevel: wb.imagemin_optimization_level}),
-                imagemin.svgo({
-                    plugins: [
-                        {
-                            removeViewBox: wb.imagemin_removeviewbox,
-                            collapseGroups: wb.imagemin_collapsegroups
-                        }
-                    ]
-                })
-            ])
-        )
-        .pipe(dest(wb.project_dist + 'images'));
+    .pipe(newer(wb.project_dist + 'images')) // check if newer images are available from src for this target folder
+    .pipe(
+        imagemin([
+            imagemin.gifsicle({interlaced: wb.imagemin_interlaced}),
+            imagemin.jpegtran({progressive: wb.imagemin_progressive}),
+            imagemin.optipng({optimizationLevel: wb.imagemin_optimization_level}),
+            imagemin.svgo({
+                plugins: [
+                    {
+                        removeViewBox: wb.imagemin_removeviewbox,
+                        collapseGroups: wb.imagemin_collapsegroups
+                    }
+                ]
+            })
+        ])
+    )
+    .pipe(dest(wb.project_dist + 'images'));
 }
 
 // WATCH TASK ====================================================================================================================
