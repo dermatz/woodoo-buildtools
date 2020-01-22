@@ -5,6 +5,9 @@ All notable changes in this project are documented in this file.
 
 
 ## Latest Release
+### [2.6.2](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
+>- update npm dependencies
+
 ### [2.6.1](https://gitlab.com/dermatz/woodoo-buildtools/-/releases)
 >- update npm dependencies
 >- add `allowEmpty` Option for `gulp-concat`
