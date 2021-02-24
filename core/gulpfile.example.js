@@ -36,6 +36,15 @@ const eslint = require('gulp-eslint');
  * Output of the current Woodoo Version in the shell
  */
 log('👍 You are using Woodoo-Buildtools ' + packageinfo.version);
+
+/**
+ * Output current node environment
+ */
+if (process.env.NODE_ENV === undefined) {
+    process.env.NODE_ENV = 'development';
+}
+log('🚀 Current NODE_ENV: ' + process.env.NODE_ENV);
+
 // BROWSER SYNC ==================================================================================================================
 
 function browserSync(done) {
