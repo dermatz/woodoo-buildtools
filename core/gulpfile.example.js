@@ -30,7 +30,7 @@ const browsersync = require("browser-sync").create();
 const browserSyncReuseTab = require('browser-sync-reuse-tab')(browsersync);
 const babel = require("gulp-babel");
 const terser = require('gulp-terser');
-const eslint = require('gulp-eslint');
+const eslint = require('gulp-eslint7');
 
 /**
  * Output of the current Woodoo Version in the shell
@@ -229,7 +229,6 @@ function image_minify() {
     .pipe(
         imagemin([
             imagemin.gifsicle({interlaced: wb.imagemin_interlaced}),
-            imagemin.jpegtran({progressive: wb.imagemin_progressive}),
             imagemin.optipng({optimizationLevel: wb.imagemin_optimization_level}),
             imagemin.svgo({
                 plugins: [

@@ -11,7 +11,7 @@ const woodoo_buildtools_core = './core/';
 // PROJECT OPTIONS AND PATHES
 // IMPORTANT: add slash "/" at the end of the path
 //================================================================================================================================
-const project_path      =   '../test/';
+const project_path      =   '../your/relative/project/path/';
 const project_dist      =   project_path + 'dist/';          // destination directory
 const project_scss      =   project_path + 'assets/scss/';   // path to the scss source files
 const project_images    =   project_path + 'assets/images/'; // path to the image source files
@@ -24,15 +24,15 @@ const project_js_footer =   project_js + 'footer/';          // path to the foot
 // CONFIG FILES
 //================================================================================================================================
 const sassLint          =   woodoo_buildtools_core + '.sass-lint.yml';      // Name and Path to the sass-lint config file
-const esLint            =   woodoo_buildtools_core + '.eslintrc';
+const esLint            =   woodoo_buildtools_core + '.eslintrc.json';
 const babelLint         =   woodoo_buildtools_core + '.babelrc';
-const babelconfigFile   =   woodoo_buildtools_core + 'babel.config.js';                       // Name and Path to the babel.config.js file
+const babelconfigFile   =   woodoo_buildtools_core + 'babel.config.js';     // Name and Path to the babel.config.js file
 
 //================================================================================================================================
 // BROWSERSYNC
 //================================================================================================================================
-const browsersync_support   =   true;                       // enable or disable the BrowserSync functionality
-const browsersync_proxyUrl  =   'local.test';               // add you project development url
+const browsersync_support   =   true;           // enable or disable the BrowserSync functionality
+const browsersync_proxyUrl  =   'local.test';   // add you project development url
 const browsersync_port      =   3000;
 const browsersync_portUI    =   8080;
 const browsersync_https     =   false;
