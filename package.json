@@ -1,6 +1,6 @@
 {
   "name": "woodoo-buildtools",
-  "version": "2.6.2",
+  "version": "2.7.0",
   "description": "Gulp Frontend Workflow",
   "author": "Mathias Elle <hello@dermatz.de> (https://www.dermatz.de)",
   "license": "OSL-3.0",
@@ -35,7 +35,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
-    "gulp-eslint": "^6.0.0",
+    "gulp-eslint7":  "^0.3.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-merge-json": "^2.1.1",
     "gulp-newer": "^1.4.0",
